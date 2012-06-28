@@ -1,0 +1,80 @@
+/* 
+  Localizable.strings
+  Labixiaoxin1-5
+
+  Created by 晋辉 卫 on 5/5/12.
+  Copyright (c) 2012 MobileWoo. All rights reserved.
+  繁体
+*/
+/* No comment provided by engineer. */
+"%d days ago" = "%d days ago";
+
+/* No comment provided by engineer. */
+"%d hours ago" = "%d hours ago";
+
+/* No comment provided by engineer. */
+"%d mins ago" = "%d mins ago";
+
+/* No comment provided by engineer. */
+"%d Volum" = "第%d卷";
+
+/* No comment provided by engineer. */
+"%dd" = "%dd";
+
+/* No comment provided by engineer. */
+"%dh" = "%dh";
+
+/* No comment provided by engineer. */
+"%dm" = "%dm";
+
+/* No comment provided by engineer. */
+"0m" = "0m";
+
+/* No comment provided by engineer. */
+"comment" = "去評分";
+
+/* No comment provided by engineer. */
+"Back" = "返回";
+
+/* No comment provided by engineer. */
+"Be about to online" = "即將上線,敬請期待";
+
+/* No comment provided by engineer. */
+"I know" = "知道了";
+
+/* No comment provided by engineer. */
+"Book name" = "蠟筆小新";
+
+/* No comment provided by engineer. */
+"More cartoon" = "更多漫畫";
+
+/* No comment provided by engineer. */
+"YYYY-MM-dd" = "YYYY-MM-dd";
+
+/* No comment provided by engineer. */
+"YYYY.MM.dd" = "YYYY.MM.dd";
+
+/* No comment provided by engineer. */
+"忍痛拒绝" = "忍痛拒絕";
+
+/* No comment provided by engineer. */
+"欢喜评分" = "歡喜評分";
+
+/* No comment provided by engineer. */
+"如果喜欢就帮忙评价一下把～嘿嘿" = "如果喜歡就幫忙評價一下把～嘿嘿";
+
+/* No comment provided by engineer. */
+"移除广告" = "移除廣告";
+
+/* No comment provided by engineer. */
+"抱歉" = "抱歉";
+
+/* No comment provided by engineer. */
+"购买成功" = "購買成功";
+
+/* No comment provided by engineer. */
+"广告已移除,请继续欣赏~~" = "廣告已移除,請繼續欣賞~~";
+
+"购买该功能" = "購買該功能";
+
+"恢复该功能" = "恢復該功能";
