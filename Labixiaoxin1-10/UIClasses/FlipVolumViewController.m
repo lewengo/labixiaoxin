@@ -148,6 +148,7 @@
 
 - (void)dealloc
 {
+    [_MobWINView removeFromSuperview];
     _bannerView.delegate = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -244,15 +245,28 @@
         _bannerView.frame = CGRectMake(0, CGRectGetHeight(frontView.frame) - CGRectGetHeight(_bannerView.frame), CGRectGetWidth(_bannerView.frame), CGRectGetHeight(_bannerView.frame));
         [_bannerView loadRequest:[GADRequest request]];
         
-        
+#ifdef USE_MOBWIN
+        _MobWINView = [[MobWinBannerView alloc] initMobWinBannerSizeIdentifier:MobWINBannerSizeIdentifier320x50];
+        _MobWINView.rootViewController = self.navigationController;
+        _MobWINView.adUnitID = MobWIN_ID;
+        _MobWINView.delegate = self;
+        [frontView addSubview:_MobWINView];
+        _MobWINView.frame = CGRectMake(CGRectGetWidth(frontView.frame) - CGRectGetWidth(_MobWINView.frame), CGRectGetHeight(frontView.frame) - CGRectGetHeight(_MobWINView.frame) + 10, CGRectGetWidth(_MobWINView.frame), CGRectGetHeight(_MobWINView.frame));
+        _MobWINView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
+        [_MobWINView startRequest];
+    }
+#else
+#ifdef USE_YOUMI
        _youmiView = [[YouMiView alloc] initWithContentSizeIdentifier:YouMiBannerContentSizeIdentifier320x50 delegate:self];
-        _youmiView.appID = Other_Ad_Id;
-        _youmiView.appSecret = Other_Ad_Secret;
+        _youmiView.appID = Youmi_Ad_Id;
+        _youmiView.appSecret = Youmi_Ad_Secret;
         [frontView addSubview:_youmiView];
         _youmiView.frame = CGRectMake(CGRectGetWidth(frontView.frame) - CGRectGetWidth(_youmiView.frame), CGRectGetHeight(frontView.frame) - CGRectGetHeight(_youmiView.frame), CGRectGetWidth(_youmiView.frame), CGRectGetHeight(_youmiView.frame));
         _youmiView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
         [_youmiView start];
     }
+#endif
+#endif
 }
 
 - (void)viewDidUnload
@@ -261,6 +275,7 @@
     frontView = nil;
     menuButton = nil;
     bottomBar = nil;
+    [_MobWINView stopRequest];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -640,5 +655,40 @@ didFailToReceiveAdWithError:(GADRequestError *)error
 {
     int a = 10;
     a ++;
+}
+
+
+#pragma mobwin
+// 请求广告条数据成功后调用
+//
+// 详解:当接收服务器返回的广告数据成功后调用该函数
+- (void)bannerViewDidReceived
+{
+    _MobWINView.frame = CGRectMake(CGRectGetWidth(frontView.frame) - CGRectGetWidth(_MobWINView.frame), CGRectGetHeight(frontView.frame) - CGRectGetHeight(_MobWINView.frame) + 10, CGRectGetWidth(_MobWINView.frame), CGRectGetHeight(_MobWINView.frame));
+}
+
+// 请求广告条数据失败后调用
+//
+// 详解:当接收服务器返回的广告数据失败后调用该函数
+- (void)bannerViewFailToReceived
+{
+    int a = 10;
+    a ++;
+}
+
+// 全屏广告弹出时调用
+//
+// 详解:当广告栏被点击，弹出内嵌全屏广告时调用
+- (void)bannerViewDidPresentScreen
+{
+    
+}
+
+// 全屏广告关闭时调用
+//
+// 详解:当弹出内嵌全屏广告关闭，返回广告栏界面时调用
+- (void)bannerViewDidDismissScreen
+{
+    
 }
 @end

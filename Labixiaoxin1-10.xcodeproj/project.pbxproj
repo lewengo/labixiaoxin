@@ -59,6 +59,11 @@
 		0B4C80D61573434F00EE687D /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B4C80D41573434F00EE687D /* Default-Landscape~ipad.png */; };
 		0B4C8B2C157348E100EE687D /* userGuide2-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B4C8B2A157348E100EE687D /* userGuide2-Landscape@2x~ipad.png */; };
 		0B4C8B2D157348E100EE687D /* userGuide2-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B4C8B2B157348E100EE687D /* userGuide2-Landscape~ipad.png */; };
+		0B54AC1D15A1497A00AD91DD /* MobWin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B54AC1815A1497A00AD91DD /* MobWin.a */; };
+		0B54AC2215A14B3600AD91DD /* LBSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B54AC2115A14B3600AD91DD /* LBSSDK.framework */; };
+		0B54AC2F15A14C7300AD91DD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B54AC2E15A14C7300AD91DD /* CFNetwork.framework */; };
+		0B54AC3115A14C9600AD91DD /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B54AC3015A14C9600AD91DD /* libstdc++.dylib */; };
+		0B54AC3315A14C9F00AD91DD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B54AC3215A14C9F00AD91DD /* libz.dylib */; };
 		0B5BDDCB1571C454005EDDBD /* volumStandLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5BDDC91571C454005EDDBD /* volumStandLandscape.png */; };
 		0B5BDDCC1571C454005EDDBD /* volumStandLandscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5BDDCA1571C454005EDDBD /* volumStandLandscape@2x.png */; };
 		0B6D6CA81571321E000A6EE1 /* flip-illusion-oriented.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B6D6CA61571321E000A6EE1 /* flip-illusion-oriented.jpg */; };
@@ -1502,6 +1507,15 @@
 		0B4C80D41573434F00EE687D /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		0B4C8B2A157348E100EE687D /* userGuide2-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userGuide2-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		0B4C8B2B157348E100EE687D /* userGuide2-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userGuide2-Landscape~ipad.png"; sourceTree = "<group>"; };
+		0B54AC1815A1497A00AD91DD /* MobWin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = MobWin.a; sourceTree = "<group>"; };
+		0B54AC1915A1497A00AD91DD /* MobWinBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobWinBannerView.h; sourceTree = "<group>"; };
+		0B54AC1A15A1497A00AD91DD /* MobWinBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobWinBannerViewDelegate.h; sourceTree = "<group>"; };
+		0B54AC1B15A1497A00AD91DD /* MobWinSpotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobWinSpotView.h; sourceTree = "<group>"; };
+		0B54AC1C15A1497A00AD91DD /* MobWinSpotViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobWinSpotViewDelegate.h; sourceTree = "<group>"; };
+		0B54AC2115A14B3600AD91DD /* LBSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LBSSDK.framework; sourceTree = "<group>"; };
+		0B54AC2E15A14C7300AD91DD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		0B54AC3015A14C9600AD91DD /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		0B54AC3215A14C9F00AD91DD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		0B5BDDC91571C454005EDDBD /* volumStandLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumStandLandscape.png; sourceTree = "<group>"; };
 		0B5BDDCA1571C454005EDDBD /* volumStandLandscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volumStandLandscape@2x.png"; sourceTree = "<group>"; };
 		0B6D6CA61571321E000A6EE1 /* flip-illusion-oriented.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "flip-illusion-oriented.jpg"; sourceTree = "<group>"; };
@@ -2887,6 +2901,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B54AC3315A14C9F00AD91DD /* libz.dylib in Frameworks */,
+				0B54AC3115A14C9600AD91DD /* libstdc++.dylib in Frameworks */,
+				0B54AC2F15A14C7300AD91DD /* CFNetwork.framework in Frameworks */,
 				0BF0959A157BA6F400DFE50A /* MapKit.framework in Frameworks */,
 				0BF09599157BA6E500DFE50A /* ImageIO.framework in Frameworks */,
 				0BF09598157BA6D500DFE50A /* CoreLocation.framework in Frameworks */,
@@ -2905,6 +2922,8 @@
 				0BA1B9D41550D8F500E02191 /* libGoogleAdMobAds.a in Frameworks */,
 				0B1615BA155568DD0023E7A6 /* libJsonUtils-4.0.a in Frameworks */,
 				0BF0958A157BA28300DFE50A /* libYouMi.a in Frameworks */,
+				0B54AC1D15A1497A00AD91DD /* MobWin.a in Frameworks */,
+				0B54AC2215A14B3600AD91DD /* LBSSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3034,6 +3053,9 @@
 		0B49BB3F154FDC8D004B8AC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0B54AC3215A14C9F00AD91DD /* libz.dylib */,
+				0B54AC3015A14C9600AD91DD /* libstdc++.dylib */,
+				0B54AC2E15A14C7300AD91DD /* CFNetwork.framework */,
 				0BF09596157BA67800DFE50A /* libsqlite3.0.dylib */,
 				0BF09594157BA65300DFE50A /* CoreTelephony.framework */,
 				0BF09590157BA62A00DFE50A /* ImageIO.framework */,
@@ -3057,6 +3079,7 @@
 		0B49BB46154FDC8D004B8AC1 /* Labixiaoxin1-10 */ = {
 			isa = PBXGroup;
 			children = (
+				0B54AC1715A1497A00AD91DD /* MobWIN */,
 				0BF0957F157BA28300DFE50A /* YouMiSDK[iOS] */,
 				0BD1928C1566AE7600C47E4A /* Pics */,
 				0B1615B0155568DD0023E7A6 /* SBJson */,
@@ -3201,6 +3224,19 @@
 				0B0749C81554DA2E00ECC9EA /* Book.m */,
 			);
 			path = DataModels;
+			sourceTree = "<group>";
+		};
+		0B54AC1715A1497A00AD91DD /* MobWIN */ = {
+			isa = PBXGroup;
+			children = (
+				0B54AC2115A14B3600AD91DD /* LBSSDK.framework */,
+				0B54AC1815A1497A00AD91DD /* MobWin.a */,
+				0B54AC1915A1497A00AD91DD /* MobWinBannerView.h */,
+				0B54AC1A15A1497A00AD91DD /* MobWinBannerViewDelegate.h */,
+				0B54AC1B15A1497A00AD91DD /* MobWinSpotView.h */,
+				0B54AC1C15A1497A00AD91DD /* MobWinSpotViewDelegate.h */,
+			);
+			path = MobWIN;
 			sourceTree = "<group>";
 		};
 		0BA055E01556579200E75963 /* image */ = {
@@ -6259,11 +6295,16 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A0275C4F-281B-4EE6-A93B-01E253DA097E";
 				SDKROOT = iphoneos;
 			};
@@ -6281,12 +6322,17 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jinhui Wei";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FA0728E2-35C8-4D7B-B541-F6D814F6DDA0";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -6299,8 +6345,14 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xiaoxiao wei (DSXR77A9C9)";
 				COMPRESS_PNG_FILES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Labixiaoxin1-10/MobWIN/Framework\"",
+					"\"$(SRCROOT)/Labixiaoxin1-10/MobWIN\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Labixiaoxin1-10/Labixiaoxin1-10-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Labixiaoxin1-10/Labixiaoxin1-10-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -6308,6 +6360,7 @@
 					"\"$(SRCROOT)/Labixiaoxin1-10/GoogleAdMobAdsSdkiOS-6.0.1\"",
 					"\"$(SRCROOT)/Labixiaoxin1-10/SBJson\"",
 					"\"$(SRCROOT)/Labixiaoxin1-10/YouMiSDK[iOS]/lib\"",
+					"\"$(SRCROOT)/Labixiaoxin1-10/MobWIN\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A0275C4F-281B-4EE6-A93B-01E253DA097E";
@@ -6321,8 +6374,14 @@
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jinhui Wei";
 				COMPRESS_PNG_FILES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Labixiaoxin1-10/MobWIN/Framework\"",
+					"\"$(SRCROOT)/Labixiaoxin1-10/MobWIN\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Labixiaoxin1-10/Labixiaoxin1-10-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Labixiaoxin1-10/Labixiaoxin1-10-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -6330,6 +6389,7 @@
 					"\"$(SRCROOT)/Labixiaoxin1-10/GoogleAdMobAdsSdkiOS-6.0.1\"",
 					"\"$(SRCROOT)/Labixiaoxin1-10/SBJson\"",
 					"\"$(SRCROOT)/Labixiaoxin1-10/YouMiSDK[iOS]/lib\"",
+					"\"$(SRCROOT)/Labixiaoxin1-10/MobWIN\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FA0728E2-35C8-4D7B-B541-F6D814F6DDA0";
@@ -6348,6 +6408,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Labixiaoxin1-10/Labixiaoxin1-10-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Labixiaoxin1-10Tests/Labixiaoxin1-10Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -6365,6 +6426,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Labixiaoxin1-10/Labixiaoxin1-10-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Labixiaoxin1-10Tests/Labixiaoxin1-10Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";

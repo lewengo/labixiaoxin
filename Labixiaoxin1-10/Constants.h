@@ -16,8 +16,12 @@
 #define APP_RATING_URL          @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=525300493"
 #define ADMOB_ID                @"a14fb644e629a23"
 
-#define Other_Ad_Id             @"4d698d73b01a2201"
-#define Other_Ad_Secret         @"3519b578598f5c00"
+#define USE_MOBWIN
+#define MobWIN_ID               @"A09199F505177789A65CCA9EA86259F8"
+
+//#define USE_YOUMI
+#define Youmi_Ad_Id             @"4d698d73b01a2201"
+#define Youmi_Ad_Secret         @"3519b578598f5c00"
 
 #define URL_REQUEST_TIMEOUT     120
 #define REQUEST_SOURCE_KEY      @"_source"
