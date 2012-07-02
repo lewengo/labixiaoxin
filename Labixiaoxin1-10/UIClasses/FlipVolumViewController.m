@@ -559,9 +559,6 @@
 
 - (NSInteger)numberOfPagesForPageFlipper:(AFKPageFlipper *)pageFlipper
 {
-#ifdef DEBUG
-    NSLog(@"%d", count / 2 + (count % 2 == 0 ? 0 : 1));
-#endif
     return count / 2 + (count % 2 == 0 ? 0 : 1);
 }
 
