@@ -245,7 +245,7 @@
         _bannerView.frame = CGRectMake(0, CGRectGetHeight(frontView.frame) - CGRectGetHeight(_bannerView.frame), CGRectGetWidth(_bannerView.frame), CGRectGetHeight(_bannerView.frame));
         [_bannerView loadRequest:[GADRequest request]];
         
-#ifdef USE_MOBWIN
+#if defined (USE_MOBWIN)
         _MobWINView = [[MobWinBannerView alloc] initMobWinBannerSizeIdentifier:MobWINBannerSizeIdentifier320x50];
         _MobWINView.rootViewController = self.navigationController;
         _MobWINView.adUnitID = MobWIN_ID;
@@ -254,9 +254,7 @@
         _MobWINView.frame = CGRectMake(CGRectGetWidth(frontView.frame) - CGRectGetWidth(_MobWINView.frame), CGRectGetHeight(frontView.frame) - CGRectGetHeight(_MobWINView.frame) + 10, CGRectGetWidth(_MobWINView.frame), CGRectGetHeight(_MobWINView.frame));
         _MobWINView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
         [_MobWINView startRequest];
-    }
-#else
-#ifdef USE_YOUMI
+#elif defined (USE_YOUMI)
        _youmiView = [[YouMiView alloc] initWithContentSizeIdentifier:YouMiBannerContentSizeIdentifier320x50 delegate:self];
         _youmiView.appID = Youmi_Ad_Id;
         _youmiView.appSecret = Youmi_Ad_Secret;
@@ -264,9 +262,9 @@
         _youmiView.frame = CGRectMake(CGRectGetWidth(frontView.frame) - CGRectGetWidth(_youmiView.frame), CGRectGetHeight(frontView.frame) - CGRectGetHeight(_youmiView.frame), CGRectGetWidth(_youmiView.frame), CGRectGetHeight(_youmiView.frame));
         _youmiView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
         [_youmiView start];
+#endif
+        
     }
-#endif
-#endif
 }
 
 - (void)viewDidUnload

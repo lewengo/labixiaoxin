@@ -19,7 +19,7 @@
 //#define USE_MOBWIN
 #define MobWIN_ID               @"A09199F505177789A65CCA9EA86259F8"
 
-#define USE_YOUMI
+//#define USE_YOUMI
 #define Youmi_Ad_Id             @"4d698d73b01a2201"
 #define Youmi_Ad_Secret         @"3519b578598f5c00"
 
