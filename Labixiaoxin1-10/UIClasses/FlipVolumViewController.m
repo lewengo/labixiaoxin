@@ -607,6 +607,11 @@
     currentPageIndex = (page - 1) * 2;
     [self updateIndex];
     [self updateSlide];
+    viewedCount ++;
+    if (viewedCount == 5) {
+        AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        [delegate promptComment];
+    }
 }
 
 - (void)adViewDidReceiveAd:(GADBannerView *)view
