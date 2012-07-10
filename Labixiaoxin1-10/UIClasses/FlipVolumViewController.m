@@ -228,7 +228,7 @@
     
     UITapGestureRecognizer *taper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     taper.delegate = self;
-    [self.view addGestureRecognizer:taper];
+    [frontView addGestureRecognizer:taper];
     
 //    flipGesture = [[UIPanGestureRecognizer alloc] initWithTarget:flipView action:@selector(panned:)];
 //    [flipGesture setMaximumNumberOfTouches:1];
@@ -506,8 +506,14 @@
         }
         return YES;
     } else {
-        CGPoint point = [touch locationInView:menuButton];
-        if (CGRectContainsPoint(menuButton.bounds, point)) {
+        CGPoint point = [touch locationInView:frontView];
+        if (_bannerView && CGRectContainsPoint(_bannerView.frame, point)) {
+            return NO;
+        }
+        if (_youmiView && CGRectContainsPoint(_youmiView.frame, point)) {
+            return NO;
+        }
+        if (_MobWINView && CGRectContainsPoint(_MobWINView.frame, point)) {
             return NO;
         }
         return YES;
