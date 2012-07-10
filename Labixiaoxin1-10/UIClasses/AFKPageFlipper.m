@@ -794,7 +794,6 @@
 	for (UIGestureRecognizer *recognizer in self.gestureRecognizers) {
 		recognizer.enabled = !value;
 	}
-    [dataSource setGestureDisable:value];
 }
 
 #pragma mark -

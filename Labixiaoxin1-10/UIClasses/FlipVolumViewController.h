@@ -35,7 +35,6 @@
 	BOOL rotating;
     
     IBOutlet UIView *frontView;
-    UIPanGestureRecognizer *flipGesture;
     AFKPageFlipper *flipView;
     GADBannerView *_bannerView;
     YouMiView *_youmiView;

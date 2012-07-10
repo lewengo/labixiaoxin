@@ -230,11 +230,6 @@
     taper.delegate = self;
     [frontView addGestureRecognizer:taper];
     
-//    flipGesture = [[UIPanGestureRecognizer alloc] initWithTarget:flipView action:@selector(panned:)];
-//    [flipGesture setMaximumNumberOfTouches:1];
-//    flipGesture.delegate = self;
-//    [self.view addGestureRecognizer:flipGesture];
-    
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     if (!delegate.adRemoved) {
         _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
@@ -496,28 +491,17 @@
 // called before touchesBegan:withEvent: is called on the gesture recognizer for a new touch. return NO to prevent the gesture recognizer from seeing this touch
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
-    if (gestureRecognizer == flipGesture) {
-        if (bottomBar.alpha == 0.0) {
-            return YES;
-        }
-        CGPoint point = [touch locationInView:bottomBar];
-        if (CGRectContainsPoint(bottomBar.bounds, point)) {
-            return NO;
-        }
-        return YES;
-    } else {
-        CGPoint point = [touch locationInView:frontView];
-        if (_bannerView && CGRectContainsPoint(_bannerView.frame, point)) {
-            return NO;
-        }
-        if (_youmiView && CGRectContainsPoint(_youmiView.frame, point)) {
-            return NO;
-        }
-        if (_MobWINView && CGRectContainsPoint(_MobWINView.frame, point)) {
-            return NO;
-        }
-        return YES;
+    CGPoint point = [touch locationInView:frontView];
+    if (_bannerView && CGRectContainsPoint(_bannerView.frame, point)) {
+        return NO;
     }
+    if (_youmiView && CGRectContainsPoint(_youmiView.frame, point)) {
+        return NO;
+    }
+    if (_MobWINView && CGRectContainsPoint(_MobWINView.frame, point)) {
+        return NO;
+    }
+    return YES;
 }
 
 - (void)handleTap:(UITapGestureRecognizer *)sender
@@ -599,11 +583,6 @@
     [view addSubview:firstView];
     [view addSubview:secondView];
     return view;
-}
-
-- (void)setGestureDisable:(BOOL)disable
-{
-    flipGesture.enabled = !disable;
 }
 
 - (void)pageShowed:(NSInteger)page inFlipper:(AFKPageFlipper *)pageFlipper

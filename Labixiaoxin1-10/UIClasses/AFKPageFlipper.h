@@ -19,7 +19,6 @@
 - (NSInteger)numberOfPagesForPageFlipper:(AFKPageFlipper *)pageFlipper;
 - (UIView *)viewForPage:(NSInteger)page inFlipper:(AFKPageFlipper *)pageFlipper;
 
-- (void)setGestureDisable:(BOOL)disable;
 - (void)pageShowed:(NSInteger)page inFlipper:(AFKPageFlipper *)pageFlipper;
 @end
 
