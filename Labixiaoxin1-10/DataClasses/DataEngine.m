@@ -335,6 +335,7 @@ static DataEngine *dataEngineInstance = nil;
     } else {
         self.adType = 0;
     }
+//    self.adType = 1;
     [LocalSettings saveAdType:[NSNumber numberWithInteger:self.adType]];
 }
 

@@ -64,6 +64,8 @@
 		0B54AC2F15A14C7300AD91DD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B54AC2E15A14C7300AD91DD /* CFNetwork.framework */; };
 		0B54AC3115A14C9600AD91DD /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B54AC3015A14C9600AD91DD /* libstdc++.dylib */; };
 		0B54AC3315A14C9F00AD91DD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B54AC3215A14C9F00AD91DD /* libz.dylib */; };
+		0B56B07915AD466F00DC3BAC /* DomobAdSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0B56B07715AD466F00DC3BAC /* DomobAdSDKBundle.bundle */; };
+		0B56B07A15AD466F00DC3BAC /* libDomobAdSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B56B07815AD466F00DC3BAC /* libDomobAdSDK.a */; };
 		0B5BDDCB1571C454005EDDBD /* volumStandLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5BDDC91571C454005EDDBD /* volumStandLandscape.png */; };
 		0B5BDDCC1571C454005EDDBD /* volumStandLandscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5BDDCA1571C454005EDDBD /* volumStandLandscape@2x.png */; };
 		0B6D6CA81571321E000A6EE1 /* flip-illusion-oriented.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B6D6CA61571321E000A6EE1 /* flip-illusion-oriented.jpg */; };
@@ -1516,6 +1518,12 @@
 		0B54AC2E15A14C7300AD91DD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		0B54AC3015A14C9600AD91DD /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		0B54AC3215A14C9F00AD91DD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		0B56B07215AD466F00DC3BAC /* DMAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMAdView.h; sourceTree = "<group>"; };
+		0B56B07315AD466F00DC3BAC /* DMInterstitialAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMInterstitialAdController.h; sourceTree = "<group>"; };
+		0B56B07415AD466F00DC3BAC /* DMSplashAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSplashAdController.h; sourceTree = "<group>"; };
+		0B56B07515AD466F00DC3BAC /* DMTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTools.h; sourceTree = "<group>"; };
+		0B56B07715AD466F00DC3BAC /* DomobAdSDKBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DomobAdSDKBundle.bundle; sourceTree = "<group>"; };
+		0B56B07815AD466F00DC3BAC /* libDomobAdSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobAdSDK.a; sourceTree = "<group>"; };
 		0B5BDDC91571C454005EDDBD /* volumStandLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumStandLandscape.png; sourceTree = "<group>"; };
 		0B5BDDCA1571C454005EDDBD /* volumStandLandscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volumStandLandscape@2x.png"; sourceTree = "<group>"; };
 		0B6D6CA61571321E000A6EE1 /* flip-illusion-oriented.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "flip-illusion-oriented.jpg"; sourceTree = "<group>"; };
@@ -2924,6 +2932,7 @@
 				0BF0958A157BA28300DFE50A /* libYouMi.a in Frameworks */,
 				0B54AC1D15A1497A00AD91DD /* MobWin.a in Frameworks */,
 				0B54AC2215A14B3600AD91DD /* LBSSDK.framework in Frameworks */,
+				0B56B07A15AD466F00DC3BAC /* libDomobAdSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3079,6 +3088,7 @@
 		0B49BB46154FDC8D004B8AC1 /* Labixiaoxin1-10 */ = {
 			isa = PBXGroup;
 			children = (
+				0B56B07115AD466F00DC3BAC /* DomobAdSDK */,
 				0B54AC1715A1497A00AD91DD /* MobWIN */,
 				0BF0957F157BA28300DFE50A /* YouMiSDK[iOS] */,
 				0BD1928C1566AE7600C47E4A /* Pics */,
@@ -3237,6 +3247,27 @@
 				0B54AC1C15A1497A00AD91DD /* MobWinSpotViewDelegate.h */,
 			);
 			path = MobWIN;
+			sourceTree = "<group>";
+		};
+		0B56B07115AD466F00DC3BAC /* DomobAdSDK */ = {
+			isa = PBXGroup;
+			children = (
+				0B56B07215AD466F00DC3BAC /* DMAdView.h */,
+				0B56B07315AD466F00DC3BAC /* DMInterstitialAdController.h */,
+				0B56B07415AD466F00DC3BAC /* DMSplashAdController.h */,
+				0B56B07515AD466F00DC3BAC /* DMTools.h */,
+				0B56B07615AD466F00DC3BAC /* DomobAdSDKBundle */,
+				0B56B07815AD466F00DC3BAC /* libDomobAdSDK.a */,
+			);
+			path = DomobAdSDK;
+			sourceTree = "<group>";
+		};
+		0B56B07615AD466F00DC3BAC /* DomobAdSDKBundle */ = {
+			isa = PBXGroup;
+			children = (
+				0B56B07715AD466F00DC3BAC /* DomobAdSDKBundle.bundle */,
+			);
+			path = DomobAdSDKBundle;
 			sourceTree = "<group>";
 		};
 		0BA055E01556579200E75963 /* image */ = {
@@ -6147,6 +6178,7 @@
 				0B4C80D61573434F00EE687D /* Default-Landscape~ipad.png in Resources */,
 				0B4C8B2C157348E100EE687D /* userGuide2-Landscape@2x~ipad.png in Resources */,
 				0B4C8B2D157348E100EE687D /* userGuide2-Landscape~ipad.png in Resources */,
+				0B56B07915AD466F00DC3BAC /* DomobAdSDKBundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6361,6 +6393,7 @@
 					"\"$(SRCROOT)/Labixiaoxin1-10/SBJson\"",
 					"\"$(SRCROOT)/Labixiaoxin1-10/YouMiSDK[iOS]/lib\"",
 					"\"$(SRCROOT)/Labixiaoxin1-10/MobWIN\"",
+					"\"$(SRCROOT)/Labixiaoxin1-10/DomobAdSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "81A73A0E-286A-40A7-A02C-F2CE8F615FEB";
@@ -6390,6 +6423,7 @@
 					"\"$(SRCROOT)/Labixiaoxin1-10/SBJson\"",
 					"\"$(SRCROOT)/Labixiaoxin1-10/YouMiSDK[iOS]/lib\"",
 					"\"$(SRCROOT)/Labixiaoxin1-10/MobWIN\"",
+					"\"$(SRCROOT)/Labixiaoxin1-10/DomobAdSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FA0728E2-35C8-4D7B-B541-F6D814F6DDA0";

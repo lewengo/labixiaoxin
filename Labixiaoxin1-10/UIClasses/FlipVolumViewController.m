@@ -81,6 +81,11 @@
     [_MobWINView stopRequest];
     [_MobWINView removeFromSuperview];
     _MobWINView = nil;
+    
+    _DMView.delegate = nil;
+    _DMView.rootViewController = nil;
+    [_DMView removeFromSuperview];
+    _DMView = nil;
 }
 
 - (void)relayoutRemoveAdButton
@@ -257,6 +262,16 @@
         
         switch (dataEngine.adType) {
             case 1:
+                _DMView = [[DMAdView alloc] initWithPublisherId:Domob_ID
+                                                           size:DOMOB_AD_SIZE_320x50
+                                                    autorefresh:YES];
+                _DMView.delegate = self;
+                _DMView.rootViewController = self.navigationController;
+                [frontView addSubview:_DMView];
+                _DMView.frame = CGRectMake(CGRectGetWidth(frontView.frame) - CGRectGetWidth(_DMView.frame), CGRectGetHeight(frontView.frame) - CGRectGetHeight(_DMView.frame), CGRectGetWidth(_DMView.frame), CGRectGetHeight(_DMView.frame));
+                [_DMView loadAd];
+                break;
+            case 3:
                 _youmiView = [[YouMiView alloc] initWithContentSizeIdentifier:YouMiBannerContentSizeIdentifier320x50 delegate:self];
                 _youmiView.appID = Youmi_Ad_Id;
                 _youmiView.appSecret = Youmi_Ad_Secret;
@@ -521,6 +536,9 @@
     if (_MobWINView && CGRectContainsPoint(_MobWINView.frame, point)) {
         return NO;
     }
+    if (_DMView && CGRectContainsPoint(_DMView.frame, point)) {
+        return NO;
+    }
     return YES;
 }
 
@@ -684,19 +702,17 @@ didFailToReceiveAdWithError:(GADRequestError *)error
     a ++;
 }
 
-// 全屏广告弹出时调用
-//
-// 详解:当广告栏被点击，弹出内嵌全屏广告时调用
-- (void)bannerViewDidPresentScreen
+#pragma domob
+// 成功加载广告后，回调该方法
+- (void)dmAdViewSuccessToLoadAd:(DMAdView *)adView
 {
-    
+    _DMView.frame = CGRectMake(CGRectGetWidth(frontView.frame) - CGRectGetWidth(_DMView.frame), CGRectGetHeight(frontView.frame) - CGRectGetHeight(_DMView.frame), CGRectGetWidth(_DMView.frame), CGRectGetHeight(_DMView.frame));
 }
 
-// 全屏广告关闭时调用
-//
-// 详解:当弹出内嵌全屏广告关闭，返回广告栏界面时调用
-- (void)bannerViewDidDismissScreen
+// 加载广告失败后，回调该方法
+- (void)dmAdViewFailToLoadAd:(DMAdView *)adView withError:(NSError *)error
 {
-    
+    int a = 10;
+    a ++;
 }
 @end

@@ -18,6 +18,8 @@
 
 #define MobWIN_ID               @"DB28F0874FC4ADA94558128C333BA69B"
 
+#define Domob_ID                @"56OJz/H4uMukgdF9im"
+
 #define Youmi_Ad_Id             @"4d698d73b01a2201"
 #define Youmi_Ad_Secret         @"3519b578598f5c00"
 
