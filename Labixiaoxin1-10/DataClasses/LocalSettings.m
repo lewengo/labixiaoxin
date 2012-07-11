@@ -88,4 +88,28 @@ static NSString *settingPath = nil;
 	NSString *appFile = [[self settingPath] stringByAppendingPathComponent:@"books.txt"];
     [NSKeyedArchiver archiveRootObject:books toFile:appFile];
 }
+
++ (NSNumber *)loadAdType
+{
+    NSNumber *adType = nil;
+	NSString *file = [[self settingPath] stringByAppendingPathComponent:@"adType.txt"];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:file] == YES) {
+        adType = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
+        if (![adType isKindOfClass:[NSNumber class]]) {
+            adType = nil;
+            [[NSFileManager defaultManager] removeItemAtPath:file
+                                                       error:nil];
+        }
+    }
+    return adType;
+}
+
++ (void)saveAdType:(NSNumber *)type
+{
+    if (!type) {
+        return;
+    }
+	NSString *appFile = [[self settingPath] stringByAppendingPathComponent:@"adType.txt"];
+    [NSKeyedArchiver archiveRootObject:type toFile:appFile];
+}
 @end

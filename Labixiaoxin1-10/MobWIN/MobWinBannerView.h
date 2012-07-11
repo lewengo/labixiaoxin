@@ -60,7 +60,7 @@ typedef enum {
 // 默认90%，有效范围60%～90%
 //
 // 详解：[可选]广告条背景的透明度
-@property(nonatomic, assign) CGFloat adAlpha; 
+@property(nonatomic, assign) CGFloat adAlpha;
 
 
 // 委托

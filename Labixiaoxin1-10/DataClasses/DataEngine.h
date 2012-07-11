@@ -24,6 +24,7 @@
 @property (copy, nonatomic) NSNumber *currentVolumId;
 @property (strong, nonatomic) NSMutableDictionary *volumsStatus;
 @property (strong, nonatomic) NSMutableArray *books;
+@property (assign, nonatomic) NSInteger adType;
 
 - (NSInteger)volumImageCount:(NSNumber *)index;
 - (void)saveVolumsStatus;
@@ -33,6 +34,8 @@
 
 - (void)getNewBooks:(NSString *)source;
 - (void)downloadBookIcon:(NSString *)icon withSource:(NSString *)source;
+
+- (void)getAdType;
 
 - (void)verifyPurchaseComplete:(SKPaymentTransaction *)receipt from:(NSString *)from;
 - (void)verifyPurchaseRestore:(SKPaymentTransaction *)receipt from:(NSString *)from;

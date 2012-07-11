@@ -20,6 +20,8 @@
 #define NOTIFICATION_NAME   @"NotificationName"
 #define REQUEST_IMAGE_URL   @"RequestImageRealUrl"
 
+#define REQUEST_ADTYPE_URL  @"http://comiclover.sinaapp.com/adType.php"
+
 #ifdef TEST_SERVER
 #define REQUEST_URL         @"http://testcomiclover.sinaapp.com/books.php"
 #else
@@ -45,6 +47,7 @@ static DataEngine *dataEngineInstance = nil;
 @synthesize currentVolumId = _currentVolumId;
 @synthesize volumsStatus = _volumsStatus;
 @synthesize books = _books;
+@synthesize adType = _adType;
 
 + (DataEngine *)sharedInstance
 {
@@ -60,6 +63,7 @@ static DataEngine *dataEngineInstance = nil;
         self.currentVolumId = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentVolumId"];
         self.volumsStatus = [NSMutableDictionary dictionaryWithDictionary:[LocalSettings loadVolumsStatus]];
         self.books = [NSMutableArray arrayWithArray:[LocalSettings loadBooks]];
+        self.adType = [[LocalSettings loadAdType] integerValue];
         hasRetinaDisplay = [[UIDevice currentDevice] hasRetinaDisplay];
         if (hasRetinaDisplay) {
             imageExtension = @"_2x";
@@ -69,6 +73,7 @@ static DataEngine *dataEngineInstance = nil;
         }
         sourceDict = [NSMutableDictionary dictionaryWithCapacity:5];
         httpEngine = [[HttpEngine alloc] init];
+        [self getAdType];
     }
     return self;
 }
@@ -317,6 +322,35 @@ static DataEngine *dataEngineInstance = nil;
                               nil];
         [sourceDict setObject:dict forKey:identifier];
     }
+}
+
+- (void)adTypeReceived:(NSDictionary *)dictionary
+                  with:(NSString *)identifier
+{
+    NSData *data = [dictionary objectForKey:@"data"];
+    NSDictionary *dict = [JsonUtils JSONObjectWithData:data];
+    NSNumber *type = [dict objectForKey:@"adType"];
+    if ([type isKindOfClass:[NSNumber class]]) {
+        self.adType = type.integerValue;
+    } else {
+        self.adType = 0;
+    }
+    [LocalSettings saveAdType:[NSNumber numberWithInteger:self.adType]];
+}
+
+- (void)getAdType
+{
+    NSString *identifier = [httpEngine doHttpGet:REQUEST_ADTYPE_URL
+                                         timeOut:URL_REQUEST_TIMEOUT
+                                          header:nil
+                                           error:^(NSError *error, NSString *identifier) {
+                                               [self requestFaild:error with:identifier];
+                                           }
+                                        complete:^(NSDictionary *dictionary, NSString *identifier) {
+                                            [self adTypeReceived:dictionary with:identifier];
+                                        }];
+    NSDictionary *dict = [NSDictionary dictionary];
+    [sourceDict setObject:dict forKey:identifier];
 }
 
 - (void)verifyPurchaseCompleteReceived:(NSDictionary *)dictionary with:(NSString *)identifier

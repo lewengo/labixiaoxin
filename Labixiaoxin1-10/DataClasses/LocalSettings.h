@@ -19,4 +19,7 @@
 
 + (NSArray *)loadBooks;
 + (void)saveBooks:(NSArray *)books;
+
++ (NSNumber *)loadAdType;
++ (void)saveAdType:(NSNumber *)type;
 @end

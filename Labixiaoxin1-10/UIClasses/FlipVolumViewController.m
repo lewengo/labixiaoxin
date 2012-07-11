@@ -48,6 +48,8 @@
 - (void)updateIndex;
 
 - (void)relayoutMenuButton;
+
+- (void)cleanAdViews;
 @end
 
 @implementation FlipVolumViewController
@@ -61,6 +63,24 @@
     } else {
         menuButton.frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - CGRectGetHeight(menuButton.frame) - CGRectGetHeight(bottomBar.frame), CGRectGetWidth(menuButton.frame), CGRectGetHeight(menuButton.frame));
     }
+}
+
+- (void)cleanAdViews
+{
+    _bannerView.delegate = nil;
+    _bannerView.rootViewController = nil;
+    [_bannerView removeFromSuperview];
+    _bannerView = nil;
+    
+    _youmiView.delegate = nil;
+    [_youmiView removeFromSuperview];
+    _youmiView = nil;
+    
+    _MobWINView.delegate = nil;
+    _MobWINView.rootViewController = nil;
+    [_MobWINView stopRequest];
+    [_MobWINView removeFromSuperview];
+    _MobWINView = nil;
 }
 
 - (void)relayoutRemoveAdButton
@@ -137,19 +157,14 @@
     if (delegate.adRemoved) {
         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(reloadAd) object:nil];
         _adShowing = NO;
-        [_bannerView removeFromSuperview];
-        _bannerView = nil;
-        
-        [_youmiView removeFromSuperview];
-        _youmiView = nil;
+        [self cleanAdViews];
         [self performLayout];
     }
 }
 
 - (void)dealloc
 {
-    [_MobWINView removeFromSuperview];
-    _bannerView.delegate = nil;
+    [self cleanAdViews];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -240,25 +255,30 @@
         _bannerView.frame = CGRectMake(0, CGRectGetHeight(frontView.frame) - CGRectGetHeight(_bannerView.frame), CGRectGetWidth(_bannerView.frame), CGRectGetHeight(_bannerView.frame));
         [_bannerView loadRequest:[GADRequest request]];
         
-#if defined (USE_MOBWIN)
-        _MobWINView = [[MobWinBannerView alloc] initMobWinBannerSizeIdentifier:MobWINBannerSizeIdentifier320x50];
-        _MobWINView.rootViewController = self.navigationController;
-        _MobWINView.adUnitID = MobWIN_ID;
-        _MobWINView.delegate = self;
-        [frontView addSubview:_MobWINView];
-        _MobWINView.frame = CGRectMake(CGRectGetWidth(frontView.frame) - CGRectGetWidth(_MobWINView.frame), CGRectGetHeight(frontView.frame) - CGRectGetHeight(_MobWINView.frame) + 10, CGRectGetWidth(_MobWINView.frame), CGRectGetHeight(_MobWINView.frame));
-        _MobWINView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
-        [_MobWINView startRequest];
-#elif defined (USE_YOUMI)
-       _youmiView = [[YouMiView alloc] initWithContentSizeIdentifier:YouMiBannerContentSizeIdentifier320x50 delegate:self];
-        _youmiView.appID = Youmi_Ad_Id;
-        _youmiView.appSecret = Youmi_Ad_Secret;
-        [frontView addSubview:_youmiView];
-        _youmiView.frame = CGRectMake(CGRectGetWidth(frontView.frame) - CGRectGetWidth(_youmiView.frame), CGRectGetHeight(frontView.frame) - CGRectGetHeight(_youmiView.frame), CGRectGetWidth(_youmiView.frame), CGRectGetHeight(_youmiView.frame));
-        _youmiView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
-        [_youmiView start];
-#endif
-        
+        switch (dataEngine.adType) {
+            case 1:
+                _youmiView = [[YouMiView alloc] initWithContentSizeIdentifier:YouMiBannerContentSizeIdentifier320x50 delegate:self];
+                _youmiView.appID = Youmi_Ad_Id;
+                _youmiView.appSecret = Youmi_Ad_Secret;
+                [frontView addSubview:_youmiView];
+                _youmiView.frame = CGRectMake(CGRectGetWidth(frontView.frame) - CGRectGetWidth(_youmiView.frame), CGRectGetHeight(frontView.frame) - CGRectGetHeight(_youmiView.frame), CGRectGetWidth(_youmiView.frame), CGRectGetHeight(_youmiView.frame));
+                _youmiView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
+                [_youmiView start];
+                break;
+                
+            case 0:
+            default:
+                _MobWINView = [[MobWinBannerView alloc] initMobWinBannerSizeIdentifier:MobWINBannerSizeIdentifier320x50];
+                _MobWINView.rootViewController = self.navigationController;
+                _MobWINView.adUnitID = MobWIN_ID;
+                _MobWINView.delegate = self;
+                [frontView addSubview:_MobWINView];
+                _MobWINView.frame = CGRectMake(CGRectGetWidth(frontView.frame) - CGRectGetWidth(_MobWINView.frame), CGRectGetHeight(frontView.frame) - CGRectGetHeight(_MobWINView.frame) + 10, CGRectGetWidth(_MobWINView.frame), CGRectGetHeight(_MobWINView.frame));
+                _MobWINView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
+                _MobWINView.adAlpha = 0.5;
+                [_MobWINView startRequest];
+                break;
+        }
     }
 }
 
@@ -268,7 +288,7 @@
     frontView = nil;
     menuButton = nil;
     bottomBar = nil;
-    [_MobWINView stopRequest];
+    [self cleanAdViews];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
