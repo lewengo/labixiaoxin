@@ -577,9 +577,12 @@
     UIView *view = [[UIView alloc] initWithFrame:rect];
     view.clipsToBounds = YES;
     view.backgroundColor = [UIColor colorWithRed:254 / 255.0 green:254 / 255.0 blue:254 / 255.0 alpha:1.0];
+    
+    CGRect realRect = rect;
+    realRect.size.height -= 50;
     NSInteger firstIndex = (page - 1) * 2;
     UIImageView *firstView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d-%d.jpg", [self.volumStatus.volumId intValue] + 1 + CURRENTBOOK_START, firstIndex + 1]]];
-    firstView.frame = CGRectMake(0, 0, CGRectGetWidth(firstView.frame) * rect.size.height / CGRectGetHeight(firstView.frame), rect.size.height);
+    firstView.frame = CGRectMake(0, 0, CGRectGetWidth(firstView.frame) * realRect.size.height / CGRectGetHeight(firstView.frame), realRect.size.height);
     
     UIImageView *secondView = nil;
     if (firstIndex + 1 < count) {
@@ -587,14 +590,14 @@
     } else {
         secondView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(firstView.frame), CGRectGetHeight(firstView.frame))];
     }
-    secondView.frame = CGRectMake(0, 0, CGRectGetWidth(secondView.frame) * rect.size.height / CGRectGetHeight(secondView.frame), rect.size.height);
+    secondView.frame = CGRectMake(0, 0, CGRectGetWidth(secondView.frame) * realRect.size.height / CGRectGetHeight(secondView.frame), realRect.size.height);
 #ifdef Sequence_From_Left
-    firstView.frame = CGRectMake((rect.size.width - CGRectGetWidth(firstView.frame) - CGRectGetWidth(secondView.frame)) / 2, 0, CGRectGetWidth(firstView.frame), CGRectGetHeight(firstView.frame));
+    firstView.frame = CGRectMake((realRect.size.width - CGRectGetWidth(firstView.frame) - CGRectGetWidth(secondView.frame)) / 2, 0, CGRectGetWidth(firstView.frame), CGRectGetHeight(firstView.frame));
     firstView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
     secondView.frame = CGRectMake(CGRectGetMaxX(firstView.frame), 0, CGRectGetWidth(secondView.frame), CGRectGetHeight(secondView.frame));
     secondView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
 #else
-    secondView.frame = CGRectMake((rect.size.width - CGRectGetWidth(firstView.frame) - CGRectGetWidth(secondView.frame)) / 2, 0, CGRectGetWidth(secondView.frame), CGRectGetHeight(secondView.frame));
+    secondView.frame = CGRectMake((realRect.size.width - CGRectGetWidth(firstView.frame) - CGRectGetWidth(secondView.frame)) / 2, 0, CGRectGetWidth(secondView.frame), CGRectGetHeight(secondView.frame));
     secondView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
     firstView.frame = CGRectMake(CGRectGetMaxX(secondView.frame), 0, CGRectGetWidth(firstView.frame), CGRectGetHeight(firstView.frame));
     firstView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
