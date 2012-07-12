@@ -15,6 +15,7 @@
 #import "Book.h"
 #import "MoreAppsControllerViewController.h"
 #import "FlipVolumViewController.h"
+#import "UMTableViewDemo.h"
 
 #define kIphoneNumberPerLine 3
 #define kIpadPortraitNumberPerline 3
@@ -131,6 +132,12 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:APP_RATING_URL]];
 }
 
+- (IBAction)moreApp:(id)sender
+{
+    UMTableViewDemo *moreapps = [[UMTableViewDemo alloc] init];
+    [self.navigationController pushViewController:moreapps animated:YES];
+}
+
 - (IBAction)moreBook:(id)sender
 {
     MoreAppsControllerViewController *moreapps = [[MoreAppsControllerViewController alloc] initWithNibName:@"MoreAppsControllerViewController" bundle:nil];
@@ -189,6 +196,26 @@
     if (IS_IPAD) {
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0.0f, 0.0f, 0.0f);
     }
+    
+#ifdef ADD_APPLIST
+    CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
+    UIButton *moreApp = [UIButton buttonWithType:UIButtonTypeCustom];
+    [moreApp setBackgroundImage:[[UIImage imageNamed:@"button.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
+    // Set the title to use the same font and shadow as the standard back button
+    moreApp.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
+    moreApp.titleLabel.textColor = [UIColor whiteColor];
+    moreApp.titleLabel.shadowOffset = CGSizeMake(0,-1);
+    moreApp.titleLabel.shadowColor = [UIColor darkGrayColor];
+    // Set the break mode to truncate at the end like the standard back button
+    moreApp.titleLabel.lineBreakMode = UILineBreakModeTailTruncation;
+    // Inset the title on the left and right
+    moreApp.titleEdgeInsets = UIEdgeInsetsMake(0, 6.0, 0, 3.0);
+    // Make the button as high as the passed in image
+    moreApp.frame = CGRectMake(0, 0, 56, 28);
+    [customNavigationBar setText:NSLocalizedString(@"其他应用", nil) onBackButton:moreApp leftCapWidth:10.0];
+    [moreApp addTarget:self action:@selector(moreApp:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:moreApp];
+#endif
     [self showRightButton];
 }
 

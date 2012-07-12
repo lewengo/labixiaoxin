@@ -86,6 +86,10 @@
     _DMView.rootViewController = nil;
     [_DMView removeFromSuperview];
     _DMView = nil;
+    
+    _UMengView.delegate = nil;
+    [_UMengView removeFromSuperview];
+    _UMengView = nil;
 }
 
 - (void)relayoutRemoveAdButton
@@ -223,7 +227,7 @@
     [self relayoutRemoveAdButton];
     
     UIImage *menuImage = [UIImage imageNamed:@"menuBg.png"];
-    menuButton.frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - menuImage.size.height, menuImage.size.width, menuImage.size.height);
+    menuButton.frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - 49, 66, 49);
     [menuButton setBackgroundImage:menuImage forState:UIControlStateNormal];
     pageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, 60, bottomBar.frame.size.height - 10)];
     pageLabel.textAlignment = UITextAlignmentCenter;
@@ -262,6 +266,17 @@
         
         switch (dataEngine.adType) {
             case 1:
+                _MobWINView = [[MobWinBannerView alloc] initMobWinBannerSizeIdentifier:MobWINBannerSizeIdentifier320x50];
+                _MobWINView.rootViewController = self.navigationController;
+                _MobWINView.adUnitID = MobWIN_ID;
+                _MobWINView.delegate = self;
+                [frontView addSubview:_MobWINView];
+                _MobWINView.frame = CGRectMake(CGRectGetWidth(frontView.frame) - CGRectGetWidth(_MobWINView.frame), CGRectGetHeight(frontView.frame) - CGRectGetHeight(_MobWINView.frame) + 10, CGRectGetWidth(_MobWINView.frame), CGRectGetHeight(_MobWINView.frame));
+                _MobWINView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
+                _MobWINView.adAlpha = 0.5;
+                [_MobWINView startRequest];
+                break;
+            case 2:
                 _DMView = [[DMAdView alloc] initWithPublisherId:Domob_ID
                                                            size:DOMOB_AD_SIZE_320x50
                                                     autorefresh:YES];
@@ -283,15 +298,18 @@
                 
             case 0:
             default:
-                _MobWINView = [[MobWinBannerView alloc] initMobWinBannerSizeIdentifier:MobWINBannerSizeIdentifier320x50];
-                _MobWINView.rootViewController = self.navigationController;
-                _MobWINView.adUnitID = MobWIN_ID;
-                _MobWINView.delegate = self;
-                [frontView addSubview:_MobWINView];
-                _MobWINView.frame = CGRectMake(CGRectGetWidth(frontView.frame) - CGRectGetWidth(_MobWINView.frame), CGRectGetHeight(frontView.frame) - CGRectGetHeight(_MobWINView.frame) + 10, CGRectGetWidth(_MobWINView.frame), CGRectGetHeight(_MobWINView.frame));
-                _MobWINView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
-                _MobWINView.adAlpha = 0.5;
-                [_MobWINView startRequest];
+                _UMengView = [[UMUFPBannerView alloc] initWithFrame:CGRectMake(CGRectGetWidth(frontView.frame) - 320, CGRectGetHeight(frontView.frame) - 50, 320, 50)
+                                                             appKey:UMeng_ID
+                                                             slotId:nil
+                                              currentViewController:self.navigationController];
+                _UMengView.mBackgroundColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1.0];
+                _UMengView.mTextColor = [UIColor colorWithRed:0.9
+                                                        green:0.9
+                                                         blue:0.9
+                                                        alpha:1.0];
+                _UMengView.delegate = self;
+                [frontView addSubview:_UMengView];
+                [_UMengView requestPromoterDataInBackground];
                 break;
         }
     }
@@ -539,6 +557,9 @@
     if (_DMView && CGRectContainsPoint(_DMView.frame, point)) {
         return NO;
     }
+    if (_UMengView && CGRectContainsPoint(_UMengView.frame, point)) {
+        return NO;
+    }
     return YES;
 }
 
@@ -597,7 +618,9 @@
     view.backgroundColor = [UIColor colorWithRed:254 / 255.0 green:254 / 255.0 blue:254 / 255.0 alpha:1.0];
     
     CGRect realRect = rect;
+#ifndef HAS_FOOTER
     realRect.size.height -= 50;
+#endif
     NSInteger firstIndex = (page - 1) * 2;
     UIImageView *firstView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d-%d.jpg", [self.volumStatus.volumId intValue] + 1 + CURRENTBOOK_START, firstIndex + 1]]];
     firstView.frame = CGRectMake(0, 0, CGRectGetWidth(firstView.frame) * realRect.size.height / CGRectGetHeight(firstView.frame), realRect.size.height);
@@ -711,6 +734,19 @@ didFailToReceiveAdWithError:(GADRequestError *)error
 
 // 加载广告失败后，回调该方法
 - (void)dmAdViewFailToLoadAd:(DMAdView *)adView withError:(NSError *)error
+{
+    int a = 10;
+    a ++;
+}
+
+#pragma umeng ad view
+- (void)UMUFPBannerView:(UMUFPBannerView *)banner
+      didLoadDataFinish:(NSInteger)promotersAmount
+{
+    _UMengView.frame = CGRectMake(CGRectGetWidth(frontView.frame) - 320, CGRectGetHeight(frontView.frame) - 50, 320, 50);
+}
+- (void)UMUFPBannerView:(UMUFPBannerView *)banner
+didLoadDataFailWithError:(NSError *)error
 {
     int a = 10;
     a ++;

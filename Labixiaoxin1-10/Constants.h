@@ -16,6 +16,12 @@
 #define APP_RATING_URL          @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=525300493"
 #define ADMOB_ID                @"a14fb644e629a23"
 
+#define ADD_APPLIST
+
+#define HAS_FOOTER
+
+#define UMeng_ID                @"4ffd540952701553e0000001"
+
 #define MobWIN_ID               @"DB28F0874FC4ADA94558128C333BA69B"
 
 #define Domob_ID                @"56OJz/H4uMukgdF9im"

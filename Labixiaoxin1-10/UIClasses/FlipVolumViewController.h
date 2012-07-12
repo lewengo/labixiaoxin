@@ -13,12 +13,13 @@
 #import "MobWinBannerViewDelegate.h"
 #import "MobWinBannerView.h"
 #import "DMAdView.h"
+#import "UMUFPBannerView.h"
 
 @class GADBannerView;
 @class VolumStatus;
 @class YouMiView;
 
-@interface FlipVolumViewController : UIViewController <GADBannerViewDelegate, AFKPageFlipperDataSource, UIGestureRecognizerDelegate, YouMiDelegate, MobWinBannerViewDelegate, DMAdViewDelegate>
+@interface FlipVolumViewController : UIViewController <GADBannerViewDelegate, AFKPageFlipperDataSource, UIGestureRecognizerDelegate, YouMiDelegate, MobWinBannerViewDelegate, DMAdViewDelegate, UMUFPBannerViewDelegate>
 {
     NSInteger count;
     // Paging
@@ -41,6 +42,7 @@
     YouMiView *_youmiView;
     MobWinBannerView *_MobWINView;
     DMAdView *_DMView;
+    UMUFPBannerView *_UMengView;
     BOOL _adShowing;
     IBOutlet UIButton *menuButton;
     
