@@ -44,17 +44,14 @@
 #pragma mark -
 #pragma mark Private interface
 
+@interface AFKPageFlipper()
 
-//@interface AFKPageFlipper()
-//
-//@property (nonatomic,assign) UIView *currentView;
-//@property (nonatomic,assign) UIView *postView;
-//
-//@end
+- (float)currentProgress:(CGPoint)currentPoint
+            initialPoint:(CGPoint)theInitialPoint;
 
+@end
 
 @implementation AFKPageFlipper
-
 
 #pragma mark -
 #pragma mark Flip functionality
@@ -254,7 +251,7 @@
 	
 	UIInterfaceOrientation orient = [UIApplication sharedApplication].statusBarOrientation;
 	
-	UIImage* flipImage;
+	UIImage *flipImage;
 	
 	if (orient == UIInterfaceOrientationPortrait || orient == UIInterfaceOrientationPortraitUpsideDown) {
 		flipImage = flipIllusionPortrait;
@@ -614,8 +611,7 @@
 		if (setDelegate) {
 			[self performSelector:@selector(cleanupFlip) withObject:Nil afterDelay:duration];
 		}
-	}	
-	
+	}
 }
 
 - (void)setFlipProgress:(float)progress setDelegate:(BOOL)setDelegate animate:(BOOL)animate {
@@ -794,9 +790,31 @@
 	}
 }
 
+- (float)currentProgress:(CGPoint)currentPoint
+            initialPoint:(CGPoint)theInitialPoint
+{
+    if (flipDirection == AFKPageFlipperDirectionLeft) {
+        if (currentPoint.x >= theInitialPoint.x) {
+            return 0.0;
+        }
+        float realRadius = fmax(theInitialPoint.x - CGRectGetWidth(self.frame) / 2, CGRectGetWidth(self.frame) / 2 * cos(M_PI_2 * 4 / 5));
+        float offset = fmin(theInitialPoint.x - currentPoint.x, realRadius * 2);
+        float angle = acos((realRadius - offset) / realRadius);
+        return angle / M_PI;
+    } else if (flipDirection == AFKPageFlipperDirectionRight) {
+        if (currentPoint.x <= theInitialPoint.x) {
+            return 0.0;
+        }
+        float realRadius = fmax(CGRectGetWidth(self.frame) / 2 - theInitialPoint.x, CGRectGetWidth(self.frame) / 2 * cos(M_PI_2 * 4 / 5));
+        float offset = fmin(currentPoint.x - theInitialPoint.x, realRadius * 2);
+        float angle = acos((realRadius - offset) / realRadius);
+        return angle / M_PI;
+    }
+    return 0.0;
+}
+
 #pragma mark -
 #pragma mark Touch management
-
 
 - (void)panned:(UIPanGestureRecognizer *)recognizer {
 	static BOOL hasFailed;
@@ -804,16 +822,10 @@
 	
 	static NSInteger oldPage;
 	
-	float translation = [recognizer translationInView:self].x;
-	
-	float progress = translation / self.bounds.size.width;
-	
-	if (flipDirection == AFKPageFlipperDirectionLeft) {
-		progress = MIN(progress, 0);
-	} else {
-		progress = MAX(progress, 0);
-	}
-	
+    CGPoint traslatOffset = [recognizer translationInView:self];
+    float translation = traslatOffset.x;
+    CGPoint currentPoint = [recognizer locationInView:self];
+    
 	pageDifference = 1;
 	
 	switch (recognizer.state) {
@@ -831,6 +843,10 @@
 				return;
 			}
 			
+            if (!initialized && traslatOffset.x == 0) {
+                return;
+            }
+            
 			if (!initialized) {
 				oldPage = self.currentPage;
 				
@@ -855,10 +871,23 @@
 				animating = YES;
 				setNewViewOnCompletion = NO;
 				
+                _initialPoint = currentPoint;
+                _initialPoint.x -= translation;
+                
 				[self initFlip];
-			}
+			} else {
+                if (flipDirection == AFKPageFlipperDirectionRight) {
+                    if (currentPoint.x < _initialPoint.x) {
+                        _initialPoint = currentPoint;
+                    }
+                } else if (flipDirection == AFKPageFlipperDirectionLeft) {
+                    if (currentPoint.x > _initialPoint.x) {
+                        _initialPoint = currentPoint;
+                    }
+                }
+            }
 			
-			[self setFlipProgress:fabs(progress) setDelegate:NO animate:YES];
+			[self setFlipProgress:fabs([self currentProgress:currentPoint initialPoint:_initialPoint]) setDelegate:NO animate:YES];
 			break;
 			
 		case UIGestureRecognizerStateFailed:

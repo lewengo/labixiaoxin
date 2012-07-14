@@ -50,6 +50,8 @@ typedef enum {
 	float endFlipAngle;
 	float currentAngle;
 	
+    CGPoint _initialPoint;
+    
 	BOOL setNewViewOnCompletion;
     
 	UIImage *flipIllusionPortrait;
