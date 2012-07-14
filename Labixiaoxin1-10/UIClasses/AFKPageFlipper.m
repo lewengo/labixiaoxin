@@ -61,15 +61,14 @@
 
 @synthesize pageDifference, numberOfPages, animating;
 
-- (void) initFlip {
+- (void)initFlip {
 	// Create screenshots of view
 	UIImage *currentImage = [self.currentView imageByRenderingView];
-	UIImage *newImage = [self.postView imageByRenderingView];
-	
+	UIImage *postImage = [self.postView imageByRenderingView];
 	
 	// Hide existing views
 	[self.currentView setHidden:TRUE];
-	[self.postView setHidden:TRUE];	
+	[self.postView setHidden:TRUE];
 	self.currentView.alpha = 0;
 	self.postView.alpha = 0;
 	
@@ -99,11 +98,11 @@
 	[backgroundAnimationLayer addSublayer:rightLayer];
 	
 	if (flipDirection == AFKPageFlipperDirectionRight) {
-		leftLayer.contents = (id) [newImage CGImage];
+		leftLayer.contents = (id) [postImage CGImage];
 		rightLayer.contents = (id) [currentImage CGImage];
 	} else {
 		leftLayer.contents = (id) [currentImage CGImage];
-		rightLayer.contents = (id) [newImage CGImage];
+		rightLayer.contents = (id) [postImage CGImage];
 	}
 	
 	[self.layer addSublayer:backgroundAnimationLayer];
@@ -269,7 +268,7 @@
 		backLayer.contents = (id) [currentImage CGImage];
 		backLayer.contentsGravity = kCAGravityLeft;
 		
-		frontLayer.contents = (id) [newImage CGImage];
+		frontLayer.contents = (id) [postImage CGImage];
 		frontLayer.contentsGravity = kCAGravityRight;
 		
 		CATransform3D transform = CATransform3DMakeRotation(0.0, 0.0, 1.0, 0.0);
@@ -300,7 +299,7 @@
 			
 			UIImage* blankImgFRight = flipImage;
 			frontLayer.contents = (id) [blankImgFRight CGImage];
-			blankFrontLayerForLayerRight.contents = (id) [newImage CGImage];
+			blankFrontLayerForLayerRight.contents = (id) [postImage CGImage];
 			blankFrontLayerForLayerRight.contentsGravity = kCAGravityRight;
 			
 			
@@ -368,7 +367,7 @@
 			blankBackLayerForLayerRight2.contentsGravity = kCAGravityLeft;
 			
 			UIImage* blankImgFRight2 = flipImage;
-			blankFrontLayerForLayerRight2.contents = (id) [newImage CGImage];
+			blankFrontLayerForLayerRight2.contents = (id) [postImage CGImage];
 			frontLayer.contents = (id) [blankImgFRight2 CGImage];
 			blankFrontLayerForLayerRight2.contentsGravity = kCAGravityRight;
 			
@@ -389,7 +388,7 @@
 	} else {
 		
 		backLayer.contentsGravity = kCAGravityLeft;
-		backLayer.contents = (id) [newImage CGImage];
+		backLayer.contents = (id) [postImage CGImage];
 		
 		frontLayer.contents = (id) [currentImage CGImage];
 		frontLayer.contentsGravity = kCAGravityRight;
@@ -414,7 +413,7 @@
 			
 			//start forlayer right
 			UIImage* blankImgBRight = flipImage;
-			blankBackLayerForLayerRight.contents = (id) [newImage CGImage];
+			blankBackLayerForLayerRight.contents = (id) [postImage CGImage];
 			backLayer.contents = (id) [blankImgBRight CGImage];
 			blankBackLayerForLayerRight.contentsGravity = kCAGravityLeft;
 			
@@ -479,7 +478,7 @@
 			
 			//start forlayer right2
 			UIImage* blankImgBRight2 = flipImage;
-			blankBackLayerForLayerRight2.contents = (id) [newImage CGImage];
+			blankBackLayerForLayerRight2.contents = (id) [postImage CGImage];
 			backLayer.contents = (id) [blankImgBRight2 CGImage];
 			blankBackLayerForLayerRight2.contentsGravity = kCAGravityLeft;
 			
@@ -504,7 +503,7 @@
 }
 
 
-- (void) cleanupFlip {
+- (void)cleanupFlip {
 	[backgroundAnimationLayer removeFromSuperlayer];
 	[flipAnimationLayer removeFromSuperlayer];
 	if (pageDifference > 1) {
@@ -518,7 +517,7 @@
 			[blankFlipAnimationLayerOnRight2 removeFromSuperlayer];
 			blankFlipAnimationLayerOnLeft2 = Nil;
 			blankFlipAnimationLayerOnRight2 = Nil;
-		}	
+		}
 	}
 	backgroundAnimationLayer = Nil;
 	flipAnimationLayer = Nil;
@@ -542,7 +541,7 @@
 
 
 
-- (void) setFlipProgress3:(NSDictionary*)dict{
+- (void)setFlipProgress3:(NSDictionary*)dict{
 	
 	float progress =[[dict objectForKey:@"PROGRESS"] floatValue];
 	BOOL setDelegate = [[dict objectForKey:@"DELEGATE"] boolValue];
@@ -575,7 +574,7 @@
 	}
 }
 
-- (void) setFlipProgress2:(NSDictionary*)dict{
+- (void)setFlipProgress2:(NSDictionary*)dict{
 	
 	float progress =[[dict objectForKey:@"PROGRESS"] floatValue];
 	BOOL setDelegate = [[dict objectForKey:@"DELEGATE"] boolValue];
@@ -669,7 +668,7 @@
 	
 }
 
-- (void) flipPage {
+- (void)flipPage {
 	[self setFlipProgress:1.0 setDelegate:YES animate:YES];
 }
 
@@ -740,12 +739,13 @@
     if (value > numberOfPages || value < 1) {
         return;
     }
-	pageDifference = fabs(value - currentPage);
+	NSInteger tempPageDifference = fabs(value - currentPage);
 	
 	if (![self doSetCurrentPage:value]) {
 		return;
 	}
 	
+    pageDifference = tempPageDifference;
 	setNewViewOnCompletion = YES;
 	animating = YES;
 	
@@ -800,7 +800,7 @@
 #pragma mark Touch management
 
 
-- (void) panned:(UIPanGestureRecognizer *)recognizer {
+- (void)panned:(UIPanGestureRecognizer *)recognizer {
 	static BOOL hasFailed;
 	static BOOL initialized;
 	

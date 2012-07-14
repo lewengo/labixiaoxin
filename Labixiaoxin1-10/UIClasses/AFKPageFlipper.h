@@ -15,7 +15,6 @@
 @class AFKPageFlipper;
 
 @protocol AFKPageFlipperDataSource
-
 - (NSInteger)numberOfPagesForPageFlipper:(AFKPageFlipper *)pageFlipper;
 - (UIView *)viewForPage:(NSInteger)page inFlipper:(AFKPageFlipper *)pageFlipper;
 
