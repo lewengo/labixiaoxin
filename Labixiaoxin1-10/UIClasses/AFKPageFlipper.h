@@ -31,22 +31,13 @@ typedef enum {
 
 
 @interface AFKPageFlipper : UIView {
-	__unsafe_unretained NSObject<AFKPageFlipperDataSource> *dataSource;
-	NSInteger currentPage;
-	NSInteger numberOfPages;
-	
-	NSInteger pageDifference;
-	
-	UIView *currentView;
-	UIView *newView;
-	
 	// shadows
 	CALayer *frontLayerShadow;
 	CALayer *backLayerShadow;
 	CALayer *leftLayerShadow;
 	CALayer *rightLayerShadow;
+    
 	// shadows
-  
 	CALayer *backgroundAnimationLayer;
 	CALayer *flipAnimationLayer;
 	CALayer *blankFlipAnimationLayerOnLeft1;
@@ -61,10 +52,7 @@ typedef enum {
 	float currentAngle;
 	
 	BOOL setNewViewOnCompletion;
-	BOOL animating;
-	
-	BOOL disabled;
-	
+    
 	UIImage *flipIllusionPortrait;
 	UIImage *flipIllusionLandscape;
 }
@@ -72,12 +60,16 @@ typedef enum {
 @property (nonatomic, unsafe_unretained) NSObject<AFKPageFlipperDataSource> *dataSource;
 @property (nonatomic, assign) NSInteger currentPage;
 @property (nonatomic, assign) NSInteger numberOfPages;
+
 @property (nonatomic, assign) NSInteger pageDifference;
+
 @property (nonatomic, assign) BOOL disabled;
+
 @property (nonatomic, strong) UIView *currentView;
 @property (nonatomic, strong) UIView *postView;
+
 @property (nonatomic, readonly) BOOL animating;
 
-- (void) setCurrentPage:(NSInteger) value animated:(BOOL) animated;
+- (void)setCurrentPage:(NSInteger)value animated:(BOOL)animated;
 
 @end
