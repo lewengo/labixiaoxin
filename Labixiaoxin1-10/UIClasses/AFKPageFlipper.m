@@ -664,8 +664,6 @@
 			[self performSelector:@selector(cleanupFlip) withObject:Nil afterDelay:duration];
 		}
 	}
-	
-	
 }
 
 - (void)flipPage {
@@ -752,7 +750,7 @@
 	if (animated) {
 		[self setDisabled:TRUE];
 		[self initFlip];
-		//[self setFlipProgress:0.01 setDelegate:NO animate:NO];
+        [self setFlipProgress:0.01 setDelegate:NO animate:NO];
 		
 		if (pageDifference > 1) {
 			NSMutableDictionary* dictionary = [[NSMutableDictionary alloc] init];
