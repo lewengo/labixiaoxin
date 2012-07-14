@@ -51,6 +51,8 @@ typedef enum {
 	float currentAngle;
 	
     CGPoint _initialPoint;
+    CGPoint _lastPoint;
+    BOOL needReverse;
     
 	BOOL setNewViewOnCompletion;
     

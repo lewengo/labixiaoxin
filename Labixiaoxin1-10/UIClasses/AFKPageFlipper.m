@@ -615,7 +615,9 @@
 }
 
 - (void)setFlipProgress:(float)progress setDelegate:(BOOL)setDelegate animate:(BOOL)animate {
-	
+#ifdef DEBUG
+	NSLog(@"%f", progress);
+#endif
 	float newAngle = startFlipAngle + progress * (endFlipAngle - startFlipAngle);
 	float duration = animate ? 0.5 * fabs((newAngle - currentAngle) / (endFlipAngle - startFlipAngle)) : 0;
 	
@@ -835,6 +837,7 @@
 				initialized = FALSE;
 				animating = NO;
 				setNewViewOnCompletion = NO;
+                needReverse = NO;
 			}
 			break;
 			
@@ -880,13 +883,19 @@
                     if (currentPoint.x < _initialPoint.x) {
                         _initialPoint = currentPoint;
                     }
+                    if (currentPoint.x < _lastPoint.x) {
+                        needReverse = YES;
+                    }
                 } else if (flipDirection == AFKPageFlipperDirectionLeft) {
                     if (currentPoint.x > _initialPoint.x) {
                         _initialPoint = currentPoint;
                     }
+                    if (currentPoint.x > _lastPoint.x) {
+                        needReverse = YES;
+                    }
                 }
             }
-			
+			_lastPoint = currentPoint;
 			[self setFlipProgress:fabs([self currentProgress:currentPoint initialPoint:_initialPoint]) setDelegate:NO animate:YES];
 			break;
 			
@@ -899,7 +908,12 @@
 			
 		case UIGestureRecognizerStateRecognized:
 			if (initialized) {
-				if (hasFailed) {
+                BOOL reverse = NO;
+                if (fabs([self currentProgress:currentPoint initialPoint:_initialPoint]) <= 0.5) {
+                    reverse = needReverse;
+                }
+                
+				if (hasFailed || reverse) {
 					[self setDisabled:TRUE];
 					[self setFlipProgress:0.0 setDelegate:YES animate:YES];
 					currentPage = oldPage;
