@@ -407,7 +407,8 @@
 }
 
 // Layout subviews
-- (void)performLayout {
+- (void)performLayout
+{
 	
 	// Flag
 	performingLayout = YES;
