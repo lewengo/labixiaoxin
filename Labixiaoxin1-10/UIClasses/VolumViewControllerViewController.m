@@ -15,6 +15,7 @@
 #import "AppDelegate.h"
 #import "YouMiView.h"
 #import "AdTypes.h"
+#import "ComicInfos.h"
 
 #define PADDING 5
 
@@ -222,7 +223,7 @@
     viewedCount = 0;
     DataEngine *dataEngine = [DataEngine sharedInstance];
     
-    count = [dataEngine volumImageCount:self.volumStatus.volumId];
+    count = [ComicInfos volumImageCount:self.volumStatus.volumId];
     currentPageIndex = self.volumStatus.index;
     if (currentPageIndex > count - 1) {
         currentPageIndex = 0;
@@ -370,6 +371,9 @@
 	// Super
 	[super viewWillAppear:animated];
 	
+    self.navigationController.navigationBar.tintColor = nil;
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    
 	// Layout
 	[self performLayout];
     
@@ -387,6 +391,9 @@
 	
 	// Super
 	[super viewWillDisappear:animated];
+    
+    self.navigationController.navigationBar.tintColor = nil;
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
     self.wantsFullScreenLayout = NO;

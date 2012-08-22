@@ -70,7 +70,7 @@
   // Measure the width of the text
   CGSize textSize = [text sizeWithFont:backButton.titleLabel.font];
   // Change the button's frame. The width is either the width of the new text or the max width
-  backButton.frame = CGRectMake(backButton.frame.origin.x, backButton.frame.origin.y, (textSize.width + (capWidth * 1.5)) > MAX_BACK_BUTTON_WIDTH ? MAX_BACK_BUTTON_WIDTH : (textSize.width + (capWidth * 1.5)), backButton.frame.size.height);
+  backButton.frame = CGRectMake(backButton.frame.origin.x, backButton.frame.origin.y, (NSInteger)((textSize.width + (capWidth * 1.5)) > MAX_BACK_BUTTON_WIDTH ? MAX_BACK_BUTTON_WIDTH : (textSize.width + (capWidth * 1.5))), backButton.frame.size.height);
 
   // Set the text on the button
   [backButton setTitle:text forState:UIControlStateNormal];

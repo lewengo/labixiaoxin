@@ -28,7 +28,6 @@
 @property (assign, nonatomic) NSInteger adType;
 @property (strong, nonatomic) AdTypes *adTypes;
 
-- (NSInteger)volumImageCount:(NSNumber *)index;
 - (void)saveVolumsStatus;
 - (void)saveCurrentVolum:(NSInteger)index;
 

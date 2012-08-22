@@ -17,6 +17,7 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize appRootController = _appRootController;
 @synthesize viewController = _viewController;
 @synthesize guideView = _guideView;
 
@@ -50,10 +51,10 @@
     DataEngine *dataEngine = [DataEngine sharedInstance];
     [dataEngine getNewBooks:nil];
     // Override point for customization after application launch.
-    UINavigationController* nav = [[[NSBundle mainBundle] loadNibNamed:@"CustomNavigationController" owner:self options:nil] objectAtIndex:0];
+    self.appRootController = [[[NSBundle mainBundle] loadNibNamed:@"CustomNavigationController" owner:self options:nil] objectAtIndex:0];
     self.viewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
-    [nav pushViewController:self.viewController animated:NO];
-    self.window.rootViewController = nav;
+    [self.appRootController pushViewController:self.viewController animated:NO];
+    self.window.rootViewController = self.appRootController;
     [self.window makeKeyAndVisible];
     return YES;
 }

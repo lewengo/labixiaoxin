@@ -16,6 +16,8 @@
 #import "MoreAppsControllerViewController.h"
 #import "FlipVolumViewController.h"
 #import "UMTableViewDemo.h"
+#import "MoreController.h"
+#import "PhoneEngine.h"
 
 #define kIphoneNumberPerLine 3
 #define kIpadPortraitNumberPerline 3
@@ -120,10 +122,10 @@
         }
     }
     if (hasBook) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_moreBookButton];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_moreBookButton];
 
     } else {
-        self.navigationItem.rightBarButtonItem = nil;
+        self.navigationItem.leftBarButtonItem = nil;
     }
 }
 
@@ -134,8 +136,13 @@
 
 - (IBAction)moreApp:(id)sender
 {
-    UMTableViewDemo *moreapps = [[UMTableViewDemo alloc] init];
-    [self.navigationController pushViewController:moreapps animated:YES];
+//    UMTableViewDemo *moreapps = [[UMTableViewDemo alloc] init];
+//    MoreController *more = [[MoreController alloc] initWithNibName:@"MoreController" bundle:nil];
+//    [self.navigationController pushViewController:more animated:YES];
+    
+    [[PhoneEngine sharedInstance] showMail:@"zhuimanhua@sina.com"
+                                   subject:NSLocalizedString(@"意见反馈", nil)
+                                   content:nil];
 }
 
 - (IBAction)moreBook:(id)sender
@@ -212,9 +219,9 @@
     moreApp.titleEdgeInsets = UIEdgeInsetsMake(0, 6.0, 0, 3.0);
     // Make the button as high as the passed in image
     moreApp.frame = CGRectMake(0, 0, 56, 28);
-    [customNavigationBar setText:NSLocalizedString(@"其他应用", nil) onBackButton:moreApp leftCapWidth:10.0];
+    [customNavigationBar setText:NSLocalizedString(@"更 多", nil) onBackButton:moreApp leftCapWidth:15.0];
     [moreApp addTarget:self action:@selector(moreApp:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:moreApp];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:moreApp];
 #endif
     [self showRightButton];
 }
