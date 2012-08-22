@@ -59,6 +59,10 @@
 {
     if (_adShowing) {
         CGFloat barHeight = MAX(CGRectGetHeight(bottomBar.frame), CGRectGetHeight(_bannerView.frame));
+        barHeight = MAX(barHeight, CGRectGetHeight(_youmiView.frame));
+        barHeight = MAX(barHeight, CGRectGetHeight(_MobWINView.frame));
+        barHeight = MAX(barHeight, CGRectGetHeight(_DMView.frame));
+        barHeight = MAX(barHeight, CGRectGetHeight(_UMengView.frame));
         menuButton.frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - CGRectGetHeight(menuButton.frame) - barHeight, CGRectGetWidth(menuButton.frame), CGRectGetHeight(menuButton.frame));
     } else {
         menuButton.frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - CGRectGetHeight(menuButton.frame) - CGRectGetHeight(bottomBar.frame), CGRectGetWidth(menuButton.frame), CGRectGetHeight(menuButton.frame));

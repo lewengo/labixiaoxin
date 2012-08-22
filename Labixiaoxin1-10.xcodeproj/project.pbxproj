@@ -1413,6 +1413,7 @@
 		0BF09598157BA6D500DFE50A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF0958C157BA60100DFE50A /* CoreLocation.framework */; };
 		0BF09599157BA6E500DFE50A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF09590157BA62A00DFE50A /* ImageIO.framework */; };
 		0BF0959A157BA6F400DFE50A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF0958E157BA61F00DFE50A /* MapKit.framework */; };
+		334FB5E815E4ACCB006463EA /* AdTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 334FB5E715E4ACCB006463EA /* AdTypes.m */; };
 		33E64A0B15DB95F900DD5CAF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33E64A0915DB95F900DD5CAF /* Localizable.strings */; };
 		33E64A0D15DB95FF00DD5CAF /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B4C80D31573434F00EE687D /* Default-Landscape@2x~ipad.png */; };
 		33E64A1015DB961C00DD5CAF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33E64A0E15DB961C00DD5CAF /* InfoPlist.strings */; };
@@ -2934,6 +2935,8 @@
 		0BF09590157BA62A00DFE50A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		0BF09594157BA65300DFE50A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		0BF09596157BA67800DFE50A /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		334FB5E615E4ACCB006463EA /* AdTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdTypes.h; sourceTree = "<group>"; };
+		334FB5E715E4ACCB006463EA /* AdTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdTypes.m; sourceTree = "<group>"; };
 		33E64A0A15DB95F900DD5CAF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		33E64A0C15DB95FF00DD5CAF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		33E64A0F15DB961C00DD5CAF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -3271,6 +3274,8 @@
 				0B49C05D154FE881004B8AC1 /* VolumStatus.m */,
 				0B0749C71554DA2E00ECC9EA /* Book.h */,
 				0B0749C81554DA2E00ECC9EA /* Book.m */,
+				334FB5E615E4ACCB006463EA /* AdTypes.h */,
+				334FB5E715E4ACCB006463EA /* AdTypes.m */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -6352,6 +6357,7 @@
 				0BD4FABC156F97B4000A1A34 /* GTMBase64.m in Sources */,
 				0B79A80415ADBC4E000322F4 /* UMTableViewCell.m in Sources */,
 				0B79A80515ADBC4E000322F4 /* UMTableViewDemo.m in Sources */,
+				334FB5E815E4ACCB006463EA /* AdTypes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6494,7 +6500,7 @@
 					"\"$(SRCROOT)/Labixiaoxin1-10/UMengAd\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "893A1D92-8A9D-43C0-A3C0-A591A601679D";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A703AAE4-C5F3-4BC2-9406-5D42BEACFBB1";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

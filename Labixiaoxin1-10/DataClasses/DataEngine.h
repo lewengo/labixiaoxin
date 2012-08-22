@@ -10,6 +10,7 @@
 #import "VolumStatus.h"
 
 @class HttpEngine;
+@class AdTypes;
 
 @interface DataEngine : NSObject
 {
@@ -25,6 +26,7 @@
 @property (strong, nonatomic) NSMutableDictionary *volumsStatus;
 @property (strong, nonatomic) NSMutableArray *books;
 @property (assign, nonatomic) NSInteger adType;
+@property (strong, nonatomic) AdTypes *adTypes;
 
 - (NSInteger)volumImageCount:(NSNumber *)index;
 - (void)saveVolumsStatus;

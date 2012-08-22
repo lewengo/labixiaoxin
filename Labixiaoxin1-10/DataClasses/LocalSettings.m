@@ -7,7 +7,7 @@
 //
 
 #import "LocalSettings.h"
-
+#import "AdTypes.h"
 
 #define kSettingPath @"setting"
 
@@ -111,5 +111,28 @@ static NSString *settingPath = nil;
     }
 	NSString *appFile = [[self settingPath] stringByAppendingPathComponent:@"adType.txt"];
     [NSKeyedArchiver archiveRootObject:type toFile:appFile];
+}
+
++ (AdTypes *)loadAdTypes
+{
+    AdTypes *adTypes = nil;
+	NSString *file = [[self settingPath] stringByAppendingPathComponent:@"adTypes.txt"];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:file] == YES) {
+        adTypes = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
+        if (![adTypes isKindOfClass:[AdTypes class]]) {
+            adTypes = nil;
+            [[NSFileManager defaultManager] removeItemAtPath:file
+                                                       error:nil];
+        }
+    }
+    return adTypes;
+}
++ (void)saveAdTypes:(AdTypes *)types
+{
+    if (!types) {
+        return;
+    }
+	NSString *appFile = [[self settingPath] stringByAppendingPathComponent:@"adTypes.txt"];
+    [NSKeyedArchiver archiveRootObject:types toFile:appFile];
 }
 @end

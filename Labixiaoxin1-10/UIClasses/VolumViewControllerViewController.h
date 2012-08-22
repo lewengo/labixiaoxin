@@ -10,10 +10,17 @@
 #import "ZoomingScrollView.h"
 #import "GADBannerViewDelegate.h"
 #import "CustomHitButton.h"
+#import "YouMiDelegateProtocol.h"
+#import "MobWinBannerViewDelegate.h"
+#import "MobWinBannerView.h"
+#import "DMAdView.h"
+#import "UMUFPBannerView.h"
+
 @class GADBannerView;
 @class VolumStatus;
+@class YouMiView;
 
-@interface VolumViewControllerViewController : UIViewController <UIScrollViewDelegate, ZoomingScrollViewDelegate, GADBannerViewDelegate, CustomHitButtonDelegate>
+@interface VolumViewControllerViewController : UIViewController <UIScrollViewDelegate, ZoomingScrollViewDelegate, GADBannerViewDelegate, CustomHitButtonDelegate, YouMiDelegate, MobWinBannerViewDelegate, DMAdViewDelegate, UMUFPBannerViewDelegate>
 {
     NSInteger count;
     // Paging
@@ -33,6 +40,10 @@
     
     IBOutlet UIView *secondView;
     GADBannerView *_bannerView;
+    YouMiView *_youmiView;
+    MobWinBannerView *_MobWINView;
+    DMAdView *_DMView;
+    UMUFPBannerView *_UMengView;
     BOOL _adShowing;
     IBOutlet CustomHitButton *menuButton;
     

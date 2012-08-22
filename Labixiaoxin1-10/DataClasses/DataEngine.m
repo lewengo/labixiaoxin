@@ -16,6 +16,7 @@
 #import "Book.h"
 #import "ImageCacheEngine.h"
 #import "GTMBase64.h"
+#import "AdTypes.h"
 
 #define NOTIFICATION_NAME   @"NotificationName"
 #define REQUEST_IMAGE_URL   @"RequestImageRealUrl"
@@ -48,6 +49,7 @@ static DataEngine *dataEngineInstance = nil;
 @synthesize volumsStatus = _volumsStatus;
 @synthesize books = _books;
 @synthesize adType = _adType;
+@synthesize adTypes = _adTypes;
 
 + (DataEngine *)sharedInstance
 {
@@ -64,6 +66,12 @@ static DataEngine *dataEngineInstance = nil;
         self.volumsStatus = [NSMutableDictionary dictionaryWithDictionary:[LocalSettings loadVolumsStatus]];
         self.books = [NSMutableArray arrayWithArray:[LocalSettings loadBooks]];
         self.adType = [[LocalSettings loadAdType] integerValue];
+        self.adTypes = [LocalSettings loadAdTypes];
+        if (self.adTypes == nil) {
+            self.adTypes = [[AdTypes alloc] init];
+            self.adTypes.prime = [NSNumber numberWithInteger:0];
+            self.adTypes.secondary = [NSNumber numberWithInteger:1];
+        }
         hasRetinaDisplay = [[UIDevice currentDevice] hasRetinaDisplay];
         if (hasRetinaDisplay) {
             imageExtension = @"_2x";
@@ -336,6 +344,16 @@ static DataEngine *dataEngineInstance = nil;
         self.adType = 0;
     }
 //    self.adType = 1;
+    NSNumber *prime = [dict objectForKey:@"primeType"];
+    if ([prime isKindOfClass:[NSNumber class]]) {
+        self.adTypes.prime = prime;
+    }
+    
+    NSNumber *secondary = [dict objectForKey:@"secondaryType"];
+    if ([secondary isKindOfClass:[NSNumber class]]) {
+        self.adTypes.secondary = secondary;
+    }
+    [LocalSettings saveAdTypes:self.adTypes];
     [LocalSettings saveAdType:[NSNumber numberWithInteger:self.adType]];
 }
 

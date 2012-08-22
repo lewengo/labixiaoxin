@@ -13,6 +13,8 @@
 #import "CustomNavigationBar.h"
 #import "Constants.h"
 #import "AppDelegate.h"
+#import "YouMiView.h"
+#import "AdTypes.h"
 
 #define PADDING 5
 
@@ -62,14 +64,51 @@
 @synthesize pagingScrollView = _pagingScrollView;
 @synthesize volumStatus = _volumStatus;
 
+- (CGFloat)adViewHeight
+{
+    CGFloat barHeight = CGRectGetHeight(_bannerView.frame);
+    barHeight = MAX(barHeight, CGRectGetHeight(_youmiView.frame));
+    barHeight = MAX(barHeight, CGRectGetHeight(_MobWINView.frame));
+    barHeight = MAX(barHeight, CGRectGetHeight(_DMView.frame));
+    barHeight = MAX(barHeight, CGRectGetHeight(_UMengView.frame));
+    return barHeight;
+}
+
 - (void)relayoutMenuButton
 {
     if (_adShowing) {
-        CGFloat barHeight = MAX(CGRectGetHeight(toolbar.frame), CGRectGetHeight(_bannerView.frame));
+        CGFloat barHeight = MAX(CGRectGetHeight(toolbar.frame), [self adViewHeight]);
         menuButton.frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - CGRectGetHeight(menuButton.frame) - barHeight, CGRectGetWidth(menuButton.frame), CGRectGetHeight(menuButton.frame));
     } else {
         menuButton.frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - CGRectGetHeight(menuButton.frame) - CGRectGetHeight(toolbar.frame), CGRectGetWidth(menuButton.frame), CGRectGetHeight(menuButton.frame));
     }
+}
+
+- (void)cleanAdViews
+{
+    _bannerView.delegate = nil;
+    _bannerView.rootViewController = nil;
+    [_bannerView removeFromSuperview];
+    _bannerView = nil;
+    
+    _youmiView.delegate = nil;
+    [_youmiView removeFromSuperview];
+    _youmiView = nil;
+    
+    _MobWINView.delegate = nil;
+    _MobWINView.rootViewController = nil;
+    [_MobWINView stopRequest];
+    [_MobWINView removeFromSuperview];
+    _MobWINView = nil;
+    
+    _DMView.delegate = nil;
+    _DMView.rootViewController = nil;
+    [_DMView removeFromSuperview];
+    _DMView = nil;
+    
+    _UMengView.delegate = nil;
+    [_UMengView removeFromSuperview];
+    _UMengView = nil;
 }
 
 - (void)relayoutRemoveAdButton
@@ -154,8 +193,7 @@
     if (delegate.adRemoved) {
         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(reloadAd) object:nil];
         _adShowing = NO;
-        [_bannerView removeFromSuperview];
-        _bannerView = nil;
+        [self cleanAdViews];
         [self performLayoutWithoutResize];
         [self relayoutMenuButton];
     }
@@ -255,17 +293,68 @@
     [pageSlider addTarget:self action:@selector(slideChanged:) forControlEvents:UIControlEventValueChanged];
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     if (!delegate.adRemoved) {
-        if (IS_IPAD) {
-            _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeLeaderboard];
-        } else {
-            _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+        switch ([dataEngine.adTypes.prime integerValue]) {
+            case 1:
+                if (IS_IPAD) {
+                    _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeLeaderboard];
+                } else {
+                    _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+                }
+                _bannerView.adUnitID = ADMOB_ID;
+                _bannerView.rootViewController = self;
+                _bannerView.delegate = self;
+                [secondView addSubview:_bannerView];
+                _bannerView.frame = CGRectMake((CGRectGetWidth(secondView.frame) - CGRectGetWidth(_bannerView.frame)) / 2, CGRectGetHeight(secondView.frame) - CGRectGetHeight(_bannerView.frame), CGRectGetWidth(_bannerView.frame), CGRectGetHeight(_bannerView.frame));
+                [_bannerView loadRequest:[GADRequest request]];
+                break;
+            case 2:
+                _MobWINView = [[MobWinBannerView alloc] initMobWinBannerSizeIdentifier:MobWINBannerSizeIdentifier320x50];
+                _MobWINView.rootViewController = self.navigationController;
+                _MobWINView.adUnitID = MobWIN_ID;
+                _MobWINView.delegate = self;
+                [secondView addSubview:_MobWINView];
+                _MobWINView.frame = CGRectMake((CGRectGetWidth(secondView.frame) - CGRectGetWidth(_MobWINView.frame)) / 2, CGRectGetHeight(secondView.frame) - CGRectGetHeight(_MobWINView.frame), CGRectGetWidth(_MobWINView.frame), CGRectGetHeight(_MobWINView.frame));
+                _MobWINView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin;
+                _MobWINView.adAlpha = 0.5;
+                [_MobWINView startRequest];
+                break;
+            case 3:
+                _DMView = [[DMAdView alloc] initWithPublisherId:Domob_ID
+                                                           size:DOMOB_AD_SIZE_320x50
+                                                    autorefresh:YES];
+                _DMView.delegate = self;
+                _DMView.rootViewController = self.navigationController;
+                [secondView addSubview:_DMView];
+                _DMView.frame = CGRectMake((CGRectGetWidth(secondView.frame) - CGRectGetWidth(_DMView.frame)) / 2, CGRectGetHeight(secondView.frame) - CGRectGetHeight(_DMView.frame), CGRectGetWidth(_DMView.frame), CGRectGetHeight(_DMView.frame));
+                _DMView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin;
+                [_DMView loadAd];
+                break;
+            case 4:
+                _youmiView = [[YouMiView alloc] initWithContentSizeIdentifier:YouMiBannerContentSizeIdentifier320x50 delegate:self];
+                _youmiView.appID = Youmi_Ad_Id;
+                _youmiView.appSecret = Youmi_Ad_Secret;
+                [secondView addSubview:_youmiView];
+                _youmiView.frame = CGRectMake((CGRectGetWidth(secondView.frame) - CGRectGetWidth(_youmiView.frame)) / 2, CGRectGetHeight(secondView.frame) - CGRectGetHeight(_youmiView.frame), CGRectGetWidth(_youmiView.frame), CGRectGetHeight(_youmiView.frame));
+                _youmiView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin;
+                [_youmiView start];
+                break;
+                
+            case 0:
+            default:
+                _UMengView = [[UMUFPBannerView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(secondView.frame) - 50, 320, 50)
+                                                             appKey:UMeng_ID
+                                                             slotId:nil
+                                              currentViewController:self.navigationController];
+                _UMengView.mBackgroundColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1.0];
+                _UMengView.mTextColor = [UIColor colorWithRed:0.9
+                                                        green:0.9
+                                                         blue:0.9
+                                                        alpha:1.0];
+                _UMengView.delegate = self;
+                [secondView addSubview:_UMengView];
+                [_UMengView requestPromoterDataInBackground];
+                break;
         }
-        _bannerView.adUnitID = ADMOB_ID;
-        _bannerView.rootViewController = self;
-        _bannerView.delegate = self;
-        [secondView addSubview:_bannerView];
-        _bannerView.frame = CGRectMake((CGRectGetWidth(secondView.frame) - CGRectGetWidth(_bannerView.frame)) / 2, CGRectGetHeight(secondView.frame) - CGRectGetHeight(_bannerView.frame), CGRectGetWidth(_bannerView.frame), CGRectGetHeight(_bannerView.frame));
-        [_bannerView loadRequest:[GADRequest request]];
     }
 }
 
@@ -274,6 +363,7 @@
     [self setPagingScrollView:nil];
     secondView = nil;
     menuButton = nil;
+    [self cleanAdViews];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -341,7 +431,7 @@
 - (CGRect)frameForPagingScrollView {
     CGRect frame = self.view.bounds;// [[UIScreen mainScreen] bounds];
     if (_adShowing) {
-        frame.size.height -= _bannerView.frame.size.height;
+        frame.size.height -= [self adViewHeight];
     }
     frame.origin.x -= PADDING;
     frame.size.width += (2 * PADDING);
@@ -352,7 +442,7 @@
     // We have to use the paging scroll view's bounds to calculate the contentSize, for the same reason outlined above.
     CGRect bounds = self.pagingScrollView.bounds;
     if (_adShowing) {
-        bounds.size.height -= _bannerView.frame.size.height;
+        bounds.size.height -= [self adViewHeight];
     }
     return CGSizeMake(bounds.size.width * count, bounds.size.height);
 }
@@ -722,5 +812,77 @@ didFailToReceiveAdWithError:(GADRequestError *)error
 }
 - (IBAction)hideMenu:(id)sender {
     [self performSelector:@selector(toggleControls) withObject:nil afterDelay:0.0];
+}
+
+#pragma youmi
+- (void)didReceiveAd:(YouMiView *)adView
+{
+    _youmiView.frame = CGRectMake((CGRectGetWidth(secondView.frame) - CGRectGetWidth(_youmiView.frame)) / 2, CGRectGetHeight(secondView.frame) - CGRectGetHeight(_youmiView.frame), CGRectGetWidth(_youmiView.frame), CGRectGetHeight(_youmiView.frame));
+    [self showAd];
+}
+
+// Send after fail to receive ad data from server
+// p.s. send after the first failed request and every following failed request
+//
+// 请求广告条数据失败后调用
+// 
+// 详解:
+//      当接收服务器返回的广告数据失败后调用该方法
+// 补充:
+//      第一次和接下来每次如果请求失败都会调用该方法
+// 
+- (void)didFailToReceiveAd:(YouMiView *)adView  error:(NSError *)error
+{
+    _youmiView.hidden = YES;
+    [self hideAd];
+}
+
+
+#pragma mobwin
+// 请求广告条数据成功后调用
+//
+// 详解:当接收服务器返回的广告数据成功后调用该函数
+- (void)bannerViewDidReceived
+{
+    _MobWINView.frame = CGRectMake((CGRectGetWidth(secondView.frame) - CGRectGetWidth(_MobWINView.frame)) / 2, CGRectGetHeight(secondView.frame) - CGRectGetHeight(_MobWINView.frame), CGRectGetWidth(_MobWINView.frame), CGRectGetHeight(_MobWINView.frame));
+    [self showAd];
+}
+
+// 请求广告条数据失败后调用
+//
+// 详解:当接收服务器返回的广告数据失败后调用该函数
+- (void)bannerViewFailToReceived
+{
+    _MobWINView.hidden = YES;
+    [self hideAd];
+}
+
+#pragma domob
+// 成功加载广告后，回调该方法
+- (void)dmAdViewSuccessToLoadAd:(DMAdView *)adView
+{
+    _DMView.frame = CGRectMake((CGRectGetWidth(secondView.frame) - CGRectGetWidth(_DMView.frame)) / 2, CGRectGetHeight(secondView.frame) - CGRectGetHeight(_DMView.frame), CGRectGetWidth(_DMView.frame), CGRectGetHeight(_DMView.frame));
+    [self showAd];
+}
+
+// 加载广告失败后，回调该方法
+- (void)dmAdViewFailToLoadAd:(DMAdView *)adView withError:(NSError *)error
+{
+    _DMView.hidden = YES;
+    [self hideAd];
+}
+
+#pragma umeng ad view
+- (void)UMUFPBannerView:(UMUFPBannerView *)banner
+      didLoadDataFinish:(NSInteger)promotersAmount
+{
+    _UMengView.frame = CGRectMake(0, CGRectGetHeight(secondView.frame) - 50, 320, 50);
+    [self showAd];
+}
+- (void)UMUFPBannerView:(UMUFPBannerView *)banner
+didLoadDataFailWithError:(NSError *)error
+{
+    _UMengView.hidden = YES;
+    [self hideAd];
 }
 @end

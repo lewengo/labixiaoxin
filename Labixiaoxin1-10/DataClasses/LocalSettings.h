@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class AdTypes;
 
 @interface LocalSettings : NSObject {    
 }
@@ -22,4 +23,7 @@
 
 + (NSNumber *)loadAdType;
 + (void)saveAdType:(NSNumber *)type;
+
++ (AdTypes *)loadAdTypes;
++ (void)saveAdTypes:(AdTypes *)types;
 @end
