@@ -205,9 +205,6 @@
         [dataEngine.volumsStatus setObject:self.volumStatus forKey:self.volumStatus.volumId];
         [dataEngine saveVolumsStatus];
     }
-        
-    self.navigationController.navigationBar.tintColor = nil;
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     
     CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -355,6 +352,8 @@
     
     //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
 	// Cancel any hiding timers
+    self.wantsFullScreenLayout = NO;
+    self.navigationController.navigationBar.alpha = 1.0;
 	[self cancelControlHiding];
 	[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(reloadAd) object:nil];
 }

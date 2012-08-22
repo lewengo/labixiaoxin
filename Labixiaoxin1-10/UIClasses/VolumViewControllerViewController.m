@@ -244,10 +244,6 @@
 	recycledPages = [[NSMutableSet alloc] init];
 	[self tilePages];
     
-    // Navigation bar
-    self.navigationController.navigationBar.tintColor = nil;
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
-    
     CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [backButton setBackgroundImage:[[UIImage imageNamed:@"back.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
@@ -393,6 +389,8 @@
 	[super viewWillDisappear:animated];
     
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
+    self.wantsFullScreenLayout = NO;
+    self.navigationController.navigationBar.alpha = 1.0;
 	// Cancel any hiding timers
 	[self cancelControlHiding];
 	[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(reloadAd) object:nil];
