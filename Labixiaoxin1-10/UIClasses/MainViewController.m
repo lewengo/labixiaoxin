@@ -136,13 +136,8 @@
 
 - (IBAction)moreApp:(id)sender
 {
-//    UMTableViewDemo *moreapps = [[UMTableViewDemo alloc] init];
-//    MoreController *more = [[MoreController alloc] initWithNibName:@"MoreController" bundle:nil];
-//    [self.navigationController pushViewController:more animated:YES];
-    
-    [[PhoneEngine sharedInstance] showMail:@"zhuimanhua@sina.com"
-                                   subject:NSLocalizedString(@"意见反馈", nil)
-                                   content:nil];
+    MoreController *more = [[MoreController alloc] initWithNibName:@"MoreController" bundle:nil];
+    [self.navigationController pushViewController:more animated:YES];
 }
 
 - (IBAction)moreBook:(id)sender

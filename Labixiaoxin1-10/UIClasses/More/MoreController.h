@@ -9,5 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @interface MoreController : UIViewController
+{
+    
+    IBOutlet UIButton *recommendbutton;
+    IBOutlet UIButton *feedbackButton;
+    IBOutlet UIButton *aboutButton;
+    
+}
+
+- (IBAction)recommend:(id)sender;
+- (IBAction)feedback:(id)sender;
+- (IBAction)about:(id)sender;
 
 @end

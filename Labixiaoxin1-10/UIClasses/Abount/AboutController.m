@@ -1,22 +1,19 @@
 //
-//  MoreController.m
+//  AboutController.m
 //  Labixiaoxin1-10
 //
-//  Created by Levin on 8/22/12.
+//  Created by levin wei on 8/23/12.
 //  Copyright (c) 2012 MobileWoo. All rights reserved.
 //
 
-#import "MoreController.h"
-#import "CustomNavigationBar.h"
-#import "UMTableViewDemo.h"
-#import "PhoneEngine.h"
 #import "AboutController.h"
+#import "CustomNavigationBar.h"
 
-@interface MoreController ()
+@interface AboutController ()
 
 @end
 
-@implementation MoreController
+@implementation AboutController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,7 +33,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
     CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [backButton setBackgroundImage:[[UIImage imageNamed:@"back.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
@@ -56,34 +52,11 @@
     [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     
-    self.title = NSLocalizedString(@"更 多", nil);
-    
-    [recommendbutton setTitle:NSLocalizedString(@"精彩应用推荐", nil)
-                     forState:UIControlStateNormal];
-    [feedbackButton setTitle:NSLocalizedString(@"意见反馈", nil)
-                    forState:UIControlStateNormal];
-    [aboutButton setTitle:NSLocalizedString(@"关于漫画", nil)
-                 forState:UIControlStateNormal];
-    
-    if (IS_IPAD) {
-        UIImage *buttonBg = [UIImage imageNamed:@"moreButtonBg.png"];
-        recommendbutton.frame = CGRectMake((CGRectGetWidth(self.view.frame) - buttonBg.size.width) / 2, 100, buttonBg.size.width, buttonBg.size.height);       
-
-        feedbackButton.frame = CGRectMake((CGRectGetWidth(self.view.frame) - buttonBg.size.width) / 2, 250, buttonBg.size.width, buttonBg.size.height);
-        
-        aboutButton.frame = CGRectMake((CGRectGetWidth(self.view.frame) - buttonBg.size.width) / 2, 400, buttonBg.size.width, buttonBg.size.height);
-        
-        [recommendbutton.titleLabel setFont:[UIFont boldSystemFontOfSize:35]];
-        [feedbackButton.titleLabel setFont:[UIFont boldSystemFontOfSize:35]];
-        [aboutButton.titleLabel setFont:[UIFont boldSystemFontOfSize:35]];
-    }
+    self.title = NSLocalizedString(@"关于漫画", nil);
 }
 
 - (void)viewDidUnload
 {
-    recommendbutton = nil;
-    feedbackButton = nil;
-    aboutButton = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -98,22 +71,4 @@
     }
 }
 
-- (IBAction)recommend:(id)sender
-{
-    UMTableViewDemo *moreapps = [[UMTableViewDemo alloc] init];
-    [self.navigationController pushViewController:moreapps animated:YES];
-}
-
-- (IBAction)feedback:(id)sender
-{
-    [[PhoneEngine sharedInstance] showMail:@"zhuimanhua@sina.com"
-                                   subject:NSLocalizedString(@"意见反馈", nil)
-                                   content:nil];
-}
-
-- (IBAction)about:(id)sender
-{
-    AboutController *about = [[AboutController alloc] initWithNibName:@"AboutController" bundle:nil];
-    [self.navigationController pushViewController:about animated:YES];
-}
 @end
