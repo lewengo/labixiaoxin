@@ -10,4 +10,5 @@
 
 @interface AboutController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UILabel *aboutLabel;
 @end

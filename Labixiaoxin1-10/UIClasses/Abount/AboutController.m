@@ -14,6 +14,7 @@
 @end
 
 @implementation AboutController
+@synthesize aboutLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,10 +54,20 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     
     self.title = NSLocalizedString(@"关于漫画", nil);
+    
+    aboutLabel.text = NSLocalizedString(@"    本漫画内容均来自于互联网，所有图片资料只供学习交流试看，本App与内容的出处无关，如有侵犯到您的权益，请联系zhuimanhua@sina.com，我们会马上处理。", nil);
+    
+    if (IS_IPAD) {
+        aboutLabel.font = [UIFont systemFontOfSize:25];
+        aboutLabel.frame = CGRectMake(20, 40, CGRectGetWidth(self.view.frame) - 40, CGRectGetHeight(aboutLabel.frame));
+    }
+    CGSize opSize = [aboutLabel.text sizeWithFont:aboutLabel.font constrainedToSize:CGSizeMake(CGRectGetWidth(aboutLabel.frame), MAXFLOAT)];
+    aboutLabel.frame = CGRectMake(CGRectGetMinX(aboutLabel.frame), CGRectGetMinY(aboutLabel.frame), CGRectGetWidth(aboutLabel.frame), opSize.height);
 }
 
 - (void)viewDidUnload
 {
+    [self setAboutLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
