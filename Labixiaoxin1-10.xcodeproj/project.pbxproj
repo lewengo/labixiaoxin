@@ -1420,6 +1420,7 @@
 		3375780D15E5D2EC00A528D7 /* moreButtonBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3375780B15E5D2EC00A528D7 /* moreButtonBg@2x.png */; };
 		3375781015E5D5CB00A528D7 /* moreButtonBg@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3375780E15E5D5CB00A528D7 /* moreButtonBg@2x~ipad.png */; };
 		3375781115E5D5CB00A528D7 /* moreButtonBg~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3375780F15E5D5CB00A528D7 /* moreButtonBg~ipad.png */; };
+		3375781315E5DA0100A528D7 /* Labixiaoxin1-10-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3375781215E5DA0100A528D7 /* Labixiaoxin1-10-Info.plist */; };
 		33C8AE0D15E5CDD500D42EBA /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C8AE0515E5CDD500D42EBA /* Default-Landscape@2x~ipad.png */; };
 		33C8AE0E15E5CDD500D42EBA /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C8AE0615E5CDD500D42EBA /* Default-Landscape~ipad.png */; };
 		33C8AE0F15E5CDD500D42EBA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C8AE0715E5CDD500D42EBA /* Default.png */; };
@@ -1428,7 +1429,6 @@
 		33C8AE1215E5CDD500D42EBA /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C8AE0A15E5CDD500D42EBA /* Icon-72@2x.png */; };
 		33C8AE1315E5CDD500D42EBA /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C8AE0B15E5CDD500D42EBA /* Icon.png */; };
 		33C8AE1415E5CDD500D42EBA /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C8AE0C15E5CDD500D42EBA /* Icon@2x.png */; };
-		33E64A1215DB962100DD5CAF /* Labixiaoxin1-10-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B49BB48154FDC8D004B8AC1 /* Labixiaoxin1-10-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1513,7 +1513,6 @@
 		0B49BB40154FDC8D004B8AC1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0B49BB42154FDC8D004B8AC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0B49BB44154FDC8D004B8AC1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0B49BB48154FDC8D004B8AC1 /* Labixiaoxin1-10-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Labixiaoxin1-10-Info.plist"; sourceTree = "<group>"; };
 		0B49BB4C154FDC8D004B8AC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0B49BB4E154FDC8D004B8AC1 /* Labixiaoxin1-10-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Labixiaoxin1-10-Prefix.pch"; sourceTree = "<group>"; };
 		0B49BB4F154FDC8D004B8AC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -2959,6 +2958,7 @@
 		3375780B15E5D2EC00A528D7 /* moreButtonBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moreButtonBg@2x.png"; sourceTree = "<group>"; };
 		3375780E15E5D5CB00A528D7 /* moreButtonBg@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moreButtonBg@2x~ipad.png"; sourceTree = "<group>"; };
 		3375780F15E5D5CB00A528D7 /* moreButtonBg~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moreButtonBg~ipad.png"; sourceTree = "<group>"; };
+		3375781215E5DA0100A528D7 /* Labixiaoxin1-10-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Labixiaoxin1-10-Info.plist"; path = "Labixiaoxin1-10/Labixiaoxin1-10-Info.plist"; sourceTree = SOURCE_ROOT; };
 		33C8AE0515E5CDD500D42EBA /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		33C8AE0615E5CDD500D42EBA /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		33C8AE0715E5CDD500D42EBA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -3189,7 +3189,6 @@
 		0B49BB47154FDC8D004B8AC1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0B49BB48154FDC8D004B8AC1 /* Labixiaoxin1-10-Info.plist */,
 				0B49BB4C154FDC8D004B8AC1 /* main.m */,
 				0B49BB4E154FDC8D004B8AC1 /* Labixiaoxin1-10-Prefix.pch */,
 			);
@@ -3326,6 +3325,7 @@
 		0B54B38D15E5264B003FE113 /* ToChanged */ = {
 			isa = PBXGroup;
 			children = (
+				3375781215E5DA0100A528D7 /* Labixiaoxin1-10-Info.plist */,
 				33C8AE0515E5CDD500D42EBA /* Default-Landscape@2x~ipad.png */,
 				33C8AE0615E5CDD500D42EBA /* Default-Landscape~ipad.png */,
 				33C8AE0715E5CDD500D42EBA /* Default.png */,
@@ -5083,7 +5083,6 @@
 				0B79A7F315ADAE83000322F4 /* um_nonetwork@2x.png in Resources */,
 				0B79A7F415ADAE83000322F4 /* um_placeholder@2x.png in Resources */,
 				0B79A7F515ADAE83000322F4 /* um_telephone_icon.png in Resources */,
-				33E64A1215DB962100DD5CAF /* Labixiaoxin1-10-Info.plist in Resources */,
 				0B42983E15E51CBF005539CF /* MoreController.xib in Resources */,
 				0B54B87C15E5264C003FE113 /* 1-1.jpg in Resources */,
 				0B54B87D15E5264C003FE113 /* 1-10.jpg in Resources */,
@@ -6351,6 +6350,7 @@
 				3375780D15E5D2EC00A528D7 /* moreButtonBg@2x.png in Resources */,
 				3375781015E5D5CB00A528D7 /* moreButtonBg@2x~ipad.png in Resources */,
 				3375781115E5D5CB00A528D7 /* moreButtonBg~ipad.png in Resources */,
+				3375781315E5DA0100A528D7 /* Labixiaoxin1-10-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6554,7 +6554,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xiaoxiao wei (DSXR77A9C9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: levin wei (JEDJ7ZXY76)";
 				COMPRESS_PNG_FILES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -6576,7 +6576,7 @@
 					"\"$(SRCROOT)/Labixiaoxin1-10/UMengAd\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8BA15C70-B158-4717-ACB1-97236F5093C6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A703AAE4-C5F3-4BC2-9406-5D42BEACFBB1";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
