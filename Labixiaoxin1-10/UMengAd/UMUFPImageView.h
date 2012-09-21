@@ -1,6 +1,6 @@
 //
-//  UMImageView.h
-//  UMAppNetwork
+//  UMUFPImageView.h
+//  UFP
 //
 //  Created by liu yu on 1/17/12.
 //  Copyright (c) 2012 Realcent. All rights reserved.
@@ -10,7 +10,7 @@
 
 @protocol delegate;
 
-@interface UMImageView : UIImageView {
+@interface UMUFPImageView : UIImageView {
 @private
     NSURL   *_imageURL;
     UIImage *_placeholderImage;
@@ -30,7 +30,7 @@
 
 @optional
 
-- (void)didLoadFinish:(UMImageView *)imageview; //releated image load finished
-- (void)didLoadFailed:(UMImageView *)imageview; //releated image load failed
+- (void)didLoadFinish:(UMUFPImageView *)imageview; //releated image load finished
+- (void)didLoadFailed:(UMUFPImageView *)imageview; //releated image load failed
 
 @end

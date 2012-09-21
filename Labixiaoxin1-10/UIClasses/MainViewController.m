@@ -15,7 +15,7 @@
 #import "Book.h"
 #import "MoreAppsControllerViewController.h"
 #import "FlipVolumViewController.h"
-#import "UMTableViewDemo.h"
+#import "RecommendedApps.h"
 #import "MoreController.h"
 #import "PhoneEngine.h"
 

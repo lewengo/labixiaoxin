@@ -1,5 +1,5 @@
 //
-//  UMUFPManager.h
+//  UMUFPHandleView.h
 //  UFP
 //
 //  Created by liu yu on 2/16/12.
@@ -12,7 +12,7 @@
 
 typedef enum {
     ContentTypeApp = 0, //app list
-    ContentTypeWap = 1, //wap
+    ContentTypeIconList = 1, //icon list
     ContentTypeDefault = ContentTypeApp,
 } ContentType;
 
@@ -23,22 +23,9 @@ typedef enum {
     OrientationTypeDefault = OrientationTypeAll,
 } OrientationType;
 
-@class UMImageView;
-
 @interface UMUFPHandleView : UIView {
 @private
-	UMImageView* _mImageView;
-    NSString *_mAppkey;
-    NSString *_mSlotId;
-    NSString *_mKeywords;
-    NSString *_mSessionId;
-    NSArray  *_mPromoterDatas;
-    
-    BOOL _mAutoFill;
-    BOOL _mUsingLocalImage;
     ContentType _mContentType;
-
-    UIViewController *_mCurrentViewController;
     id<UMUFPHandleViewDelegate> _delegate;
 }
 

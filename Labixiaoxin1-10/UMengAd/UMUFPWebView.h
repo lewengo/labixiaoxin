@@ -1,6 +1,6 @@
 //
-//  UMANWebView.h
-//  UMAppNetwork
+//  UMUFPWebView.h
+//  UFP
 //
 //  Created by liu yu on 1/9/12.
 //  Copyright (c) 2012 Realcent. All rights reserved.
@@ -22,13 +22,13 @@
 
 /** 
  
- This method return a UMANWebView object
+ This method return a UMUFPWebView object
  
- @param  frame frame for the UMANWebView 
+ @param  frame frame for the UMUFPWebView 
  @param  appkey appkey get from www.umeng.com, if you want use ufp service only, set this parameter empty
  @param  slotId slotId get from ufp.umeng.com
  
- @return a UMANWebView object
+ @return a UMUFPWebView object
  */
 
 - (id)initWithFrame:(CGRect)frame appKey:(NSString *)appkey slotId:(NSString *)slotId;

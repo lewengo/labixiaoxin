@@ -13,6 +13,7 @@
 #import "UIAlertView+Blocks.h"
 #import "Constants.h"
 #import "Book.h"
+#import "MobClick.h"
 
 @implementation AppDelegate
 
@@ -23,6 +24,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [MobClick startWithAppkey:UMeng_ID reportPolicy:REALTIME channelId:nil];
     /*
      if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
      SEL selector = NSSelectorFromString(@"setOrientation:");
@@ -233,6 +235,100 @@
         [_guideView showGuide:kUserGuideTypeFirst withSuperView:inView];
     }
     return userGuide;
+}
+
+- (void)showActivityView:(NSString *)text
+                  inView:(UIView*)view
+{
+    UIView *viewExist = nil;
+	for (UIView *v in [view subviews]) {
+		if ([v isKindOfClass:[MBProgressHUD class]]) {
+			viewExist = v;
+            break;
+		}
+	}
+    
+    if (viewExist) {
+        ((MBProgressHUD *)viewExist).labelText = @"";
+        ((MBProgressHUD *)viewExist).detailsLabelText = text;
+    }
+    else {
+        MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:view animated:YES];
+        HUD.delegate = self;
+        HUD.labelText = @"";
+        HUD.detailsLabelText = text;
+    }
+}
+
+- (void)hideActivityView:(UIView *)view {
+    [MBProgressHUD hideHUDForView:view animated:YES];
+}
+
+- (void)showFinishActivityView:(NSString*)text
+                      interval:(NSTimeInterval)time
+                        inView:(UIView*)view
+{
+    UIView *viewExist = nil;
+	for (UIView *v in [view subviews]) {
+		if ([v isKindOfClass:[MBProgressHUD class]]) {
+			viewExist = v;
+            break;
+		}
+	}
+    
+    if (viewExist) {
+        MBProgressHUD *HUD = (MBProgressHUD *)viewExist;
+        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"activitycheckmark.png"]];
+        HUD.mode = MBProgressHUDModeCustomView;
+        HUD.labelText = @"";
+        HUD.detailsLabelText = text;
+        [HUD hide:YES afterDelay:time];
+    }
+    else {
+        MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:view animated:YES];
+        HUD.delegate = self;
+        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"activitycheckmark.png"]];
+        HUD.mode = MBProgressHUDModeCustomView;
+        HUD.labelText = @"";
+        HUD.detailsLabelText = text;
+        [HUD hide:YES afterDelay:time];
+    }
+}
+
+- (void)showFailedActivityView:(NSString*)text
+                      interval:(NSTimeInterval)time
+                        inView:(UIView*)view
+{
+    UIView *viewExist = nil;
+	for (UIView *v in [view subviews]) {
+		if ([v isKindOfClass:[MBProgressHUD class]]) {
+			viewExist = v;
+            break;
+		}
+	}
+    
+    if (viewExist) {
+        MBProgressHUD *HUD = (MBProgressHUD *)viewExist;
+        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"activitycross.png"]];
+        HUD.mode = MBProgressHUDModeCustomView;
+        HUD.labelText = @"";
+        HUD.detailsLabelText = text;
+        [HUD hide:YES afterDelay:time];
+    }
+    else {
+        MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:view animated:YES];
+        HUD.delegate = self;
+        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"activitycross.png"]];
+        HUD.mode = MBProgressHUDModeCustomView;
+        HUD.labelText = @"";
+        HUD.detailsLabelText = text;
+        [HUD hide:YES afterDelay:time];
+    }
+}
+
+- (void)hudWasHidden:(MBProgressHUD *)hud
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ProgressDisappeared" object:nil];
 }
 
 - (void)UserGuideFinished:(NSInteger)finishedType

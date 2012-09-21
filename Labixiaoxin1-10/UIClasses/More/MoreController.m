@@ -8,7 +8,7 @@
 
 #import "MoreController.h"
 #import "CustomNavigationBar.h"
-#import "UMTableViewDemo.h"
+#import "RecommendedApps.h"
 #import "PhoneEngine.h"
 #import "AboutController.h"
 
@@ -100,8 +100,10 @@
 
 - (IBAction)recommend:(id)sender
 {
-    UMTableViewDemo *moreapps = [[UMTableViewDemo alloc] init];
-    [self.navigationController pushViewController:moreapps animated:YES];
+    RecommendedApps *recommended = [[RecommendedApps alloc] initWithNibName:@"RecommendedApps"
+                                                                     bundle:nil];
+    [self.navigationController pushViewController:recommended
+                                         animated:YES];
 }
 
 - (IBAction)feedback:(id)sender

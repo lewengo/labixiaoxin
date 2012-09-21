@@ -1,6 +1,6 @@
 //
-//  UMANBannerView.h
-//  UMAppNetwork
+//  UMUFPBannerView.h
+//  UFP
 //
 //  Created by liu yu on 11/7/11.
 //  Copyright 2011 Realcent. All rights reserved.
@@ -78,5 +78,6 @@
 - (void)UMUFPBannerView:(UMUFPBannerView *)banner didLoadDataFailWithError:(NSError *)error; //called when promoter list loaded failed for some reason, for example network problem or the promoter list is empty
 - (void)UMUFPBannerView:(UMUFPBannerView *)banner didClickPromoterForUrl:(NSURL *)url; //implement this method if you want to handle promoter click event for the case that should open an url in webview  
 - (void)UMUFPBannerView:(UMUFPBannerView *)banner didClickedPromoterAtIndex:(NSInteger)index;   //called when banner clicked
+- (void)UMUFPBannerView:(UMUFPBannerView *)banner openAdsForFlag:(NSString *)flagStr; // called when promoter with special schema url clicked
 
 @end

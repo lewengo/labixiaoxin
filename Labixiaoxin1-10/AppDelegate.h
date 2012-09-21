@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "UserGuideView.h"
+#import "MBProgressHUD.h"
 
 @class MainViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, UserGuideFinishDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UserGuideFinishDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver, MBProgressHUDDelegate>
 {
     NSString *_controllerId;
 }
@@ -22,6 +23,20 @@
 
 @property (nonatomic, strong) UserGuideView *guideView;
 - (BOOL)showUserGuide:(UIView *)inView;
+
+//first show hud with text in view
+- (void)showActivityView:(NSString *)text
+                  inView:(UIView *)view;
+//hide prevoiusly showed hud
+- (void)hideActivityView:(UIView *)view;
+//first showe hud with succeed text and image for time seconds in view
+- (void)showFinishActivityView:(NSString *)text
+                      interval:(NSTimeInterval)time
+                        inView:(UIView *)view;
+//first showe hud with failed text and image for time seconds in view
+- (void)showFailedActivityView:(NSString *)text
+                      interval:(NSTimeInterval)time
+                        inView:(UIView *)view;
 
 - (void)promptComment;
 - (void)purchase;

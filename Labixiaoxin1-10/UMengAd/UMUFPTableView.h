@@ -1,6 +1,6 @@
 //
-//  UMANTableView.h
-//  UMAppNetwork
+//  UMUFPTableView.h
+//  UFP
 //
 //  Created by liu yu on 12/17/11.
 //  Copyright (c) 2011 Realcent. All rights reserved.
@@ -12,25 +12,25 @@
 
 @interface UMUFPTableView : UITableView {
 @private
-    id<UMUFPTableViewDataLoadDelegate> _dataLoadDelegate;
-    NSString *_mKeywords;
-    NSString *_mSessionId;
-    NSString *_mAppkey;
-    NSString *_mSlotId;
     BOOL      _mAutoFill;
     BOOL      _mIsAllLoaded;
     BOOL      _mIsLoadingMore;
+    BOOL      _mIsLoading;
     NSInteger _mRequestCount;
-    
+    NSString         *_mKeywords;
+    NSMutableArray   *_mPromoterDatas;
     UIViewController *_mCurrentViewController;
+    id<UMUFPTableViewDataLoadDelegate> _dataLoadDelegate;
 }
 
 @property (nonatomic, copy) NSString *mKeywords;        //keywords for the promoters data, promoter list will return according to this property, default is @""
 @property (nonatomic)           BOOL mAutoFill;
 @property (nonatomic, readonly) BOOL mIsAllLoaded;      //shows whether there are promoters list left to load
 @property (nonatomic, readonly) BOOL mIsLoadingMore;    //shows whether more promoters list are loaded background
+@property (nonatomic, readonly) BOOL mIsLoading;        //shows whether 1th promoters list are loaded background
+@property (nonatomic, readonly) NSMutableArray *mPromoterDatas; //all the loaded promoters list for the releated appkey / slot_id
 @property (nonatomic) NSInteger mRequestCount;          //number of promoters for every load more request, default is 10
-@property (nonatomic, assign) id<UMUFPTableViewDataLoadDelegate> dataLoadDelegate; //dataLoadDelegate for tableview
+@property (nonatomic, assign)   id<UMUFPTableViewDataLoadDelegate> dataLoadDelegate; //dataLoadDelegate for tableview
 
 /** 
  
