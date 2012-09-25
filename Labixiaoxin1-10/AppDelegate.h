@@ -10,6 +10,7 @@
 #import "UserGuideView.h"
 #import "MBProgressHUD.h"
 
+@class CustomTabbarViewController;
 @class MainViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UserGuideFinishDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver, MBProgressHUDDelegate>
@@ -19,9 +20,12 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UINavigationController *appRootController;
-@property (strong, nonatomic) MainViewController *viewController;
+@property (nonatomic, retain) CustomTabbarViewController *tabBarController;
 
 @property (nonatomic, strong) UserGuideView *guideView;
+
++ (AppDelegate *)theAppDelegate;
+
 - (BOOL)showUserGuide:(UIView *)inView;
 
 //first show hud with text in view
@@ -41,4 +45,6 @@
 - (void)promptComment;
 - (void)purchase;
 - (BOOL)adRemoved;
+
+- (void)presentModalViewController:(UIViewController *)rootViewController animated:(BOOL)animated;
 @end

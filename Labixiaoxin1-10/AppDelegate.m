@@ -14,12 +14,13 @@
 #import "Constants.h"
 #import "Book.h"
 #import "MobClick.h"
+#import "CustomTabbarViewController.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize appRootController = _appRootController;
-@synthesize viewController = _viewController;
+@synthesize tabBarController = _tabBarController;
 @synthesize guideView = _guideView;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -53,9 +54,12 @@
     DataEngine *dataEngine = [DataEngine sharedInstance];
     [dataEngine getNewBooks:nil];
     // Override point for customization after application launch.
-    self.appRootController = [[[NSBundle mainBundle] loadNibNamed:@"CustomNavigationController" owner:self options:nil] objectAtIndex:0];
-    self.viewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
-    [self.appRootController pushViewController:self.viewController animated:NO];
+    self.appRootController = [[UINavigationController alloc] init];
+    self.appRootController.navigationBarHidden = YES;
+    
+    self.tabBarController = [[CustomTabbarViewController alloc] init];
+    
+    [self.appRootController pushViewController:self.tabBarController animated:NO];
     self.window.rootViewController = self.appRootController;
     [self.window makeKeyAndVisible];
     return YES;
@@ -223,6 +227,11 @@
                 break;
         }
     }
+}
+
++ (AppDelegate *)theAppDelegate
+{
+    return (AppDelegate *)[UIApplication sharedApplication].delegate;
 }
 
 - (BOOL)showUserGuide:(UIView *)inView
@@ -468,5 +477,12 @@
     } else {
         //cann't purchase
     }
+}
+
+- (void)presentModalViewController:(UIViewController*)rootViewController animated:(BOOL)animated
+{
+    UINavigationController* nav = [[[NSBundle mainBundle] loadNibNamed:@"CustomNavigationController" owner:self options:nil] objectAtIndex:0];
+    [nav pushViewController:rootViewController animated:NO];
+    [self.appRootController presentModalViewController:nav animated:animated];
 }
 @end

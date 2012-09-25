@@ -1316,8 +1316,6 @@
 		0B56B07A15AD466F00DC3BAC /* libDomobAdSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B56B07815AD466F00DC3BAC /* libDomobAdSDK.a */; };
 		0B5BDDCB1571C454005EDDBD /* volumStandLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5BDDC91571C454005EDDBD /* volumStandLandscape.png */; };
 		0B5BDDCC1571C454005EDDBD /* volumStandLandscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5BDDCA1571C454005EDDBD /* volumStandLandscape@2x.png */; };
-		0B690D4F160CA5FE009D9009 /* LBSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B690D4B160CA5FE009D9009 /* LBSSDK.framework */; };
-		0B690D50160CA5FE009D9009 /* MobWin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B690D4C160CA5FE009D9009 /* MobWin.a */; };
 		0B690D60160CA7C6009D9009 /* libYouMi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B690D5F160CA7C6009D9009 /* libYouMi.a */; };
 		0B6D6CA81571321E000A6EE1 /* flip-illusion-oriented.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0B6D6CA61571321E000A6EE1 /* flip-illusion-oriented.jpg */; };
 		0B6D6CA91571321E000A6EE1 /* flip-illusion.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B6D6CA71571321E000A6EE1 /* flip-illusion.png */; };
@@ -1351,8 +1349,6 @@
 		0BA056141556579200E75963 /* moreAppsBg2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055F61556579200E75963 /* moreAppsBg2@2x.png */; };
 		0BA056151556579200E75963 /* navigationBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055F71556579200E75963 /* navigationBarBackground.png */; };
 		0BA056161556579200E75963 /* navigationBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055F81556579200E75963 /* navigationBarBackground@2x.png */; };
-		0BA056171556579200E75963 /* notificaionBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055F91556579200E75963 /* notificaionBubble.png */; };
-		0BA056181556579200E75963 /* notificaionBubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055FA1556579200E75963 /* notificaionBubble@2x.png */; };
 		0BA056191556579200E75963 /* volumStand.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055FB1556579200E75963 /* volumStand.png */; };
 		0BA0561A1556579200E75963 /* volumStand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055FC1556579200E75963 /* volumStand@2x.png */; };
 		0BA0561B1556579200E75963 /* volumStand@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055FD1556579200E75963 /* volumStand@2x~ipad.png */; };
@@ -1371,6 +1367,16 @@
 		0BC6E0AB1571D37500256604 /* bookBgLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC6E0A91571D37500256604 /* bookBgLandscape.png */; };
 		0BC6E0AC1571D37500256604 /* bookBgLandscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC6E0AA1571D37500256604 /* bookBgLandscape@2x.png */; };
 		0BCC2F1C1611FC4300E3B379 /* UIImageExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BCC2F1B1611FC4300E3B379 /* UIImageExtra.m */; };
+		0BCC2F251611FE5C00E3B379 /* LBSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCC2F211611FE5C00E3B379 /* LBSSDK.framework */; };
+		0BCC2F261611FE5C00E3B379 /* MobWin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCC2F221611FE5C00E3B379 /* MobWin.a */; };
+		0BCC2F3A1611FFCD00E3B379 /* bottomBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BCC2F301611FFCD00E3B379 /* bottomBarBackground.png */; };
+		0BCC2F3B1611FFCD00E3B379 /* bottomBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BCC2F311611FFCD00E3B379 /* bottomBarBackground@2x.png */; };
+		0BCC2F3C1611FFCD00E3B379 /* bottomBarBackground@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BCC2F321611FFCD00E3B379 /* bottomBarBackground@2x~ipad.png */; };
+		0BCC2F3D1611FFCD00E3B379 /* bottomBarBackground~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BCC2F331611FFCD00E3B379 /* bottomBarBackground~ipad.png */; };
+		0BCC2F3E1611FFCD00E3B379 /* CTTabbarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BCC2F351611FFCD00E3B379 /* CTTabbarControl.m */; };
+		0BCC2F3F1611FFCD00E3B379 /* CustomTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BCC2F371611FFCD00E3B379 /* CustomTabbarViewController.m */; };
+		0BCC2F401611FFCD00E3B379 /* notificaionBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BCC2F381611FFCD00E3B379 /* notificaionBubble.png */; };
+		0BCC2F411611FFCD00E3B379 /* notificaionBubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BCC2F391611FFCD00E3B379 /* notificaionBubble@2x.png */; };
 		0BD19C641566AE9000C47E4A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD19C5D1566AE9000C47E4A /* MainViewController.m */; };
 		0BD19C651566AE9000C47E4A /* MoreAppsControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD19C5F1566AE9000C47E4A /* MoreAppsControllerViewController.m */; };
 		0BD19C661566AE9000C47E4A /* VolumImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD19C611566AE9000C47E4A /* VolumImageView.m */; };
@@ -2810,10 +2816,6 @@
 		0B56B07815AD466F00DC3BAC /* libDomobAdSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobAdSDK.a; sourceTree = "<group>"; };
 		0B5BDDC91571C454005EDDBD /* volumStandLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumStandLandscape.png; sourceTree = "<group>"; };
 		0B5BDDCA1571C454005EDDBD /* volumStandLandscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volumStandLandscape@2x.png"; sourceTree = "<group>"; };
-		0B690D4B160CA5FE009D9009 /* LBSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LBSSDK.framework; sourceTree = "<group>"; };
-		0B690D4C160CA5FE009D9009 /* MobWin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = MobWin.a; sourceTree = "<group>"; };
-		0B690D4D160CA5FE009D9009 /* MobWinBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobWinBannerView.h; sourceTree = "<group>"; };
-		0B690D4E160CA5FE009D9009 /* MobWinBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobWinBannerViewDelegate.h; sourceTree = "<group>"; };
 		0B690D54160CA7C6009D9009 /* YouMiDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiDelegateProtocol.h; sourceTree = "<group>"; };
 		0B690D55160CA7C6009D9009 /* YouMiSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiSpot.h; sourceTree = "<group>"; };
 		0B690D56160CA7C6009D9009 /* YouMiSpotDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiSpotDelegateProtocol.h; sourceTree = "<group>"; };
@@ -2858,8 +2860,6 @@
 		0BA055F61556579200E75963 /* moreAppsBg2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moreAppsBg2@2x.png"; sourceTree = "<group>"; };
 		0BA055F71556579200E75963 /* navigationBarBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationBarBackground.png; sourceTree = "<group>"; };
 		0BA055F81556579200E75963 /* navigationBarBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationBarBackground@2x.png"; sourceTree = "<group>"; };
-		0BA055F91556579200E75963 /* notificaionBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notificaionBubble.png; sourceTree = "<group>"; };
-		0BA055FA1556579200E75963 /* notificaionBubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notificaionBubble@2x.png"; sourceTree = "<group>"; };
 		0BA055FB1556579200E75963 /* volumStand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumStand.png; sourceTree = "<group>"; };
 		0BA055FC1556579200E75963 /* volumStand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volumStand@2x.png"; sourceTree = "<group>"; };
 		0BA055FD1556579200E75963 /* volumStand@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volumStand@2x~ipad.png"; sourceTree = "<group>"; };
@@ -2898,6 +2898,20 @@
 		0BC6E0AA1571D37500256604 /* bookBgLandscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookBgLandscape@2x.png"; sourceTree = "<group>"; };
 		0BCC2F1A1611FC4300E3B379 /* UIImageExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageExtra.h; sourceTree = "<group>"; };
 		0BCC2F1B1611FC4300E3B379 /* UIImageExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageExtra.m; sourceTree = "<group>"; };
+		0BCC2F211611FE5C00E3B379 /* LBSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LBSSDK.framework; sourceTree = "<group>"; };
+		0BCC2F221611FE5C00E3B379 /* MobWin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = MobWin.a; sourceTree = "<group>"; };
+		0BCC2F231611FE5C00E3B379 /* MobWinBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobWinBannerView.h; sourceTree = "<group>"; };
+		0BCC2F241611FE5C00E3B379 /* MobWinBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobWinBannerViewDelegate.h; sourceTree = "<group>"; };
+		0BCC2F301611FFCD00E3B379 /* bottomBarBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomBarBackground.png; sourceTree = "<group>"; };
+		0BCC2F311611FFCD00E3B379 /* bottomBarBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottomBarBackground@2x.png"; sourceTree = "<group>"; };
+		0BCC2F321611FFCD00E3B379 /* bottomBarBackground@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottomBarBackground@2x~ipad.png"; sourceTree = "<group>"; };
+		0BCC2F331611FFCD00E3B379 /* bottomBarBackground~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottomBarBackground~ipad.png"; sourceTree = "<group>"; };
+		0BCC2F341611FFCD00E3B379 /* CTTabbarControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTTabbarControl.h; sourceTree = "<group>"; };
+		0BCC2F351611FFCD00E3B379 /* CTTabbarControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTTabbarControl.m; sourceTree = "<group>"; };
+		0BCC2F361611FFCD00E3B379 /* CustomTabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabbarViewController.h; sourceTree = "<group>"; };
+		0BCC2F371611FFCD00E3B379 /* CustomTabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabbarViewController.m; sourceTree = "<group>"; };
+		0BCC2F381611FFCD00E3B379 /* notificaionBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notificaionBubble.png; sourceTree = "<group>"; };
+		0BCC2F391611FFCD00E3B379 /* notificaionBubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notificaionBubble@2x.png"; sourceTree = "<group>"; };
 		0BD19C5C1566AE9000C47E4A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		0BD19C5D1566AE9000C47E4A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		0BD19C5E1566AE9000C47E4A /* MoreAppsControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreAppsControllerViewController.h; sourceTree = "<group>"; };
@@ -3022,9 +3036,9 @@
 				0B56B07A15AD466F00DC3BAC /* libDomobAdSDK.a in Frameworks */,
 				33D57BD8160C595C0016F32F /* libMobClickLibrary.a in Frameworks */,
 				33D57C00160C5A000016F32F /* libUMAppNetwork.a in Frameworks */,
-				0B690D4F160CA5FE009D9009 /* LBSSDK.framework in Frameworks */,
-				0B690D50160CA5FE009D9009 /* MobWin.a in Frameworks */,
 				0B690D60160CA7C6009D9009 /* libYouMi.a in Frameworks */,
+				0BCC2F251611FE5C00E3B379 /* LBSSDK.framework in Frameworks */,
+				0BCC2F261611FE5C00E3B379 /* MobWin.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3191,11 +3205,11 @@
 		0B49BB46154FDC8D004B8AC1 /* Labixiaoxin1-10 */ = {
 			isa = PBXGroup;
 			children = (
+				0BCC2F1E1611FE5C00E3B379 /* MobWIN */,
 				33D57BDE160C5A000016F32F /* UMengAd */,
 				33D57BD5160C595C0016F32F /* Analytics */,
 				0B54B38D15E5264B003FE113 /* ToChanged */,
 				0B56B07115AD466F00DC3BAC /* DomobAdSDK */,
-				0B54AC1715A1497A00AD91DD /* MobWIN */,
 				0BF0957F157BA28300DFE50A /* YouMiSDK[iOS] */,
 				0B1615B0155568DD0023E7A6 /* SBJson */,
 				0B0749C61554D0EB00ECC9EA /* Constants.h */,
@@ -3285,6 +3299,7 @@
 		0B49C044154FE2D5004B8AC1 /* CustomClasses */ = {
 			isa = PBXGroup;
 			children = (
+				0BCC2F2F1611FFCC00E3B379 /* CustomTabbar */,
 				33D57C0A160C5B490016F32F /* MBProgressHUD */,
 				0B08417B1566CBD00083DB37 /* UIAlertView-Blocks */,
 				0BD19C681566AE9800C47E4A /* CustomHitButton */,
@@ -3336,17 +3351,6 @@
 				334FB5E715E4ACCB006463EA /* AdTypes.m */,
 			);
 			path = DataModels;
-			sourceTree = "<group>";
-		};
-		0B54AC1715A1497A00AD91DD /* MobWIN */ = {
-			isa = PBXGroup;
-			children = (
-				0B690D49160CA5FE009D9009 /* build */,
-				0B690D4C160CA5FE009D9009 /* MobWin.a */,
-				0B690D4D160CA5FE009D9009 /* MobWinBannerView.h */,
-				0B690D4E160CA5FE009D9009 /* MobWinBannerViewDelegate.h */,
-			);
-			path = MobWIN;
 			sourceTree = "<group>";
 		};
 		0B54B38D15E5264B003FE113 /* ToChanged */ = {
@@ -4728,22 +4732,6 @@
 			path = DomobAdSDK;
 			sourceTree = "<group>";
 		};
-		0B690D49160CA5FE009D9009 /* build */ = {
-			isa = PBXGroup;
-			children = (
-				0B690D4A160CA5FE009D9009 /* Framework */,
-			);
-			path = build;
-			sourceTree = "<group>";
-		};
-		0B690D4A160CA5FE009D9009 /* Framework */ = {
-			isa = PBXGroup;
-			children = (
-				0B690D4B160CA5FE009D9009 /* LBSSDK.framework */,
-			);
-			path = Framework;
-			sourceTree = "<group>";
-		};
 		0B690D51160CA7C6009D9009 /* lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -4851,8 +4839,6 @@
 				0BA055F61556579200E75963 /* moreAppsBg2@2x.png */,
 				0BA055F71556579200E75963 /* navigationBarBackground.png */,
 				0BA055F81556579200E75963 /* navigationBarBackground@2x.png */,
-				0BA055F91556579200E75963 /* notificaionBubble.png */,
-				0BA055FA1556579200E75963 /* notificaionBubble@2x.png */,
 				0BA055FB1556579200E75963 /* volumStand.png */,
 				0BA055FC1556579200E75963 /* volumStand@2x.png */,
 				0BA055FD1556579200E75963 /* volumStand@2x~ipad.png */,
@@ -4919,6 +4905,50 @@
 				0BCC2F1B1611FC4300E3B379 /* UIImageExtra.m */,
 			);
 			path = IMAGE;
+			sourceTree = "<group>";
+		};
+		0BCC2F1E1611FE5C00E3B379 /* MobWIN */ = {
+			isa = PBXGroup;
+			children = (
+				0BCC2F1F1611FE5C00E3B379 /* build */,
+				0BCC2F221611FE5C00E3B379 /* MobWin.a */,
+				0BCC2F231611FE5C00E3B379 /* MobWinBannerView.h */,
+				0BCC2F241611FE5C00E3B379 /* MobWinBannerViewDelegate.h */,
+			);
+			path = MobWIN;
+			sourceTree = "<group>";
+		};
+		0BCC2F1F1611FE5C00E3B379 /* build */ = {
+			isa = PBXGroup;
+			children = (
+				0BCC2F201611FE5C00E3B379 /* Framework */,
+			);
+			path = build;
+			sourceTree = "<group>";
+		};
+		0BCC2F201611FE5C00E3B379 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				0BCC2F211611FE5C00E3B379 /* LBSSDK.framework */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
+		0BCC2F2F1611FFCC00E3B379 /* CustomTabbar */ = {
+			isa = PBXGroup;
+			children = (
+				0BCC2F301611FFCD00E3B379 /* bottomBarBackground.png */,
+				0BCC2F311611FFCD00E3B379 /* bottomBarBackground@2x.png */,
+				0BCC2F321611FFCD00E3B379 /* bottomBarBackground@2x~ipad.png */,
+				0BCC2F331611FFCD00E3B379 /* bottomBarBackground~ipad.png */,
+				0BCC2F341611FFCD00E3B379 /* CTTabbarControl.h */,
+				0BCC2F351611FFCD00E3B379 /* CTTabbarControl.m */,
+				0BCC2F361611FFCD00E3B379 /* CustomTabbarViewController.h */,
+				0BCC2F371611FFCD00E3B379 /* CustomTabbarViewController.m */,
+				0BCC2F381611FFCD00E3B379 /* notificaionBubble.png */,
+				0BCC2F391611FFCD00E3B379 /* notificaionBubble@2x.png */,
+			);
+			path = CustomTabbar;
 			sourceTree = "<group>";
 		};
 		0BD19C681566AE9800C47E4A /* CustomHitButton */ = {
@@ -5124,8 +5154,6 @@
 				0BA056141556579200E75963 /* moreAppsBg2@2x.png in Resources */,
 				0BA056151556579200E75963 /* navigationBarBackground.png in Resources */,
 				0BA056161556579200E75963 /* navigationBarBackground@2x.png in Resources */,
-				0BA056171556579200E75963 /* notificaionBubble.png in Resources */,
-				0BA056181556579200E75963 /* notificaionBubble@2x.png in Resources */,
 				0BA056191556579200E75963 /* volumStand.png in Resources */,
 				0BA0561A1556579200E75963 /* volumStand@2x.png in Resources */,
 				0BA0561B1556579200E75963 /* volumStand@2x~ipad.png in Resources */,
@@ -6447,6 +6475,12 @@
 				33D57C17160C677E0016F32F /* canvas@2x.png in Resources */,
 				33D57C18160C677E0016F32F /* canvas@2x~ipad.png in Resources */,
 				33D57C19160C677E0016F32F /* canvas~ipad.png in Resources */,
+				0BCC2F3A1611FFCD00E3B379 /* bottomBarBackground.png in Resources */,
+				0BCC2F3B1611FFCD00E3B379 /* bottomBarBackground@2x.png in Resources */,
+				0BCC2F3C1611FFCD00E3B379 /* bottomBarBackground@2x~ipad.png in Resources */,
+				0BCC2F3D1611FFCD00E3B379 /* bottomBarBackground~ipad.png in Resources */,
+				0BCC2F401611FFCD00E3B379 /* notificaionBubble.png in Resources */,
+				0BCC2F411611FFCD00E3B379 /* notificaionBubble@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6532,6 +6566,8 @@
 				33D57C09160C5A4D0016F32F /* UMTableViewCell.m in Sources */,
 				33D57C0D160C5B490016F32F /* MBProgressHUD.m in Sources */,
 				0BCC2F1C1611FC4300E3B379 /* UIImageExtra.m in Sources */,
+				0BCC2F3E1611FFCD00E3B379 /* CTTabbarControl.m in Sources */,
+				0BCC2F3F1611FFCD00E3B379 /* CustomTabbarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6656,7 +6692,6 @@
 				COMPRESS_PNG_FILES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Labixiaoxin1-10/MobWIN/Framework\"",
 					"\"$(SRCROOT)/Labixiaoxin1-10/MobWIN\"",
 					"\"$(SRCROOT)/Labixiaoxin1-10/MobWIN/build/Framework\"",
 				);
@@ -6689,7 +6724,6 @@
 				COMPRESS_PNG_FILES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Labixiaoxin1-10/MobWIN/Framework\"",
 					"\"$(SRCROOT)/Labixiaoxin1-10/MobWIN\"",
 					"\"$(SRCROOT)/Labixiaoxin1-10/MobWIN/build/Framework\"",
 				);

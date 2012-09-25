@@ -10,7 +10,9 @@
 
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
+    #import "MobClick.h"
     #import <Foundation/Foundation.h>
+    #import <QuartzCore/QuartzCore.h>
     #import <StoreKit/StoreKit.h>
     #import "ChangeConstants.h"
     #import "DeviceHardware.h"

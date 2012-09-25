@@ -8,6 +8,8 @@
 
 //#define TEST_SERVER 1
 
+#define UM_LabelName            NSLocalizedString(@"操作类型", nil)
+
 #define URL_REQUEST_TIMEOUT     120
 #define REQUEST_SOURCE_KEY      @"_source"
 
