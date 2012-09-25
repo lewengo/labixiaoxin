@@ -52,8 +52,8 @@
     if (has) {
         CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
         UIButton *commentButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [commentButton setBackgroundImage:[[UIImage imageNamed:@"button.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
-        //    [commentButton setBackgroundImage:[[UIImage imageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
+        [commentButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
+        //    [commentButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
         // Set the title to use the same font and shadow as the standard back button
         commentButton.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
         commentButton.titleLabel.textColor = [UIColor whiteColor];
@@ -130,8 +130,8 @@
     
     CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [backButton setBackgroundImage:[[UIImage imageNamed:@"back.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
-    //    [commentButton setBackgroundImage:[[UIImage imageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
+    [backButton setBackgroundImage:[[UIImage retina4ImageNamed:@"back.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
+    //    [commentButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
     // Set the title to use the same font and shadow as the standard back button
     backButton.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
     backButton.titleLabel.textColor = [UIColor whiteColor];
@@ -208,15 +208,15 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        UIImageView *arrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"moreAppsArrow.png"]];
+        UIImageView *arrow = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"moreAppsArrow.png"]];
         [cell.contentView addSubview:arrow];
         arrow.frame = CGRectMake(CGRectGetWidth(self.tableView.frame) - 10 - CGRectGetWidth(arrow.frame), ([self tableView:tableView heightForRowAtIndexPath:indexPath] - CGRectGetHeight(arrow.frame)) / 2, CGRectGetWidth(arrow.frame), CGRectGetHeight(arrow.frame));
     }
     if (indexPath.row < _bookArray.count) {
         if (indexPath.row % 2 == 0) {
-            cell.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"moreAppsBg1.png"] stretchableImageWithLeftCapWidth:160 topCapHeight:35]];
+            cell.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage retina4ImageNamed:@"moreAppsBg1.png"] stretchableImageWithLeftCapWidth:160 topCapHeight:35]];
         } else {
-            cell.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"moreAppsBg2.png"] stretchableImageWithLeftCapWidth:160 topCapHeight:35]];
+            cell.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage retina4ImageNamed:@"moreAppsBg2.png"] stretchableImageWithLeftCapWidth:160 topCapHeight:35]];
         }
         UIImageView *icon = (UIImageView *)[cell.contentView viewWithTag:kAppImageTag];
         if (icon == nil) {
@@ -231,10 +231,10 @@
                 icon.image = [UIImage imageWithContentsOfFile:path];
             } else {
                 [self getImage:book.bookIcon];
-                icon.image = [UIImage imageNamed:@"appIconEmpty.png"];
+                icon.image = [UIImage retina4ImageNamed:@"appIconEmpty.png"];
             }
         } else {
-            icon.image = [UIImage imageNamed:@"appIconEmpty.png"];
+            icon.image = [UIImage retina4ImageNamed:@"appIconEmpty.png"];
         }
         
         UIImageView *newIcon = (UIImageView *)[cell.contentView viewWithTag:kNewAppIconTag];
@@ -244,7 +244,7 @@
             [cell.contentView addSubview:newIcon];
         }
         if (book.isNew) {
-            newIcon.image = [UIImage imageNamed:@"newIcon.png"];
+            newIcon.image = [UIImage retina4ImageNamed:@"newIcon.png"];
         } else {
             newIcon.image = nil;
         }

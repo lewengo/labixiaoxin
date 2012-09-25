@@ -1370,6 +1370,7 @@
 		0BA1BA10155188A100E02191 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BA1BA0F155188A100E02191 /* MainViewController.xib */; };
 		0BC6E0AB1571D37500256604 /* bookBgLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC6E0A91571D37500256604 /* bookBgLandscape.png */; };
 		0BC6E0AC1571D37500256604 /* bookBgLandscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC6E0AA1571D37500256604 /* bookBgLandscape@2x.png */; };
+		0BCC2F1C1611FC4300E3B379 /* UIImageExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BCC2F1B1611FC4300E3B379 /* UIImageExtra.m */; };
 		0BD19C641566AE9000C47E4A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD19C5D1566AE9000C47E4A /* MainViewController.m */; };
 		0BD19C651566AE9000C47E4A /* MoreAppsControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD19C5F1566AE9000C47E4A /* MoreAppsControllerViewController.m */; };
 		0BD19C661566AE9000C47E4A /* VolumImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD19C611566AE9000C47E4A /* VolumImageView.m */; };
@@ -2895,6 +2896,8 @@
 		0BA1BA0F155188A100E02191 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		0BC6E0A91571D37500256604 /* bookBgLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookBgLandscape.png; sourceTree = "<group>"; };
 		0BC6E0AA1571D37500256604 /* bookBgLandscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookBgLandscape@2x.png"; sourceTree = "<group>"; };
+		0BCC2F1A1611FC4300E3B379 /* UIImageExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageExtra.h; sourceTree = "<group>"; };
+		0BCC2F1B1611FC4300E3B379 /* UIImageExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageExtra.m; sourceTree = "<group>"; };
 		0BD19C5C1566AE9000C47E4A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		0BD19C5D1566AE9000C47E4A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		0BD19C5E1566AE9000C47E4A /* MoreAppsControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreAppsControllerViewController.h; sourceTree = "<group>"; };
@@ -3059,6 +3062,7 @@
 		0B0749931554C8D900ECC9EA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0BCC2F191611FC4300E3B379 /* IMAGE */,
 				0BD4FAB8156F97B4000A1A34 /* Base64 */,
 				0B0749B51554C90A00ECC9EA /* MD5 */,
 				0B0749941554C8D900ECC9EA /* DeviceHardware.h */,
@@ -4908,6 +4912,15 @@
 			path = Mediation;
 			sourceTree = "<group>";
 		};
+		0BCC2F191611FC4300E3B379 /* IMAGE */ = {
+			isa = PBXGroup;
+			children = (
+				0BCC2F1A1611FC4300E3B379 /* UIImageExtra.h */,
+				0BCC2F1B1611FC4300E3B379 /* UIImageExtra.m */,
+			);
+			path = IMAGE;
+			sourceTree = "<group>";
+		};
 		0BD19C681566AE9800C47E4A /* CustomHitButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -6518,6 +6531,7 @@
 				33D57C07160C5A4D0016F32F /* RecommendedApps.m in Sources */,
 				33D57C09160C5A4D0016F32F /* UMTableViewCell.m in Sources */,
 				33D57C0D160C5B490016F32F /* MBProgressHUD.m in Sources */,
+				0BCC2F1C1611FC4300E3B379 /* UIImageExtra.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

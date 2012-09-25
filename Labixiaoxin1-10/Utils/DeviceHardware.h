@@ -12,6 +12,8 @@
 
 - (BOOL)hasRetinaDisplay;
 
+- (BOOL)isIphone5;
+
 - (BOOL)hasMultitasking;
 
 - (BOOL)hasCamera;

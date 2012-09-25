@@ -101,6 +101,12 @@
     return ret;
 }
 
+- (BOOL)isIphone5
+{
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    return ([UIScreen mainScreen].scale == 2.f && screenHeight == 568.0f);
+}
+
 - (BOOL)hasMultitasking {
     if ([self respondsToSelector:@selector(isMultitaskingSupported)]) {
         return [self isMultitaskingSupported];

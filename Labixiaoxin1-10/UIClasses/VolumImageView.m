@@ -17,17 +17,17 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-//        UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bookBg.png"]];
+//        UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"bookBg.png"]];
         
         UIImageView *bgView = nil;
         if (IS_IPAD) {
 #ifdef Is_Only_Portrait
-            bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bookBg.png"]];
+            bgView = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"bookBg.png"]];
 #else
-            bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bookBgLandscape.png"]];
+            bgView = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"bookBgLandscape.png"]];
 #endif
         } else {
-            bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bookBg.png"]];
+            bgView = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"bookBg.png"]];
         }
         
         [self addSubview:bgView];
@@ -43,7 +43,7 @@
         }
         [self addSubview:coverImage];
         
-        bookMark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"currentBookmark.png"]];
+        bookMark = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"currentBookmark.png"]];
         if (IS_IPAD) {
 #ifdef Is_Only_Portrait
             bookMark.frame = CGRectMake(150, 2, bookMark.frame.size.width, bookMark.frame.size.height);
@@ -88,7 +88,7 @@
 - (void)setVolum:(VolumStatus *)volum
 {
     _volum = volum;
-    coverImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"cover%d.jpg", [_volum.volumId intValue] + 1 + CURRENTBOOK_START]];
+    coverImage.image = [UIImage retina4ImageNamed:[NSString stringWithFormat:@"cover%d.jpg", [_volum.volumId intValue] + 1 + CURRENTBOOK_START]];
     volumName.text = [NSString stringWithFormat:NSLocalizedString(@"%d Volum", nil), [_volum.volumId intValue] + 1 + CURRENTBOOK_START];
 }
 

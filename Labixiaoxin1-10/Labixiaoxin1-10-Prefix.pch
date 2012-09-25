@@ -13,6 +13,14 @@
     #import <Foundation/Foundation.h>
     #import <StoreKit/StoreKit.h>
     #import "ChangeConstants.h"
+    #import "DeviceHardware.h"
+    #import "UIImageExtra.h"
 #endif
 
 #define IS_IPAD ([[UIDevice currentDevice] respondsToSelector:@selector(userInterfaceIdiom)] && [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+
+#ifndef __OPTIMIZE__
+# define MSLog(...) NSLog(__VA_ARGS__)
+#else
+# define MSLog(...)
+#endif

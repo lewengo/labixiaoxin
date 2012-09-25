@@ -278,7 +278,7 @@
     
     if (viewExist) {
         MBProgressHUD *HUD = (MBProgressHUD *)viewExist;
-        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"activitycheckmark.png"]];
+        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"activitycheckmark.png"]];
         HUD.mode = MBProgressHUDModeCustomView;
         HUD.labelText = @"";
         HUD.detailsLabelText = text;
@@ -287,7 +287,7 @@
     else {
         MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:view animated:YES];
         HUD.delegate = self;
-        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"activitycheckmark.png"]];
+        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"activitycheckmark.png"]];
         HUD.mode = MBProgressHUDModeCustomView;
         HUD.labelText = @"";
         HUD.detailsLabelText = text;
@@ -309,7 +309,7 @@
     
     if (viewExist) {
         MBProgressHUD *HUD = (MBProgressHUD *)viewExist;
-        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"activitycross.png"]];
+        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"activitycross.png"]];
         HUD.mode = MBProgressHUDModeCustomView;
         HUD.labelText = @"";
         HUD.detailsLabelText = text;
@@ -318,7 +318,7 @@
     else {
         MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:view animated:YES];
         HUD.delegate = self;
-        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"activitycross.png"]];
+        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"activitycross.png"]];
         HUD.mode = MBProgressHUDModeCustomView;
         HUD.labelText = @"";
         HUD.detailsLabelText = text;

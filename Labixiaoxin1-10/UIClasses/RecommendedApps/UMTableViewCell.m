@@ -28,7 +28,7 @@
         self.detailTextLabel.backgroundColor = [UIColor clearColor];
         self.detailTextLabel.textColor = [UIColor blackColor];
         
-        _mImageView = [[UMUFPImageView alloc] initWithPlaceholderImage:[UIImage imageNamed:@"appIconEmpty.png"]];
+        _mImageView = [[UMUFPImageView alloc] initWithPlaceholderImage:[UIImage retina4ImageNamed:@"appIconEmpty.png"]];
 		self.mImageView.frame = CGRectMake(20.0f, 6.0f, kIconWidth, kIconWidth);
 		[self.contentView addSubview:self.mImageView];
     }

@@ -35,7 +35,7 @@
 {
     if (self = [super initWithCoder:aDecoder]) {
         navigationBarBackgroundImage = [[UIImageView alloc] initWithFrame:self.frame];
-        navigationBarBackgroundImage.image = [UIImage imageNamed:@"navigationBarBackground.png"];
+        navigationBarBackgroundImage.image = [UIImage retina4ImageNamed:@"navigationBarBackground.png"];
     }
     return self;
 }

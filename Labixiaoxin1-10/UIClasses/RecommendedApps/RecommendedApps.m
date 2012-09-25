@@ -56,15 +56,15 @@
     }
     _thePromptView = self.navigationController.view;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"canvas.png"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage retina4ImageNamed:@"canvas.png"]];
     self.title = NSLocalizedString(@"精彩推荐", nil);
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     if (0 && IS_IPAD) {
-        [backButton setBackgroundImage:[[UIImage imageNamed:@"back2.png"] stretchableImageWithLeftCapWidth:14.0 topCapHeight:15.0] forState:UIControlStateNormal];
+        [backButton setBackgroundImage:[[UIImage retina4ImageNamed:@"back2.png"] stretchableImageWithLeftCapWidth:14.0 topCapHeight:15.0] forState:UIControlStateNormal];
         backButton.titleLabel.font = [UIFont boldSystemFontOfSize:16];
     } else {
-        [backButton setBackgroundImage:[[UIImage imageNamed:@"back.png"] stretchableImageWithLeftCapWidth:14.0 topCapHeight:15.0] forState:UIControlStateNormal];
+        [backButton setBackgroundImage:[[UIImage retina4ImageNamed:@"back.png"] stretchableImageWithLeftCapWidth:14.0 topCapHeight:15.0] forState:UIControlStateNormal];
         backButton.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
     }    // Set the title to use the same font and shadow as the standard back button
     backButton.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
@@ -85,7 +85,7 @@
     _mTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     _mTableView.delegate = self;
     _mTableView.dataSource = self;
-    _mTableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"canvas.png"]];
+    _mTableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage retina4ImageNamed:@"canvas.png"]];
     _mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _mTableView.dataLoadDelegate = (id<UMUFPTableViewDataLoadDelegate>)self;
     [self.view addSubview:_mTableView];
@@ -93,7 +93,7 @@
     //如果设置了tableview的dataLoadDelegate，请在viewController销毁时将tableview的dataLoadDelegate置空，这样可以避免一些可能的delegate问题，虽然我有在tableview的dealloc方法中将其置空
     
     _mLoadingWaitView = [[UIView alloc] initWithFrame:self.view.bounds];
-    _mLoadingWaitView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"canvas.png"]];
+    _mLoadingWaitView.backgroundColor = [UIColor colorWithPatternImage:[UIImage retina4ImageNamed:@"canvas.png"]];
     _mLoadingWaitView.autoresizesSubviews = YES;
     _mLoadingWaitView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     
@@ -171,9 +171,9 @@
         }
         
         if (indexPath.row % 2 == 0) {
-            cell.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"moreAppsBg1.png"] stretchableImageWithLeftCapWidth:160 topCapHeight:35]];
+            cell.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage retina4ImageNamed:@"moreAppsBg1.png"] stretchableImageWithLeftCapWidth:160 topCapHeight:35]];
         } else {
-            cell.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"moreAppsBg2.png"] stretchableImageWithLeftCapWidth:160 topCapHeight:35]];
+            cell.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage retina4ImageNamed:@"moreAppsBg2.png"] stretchableImageWithLeftCapWidth:160 topCapHeight:35]];
         }
         
         NSDictionary *promoter = [_mTableView.mPromoterDatas objectAtIndex:indexPath.row];
@@ -248,7 +248,7 @@
     _mLoadingActivityIndicator.hidden = YES;
     
     if (!_mNoNetworkImageView) {
-        UIImage *image = [UIImage imageNamed:@"um_nonetwork.png"];
+        UIImage *image = [UIImage retina4ImageNamed:@"um_nonetwork.png"];
         CGSize imageSize = image.size;
         _mNoNetworkImageView = [[UIImageView alloc] initWithFrame:CGRectMake((_mLoadingWaitView.bounds.size.width - imageSize.width) / 2, 80, imageSize.width, imageSize.height)];
         _mNoNetworkImageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;

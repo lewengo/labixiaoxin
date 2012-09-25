@@ -47,7 +47,7 @@
         UITapGestureRecognizer *reco = (UITapGestureRecognizer *)sender;
         if ([reco view].tag == 1) {
             [[reco view] removeFromSuperview];
-            UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"userGuide2.png"]];
+            UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"userGuide2.png"]];
             imageView.tag = 2;
             imageView.frame = _backgroundView.bounds;
             [_backgroundView addSubview:imageView];
@@ -113,9 +113,9 @@
 {
     if (IS_IPAD) {
 #ifdef Is_Only_Portrait
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"userGuide2.png"]];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"userGuide2.png"]];
 #else
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"userGuide2-Landscape.png"]];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"userGuide2-Landscape.png"]];
 #endif
         imageView.tag = 2;
         imageView.frame = _backgroundView.bounds;
@@ -125,7 +125,7 @@
         [imageView addGestureRecognizer:tapGesture];
         imageView.userInteractionEnabled = YES;
     } else {
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"userGuide1.png"]];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"userGuide1.png"]];
         imageView.tag = 1;
         imageView.frame = _backgroundView.bounds;
         [_backgroundView addSubview:imageView];
@@ -141,7 +141,7 @@
 
 - (void)arrangeFloatGuides
 {
-    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"userGuideBackground.jpg"]];
+    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"userGuideBackground.jpg"]];
     [_backgroundView addSubview:backgroundImage];
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
@@ -154,7 +154,7 @@
     for (int ii = 0; ii < FLOATGUIDEIMAGECOUNT; ii++) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(ii * 320, 0, 320, 460)];
         imageView.backgroundColor = [UIColor clearColor];
-        imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"floatUserGuide%d.jpg", ii]];
+        imageView.image = [UIImage retina4ImageNamed:[NSString stringWithFormat:@"floatUserGuide%d.jpg", ii]];
         imageView.tag = ii;
         [scrollView addSubview:imageView];
     }
@@ -166,7 +166,7 @@
     
     [_backgroundView addSubview:scrollView];
     
-    UIImageView *floatView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"floatIcon.png"]];
+    UIImageView *floatView = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"floatIcon.png"]];
     floatView.tag = FLOATICONTAG;
     floatView.frame = CGRectMake(floatView.frame.origin.x, floatView.frame.origin.y, floatView.frame.size.width / 2, floatView.frame.size.height / 2);
     [_backgroundView addSubview:floatView];
@@ -177,8 +177,8 @@
 //    imageDot.numberOfPages = USERGUIDEIMAGECOUNT;
 //    imageDot.currentPage = 0;
 //    imageDot.tag = USERGUIDEPAGECONTROLTAG;
-//    imageDot.image = [UIImage imageNamed:@"userGuide_off.png"];
-//    imageDot.selectedImage = [UIImage imageNamed:@"userGuide_on.png"];
+//    imageDot.image = [UIImage retina4ImageNamed:@"userGuide_off.png"];
+//    imageDot.selectedImage = [UIImage retina4ImageNamed:@"userGuide_on.png"];
 //    imageDot.padding = 5;
     
 //    [_backgroundView addSubview:imageDot];   

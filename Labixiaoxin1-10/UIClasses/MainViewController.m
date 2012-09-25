@@ -73,8 +73,8 @@
     CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
     if (_moreBookButton == nil) {
         _moreBookButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_moreBookButton setBackgroundImage:[[UIImage imageNamed:@"button.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
-//        [_moreBookButton setBackgroundImage:[[UIImage imageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
+        [_moreBookButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
+//        [_moreBookButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
         // Set the title to use the same font and shadow as the standard back button
         _moreBookButton.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
         _moreBookButton.titleLabel.textColor = [UIColor whiteColor];
@@ -89,7 +89,7 @@
         [customNavigationBar setText:NSLocalizedString(@"More cartoon", nil) onBackButton:_moreBookButton leftCapWidth:10.0];
         [_moreBookButton addTarget:self action:@selector(moreBook:) forControlEvents:UIControlEventTouchUpInside];
         
-        UIImage *bageBg = [[UIImage imageNamed:@"notificaionBubble.png"] stretchableImageWithLeftCapWidth:12.0f topCapHeight:8.0f];
+        UIImage *bageBg = [[UIImage retina4ImageNamed:@"notificaionBubble.png"] stretchableImageWithLeftCapWidth:12.0f topCapHeight:8.0f];
         _baggeButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_baggeButton setBackgroundImage:bageBg forState:UIControlStateNormal];
         _baggeButton.titleEdgeInsets = UIEdgeInsetsMake(-1, 2, 0, 0);
@@ -192,7 +192,7 @@
     
 #ifndef Is_Only_Portrait
     if (IS_IPAD) {
-        self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bookShelf.png"]];
+        self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage retina4ImageNamed:@"bookShelf.png"]];
     }
 #endif
     if (IS_IPAD) {
@@ -202,7 +202,7 @@
 #ifdef ADD_APPLIST
     CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
     UIButton *moreApp = [UIButton buttonWithType:UIButtonTypeCustom];
-    [moreApp setBackgroundImage:[[UIImage imageNamed:@"button.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
+    [moreApp setBackgroundImage:[[UIImage retina4ImageNamed:@"button.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
     // Set the title to use the same font and shadow as the standard back button
     moreApp.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
     moreApp.titleLabel.textColor = [UIColor whiteColor];
@@ -293,12 +293,12 @@
         UIImageView *stand = nil;
         if (IS_IPAD) {
 #ifdef Is_Only_Portrait
-            stand = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"volumStand.png"]];
+            stand = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"volumStand.png"]];
 #else
-            stand = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"volumStandLandscape.png"]];
+            stand = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"volumStandLandscape.png"]];
 #endif
         } else {
-            stand = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"volumStand.png"]];
+            stand = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"volumStand.png"]];
         }
         stand.frame = CGRectMake(stand.frame.origin.x, [self tableView:tableView heightForRowAtIndexPath:indexPath] - stand.frame.size.height, stand.frame.size.width, stand.frame.size.height);
         [cell.contentView addSubview:stand];

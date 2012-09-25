@@ -105,8 +105,8 @@
     } else {
         CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
         UIButton *removeAd = [UIButton buttonWithType:UIButtonTypeCustom];
-        [removeAd setBackgroundImage:[[UIImage imageNamed:@"button.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
-        //        [_moreBookButton setBackgroundImage:[[UIImage imageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
+        [removeAd setBackgroundImage:[[UIImage retina4ImageNamed:@"button.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
+        //        [_moreBookButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
         // Set the title to use the same font and shadow as the standard back button
         removeAd.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
         removeAd.titleLabel.textColor = [UIColor whiteColor];
@@ -209,8 +209,8 @@
     
     CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [backButton setBackgroundImage:[[UIImage imageNamed:@"back.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
-    //    [commentButton setBackgroundImage:[[UIImage imageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
+    [backButton setBackgroundImage:[[UIImage retina4ImageNamed:@"back.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
+    //    [commentButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
     // Set the title to use the same font and shadow as the standard back button
     backButton.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
     backButton.titleLabel.textColor = [UIColor whiteColor];
@@ -228,7 +228,7 @@
     
     [self relayoutRemoveAdButton];
     
-    UIImage *menuImage = [UIImage imageNamed:@"menuBg.png"];
+    UIImage *menuImage = [UIImage retina4ImageNamed:@"menuBg.png"];
     menuButton.frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - 49, 66, 49);
     [menuButton setBackgroundImage:menuImage forState:UIControlStateNormal];
     pageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, 60, bottomBar.frame.size.height - 10)];
@@ -471,9 +471,9 @@
 - (void)reloadMenuBg
 {
     if (self.navigationController.navigationBar.alpha == 0.0) {
-        [menuButton setBackgroundImage:[UIImage imageNamed:@"menuBgShow.png"] forState:UIControlStateNormal];
+        [menuButton setBackgroundImage:[UIImage retina4ImageNamed:@"menuBgShow.png"] forState:UIControlStateNormal];
     } else {
-        [menuButton setBackgroundImage:[UIImage imageNamed:@"menuBg.png"] forState:UIControlStateNormal];
+        [menuButton setBackgroundImage:[UIImage retina4ImageNamed:@"menuBg.png"] forState:UIControlStateNormal];
     }
 }
 
@@ -549,7 +549,7 @@
 
 - (UIImage *)getImage:(NSInteger)index
 {
-    return [UIImage imageNamed:[NSString stringWithFormat:@"%d-%d.jpg", [self.volumStatus.volumId intValue] + 1 + CURRENTBOOK_START, index + 1]];
+    return [UIImage retina4ImageNamed:[NSString stringWithFormat:@"%d-%d.jpg", [self.volumStatus.volumId intValue] + 1 + CURRENTBOOK_START, index + 1]];
 }
 
 // called before touchesBegan:withEvent: is called on the gesture recognizer for a new touch. return NO to prevent the gesture recognizer from seeing this touch
@@ -633,12 +633,12 @@
     realRect.size.height -= 50;
 #endif
     NSInteger firstIndex = (page - 1) * 2;
-    UIImageView *firstView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d-%d.jpg", [self.volumStatus.volumId intValue] + 1 + CURRENTBOOK_START, firstIndex + 1]]];
+    UIImageView *firstView = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:[NSString stringWithFormat:@"%d-%d.jpg", [self.volumStatus.volumId intValue] + 1 + CURRENTBOOK_START, firstIndex + 1]]];
     firstView.frame = CGRectMake(0, 0, CGRectGetWidth(firstView.frame) * realRect.size.height / CGRectGetHeight(firstView.frame), realRect.size.height);
     
     UIImageView *secondView = nil;
     if (firstIndex + 1 < count) {
-        secondView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d-%d.jpg", [self.volumStatus.volumId intValue] + 1 + CURRENTBOOK_START, firstIndex + 2]]];
+        secondView = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:[NSString stringWithFormat:@"%d-%d.jpg", [self.volumStatus.volumId intValue] + 1 + CURRENTBOOK_START, firstIndex + 2]]];
     } else {
         secondView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(firstView.frame), CGRectGetHeight(firstView.frame))];
     }

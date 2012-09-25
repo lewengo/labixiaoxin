@@ -967,8 +967,8 @@
 		[panRecognizer setMaximumNumberOfTouches:1];
 		[self addGestureRecognizer:panRecognizer];
 		
-		flipIllusionPortrait = [UIImage imageNamed:@"flip-illusion-oriented.jpg"];
-		flipIllusionLandscape = [UIImage imageNamed:@"flip-illusion.png"];
+		flipIllusionPortrait = [UIImage retina4ImageNamed:@"flip-illusion-oriented.jpg"];
+		flipIllusionLandscape = [UIImage retina4ImageNamed:@"flip-illusion.png"];
 		
 		animating = FALSE;
     }
