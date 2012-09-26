@@ -298,23 +298,21 @@
 {
     if (IS_IPAD) {
         if (theIndex == 0) {
-            return NSLocalizedString(@"推荐", nil);
+            return NSLocalizedString(@"我的漫画", nil);
         } else if (theIndex == 1) {
-            return NSLocalizedString(@"下载", nil);
+            return NSLocalizedString(@"More cartoon", nil);
         } else if (theIndex == 2) {
-            return NSLocalizedString(@"最近阅读", nil);
-        } else if (theIndex == 3) {
-            return NSLocalizedString(@"更多", nil);
+            return NSLocalizedString(@"更 多", nil);
         } else {
             return nil;
         }
     } else {
         if (theIndex == 0) {
-            return NSLocalizedString(@"推荐", nil);
-        } else if (theIndex == 1) {
             return NSLocalizedString(@"我的漫画", nil);
+        } else if (theIndex == 1) {
+            return NSLocalizedString(@"More cartoon", nil);
         } else if (theIndex == 2) {
-            return NSLocalizedString(@"更多", nil);
+            return NSLocalizedString(@"更 多", nil);
         } else {
             return nil;
         }
