@@ -52,19 +52,23 @@
     UITapGestureRecognizer *gesture = sender;
     VolumImageView *view = (VolumImageView *)[gesture view];
     
+    AppDelegate *delegate = [AppDelegate theAppDelegate];
+    
 #ifndef Is_Only_Portrait
     if (IS_IPAD) {
         FlipVolumViewController *fliper = [[FlipVolumViewController alloc] initWithNibName:@"FlipVolumViewController" bundle:nil];
         fliper.volumStatus = view.volum;
         [[DataEngine sharedInstance] saveCurrentVolum:[view.volum.volumId intValue]];
-        [self.navigationController pushViewController:fliper animated:YES];
+        [delegate.appRootController pushViewController:fliper animated:YES];
+//        [self.navigationController pushViewController:fliper animated:YES];
     } else
 #endif
     {
         VolumViewControllerViewController *controller = [[VolumViewControllerViewController alloc] initWithNibName:@"VolumViewControllerViewController" bundle:nil];
         controller.volumStatus = view.volum;
         [[DataEngine sharedInstance] saveCurrentVolum:[view.volum.volumId intValue]];
-        [self.navigationController pushViewController:controller animated:YES];
+        [delegate.appRootController pushViewController:controller animated:YES];
+//        [self.navigationController pushViewController:controller animated:YES];
     }
 }
 

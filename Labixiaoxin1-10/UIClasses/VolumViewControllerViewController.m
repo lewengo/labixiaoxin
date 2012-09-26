@@ -10,7 +10,6 @@
 #import "DataEngine.h"
 #import "VolumStatus.h"
 #import "GADBannerView.h"
-#import "CustomNavigationBar.h"
 #import "Constants.h"
 #import "AppDelegate.h"
 #import "YouMiView.h"
@@ -118,7 +117,6 @@
     if ([delegate adRemoved]) {
         self.navigationItem.rightBarButtonItem = nil;
     } else {
-        CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
         UIButton *removeAd = [UIButton buttonWithType:UIButtonTypeCustom];
         [removeAd setBackgroundImage:[[UIImage retina4ImageNamed:@"button.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
         //        [_moreBookButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
@@ -133,7 +131,7 @@
         removeAd.titleEdgeInsets = UIEdgeInsetsMake(0, 6.0, 0, 3.0);
         // Make the button as high as the passed in image
         removeAd.frame = CGRectMake(0, 0, 56, 28);
-        [customNavigationBar setText:NSLocalizedString(@"移除广告", nil) onBackButton:removeAd leftCapWidth:10.0];
+        [naviBar setText:NSLocalizedString(@"移除广告", nil) onBackButton:removeAd leftCapWidth:10.0];
         [removeAd addTarget:self action:@selector(removeAd:) forControlEvents:UIControlEventTouchUpInside];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:removeAd];
     }
@@ -245,7 +243,7 @@
 	recycledPages = [[NSMutableSet alloc] init];
 	[self tilePages];
     
-    CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
+    [naviBar pushNavigationItem:self.navigationItem animated:YES];
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [backButton setBackgroundImage:[[UIImage retina4ImageNamed:@"back.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
     //    [commentButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
@@ -260,7 +258,7 @@
     backButton.titleEdgeInsets = UIEdgeInsetsMake(0, 6.0, 0, 3.0);
     // Make the button as high as the passed in image
     backButton.frame = CGRectMake(0, 0, 56, 28);
-    [customNavigationBar setText:[NSString stringWithFormat:@" %@", NSLocalizedString(@"Back", nil)] onBackButton:backButton leftCapWidth:10.0];
+    [naviBar setText:[NSString stringWithFormat:@" %@", NSLocalizedString(@"Back", nil)] onBackButton:backButton leftCapWidth:10.0];
     [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     
@@ -371,8 +369,8 @@
 	// Super
 	[super viewWillAppear:animated];
 	
-    self.navigationController.navigationBar.tintColor = nil;
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    naviBar.tintColor = nil;
+    naviBar.barStyle = UIBarStyleBlackTranslucent;
     
 	// Layout
 	[self performLayout];
@@ -392,12 +390,12 @@
 	// Super
 	[super viewWillDisappear:animated];
     
-    self.navigationController.navigationBar.tintColor = nil;
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    naviBar.tintColor = nil;
+    naviBar.barStyle = UIBarStyleBlackOpaque;
     
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
     self.wantsFullScreenLayout = NO;
-    self.navigationController.navigationBar.alpha = 1.0;
+    naviBar.alpha = 1.0;
 	// Cancel any hiding timers
 	[self cancelControlHiding];
 	[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(reloadAd) object:nil];
@@ -637,7 +635,7 @@
 
 - (void)reloadMenuBg
 {
-    if (self.navigationController.navigationBar.alpha == 0.0) {
+    if (naviBar.alpha == 0.0) {
         [menuButton setBackgroundImage:[UIImage retina4ImageNamed:@"menuBgShow.png"] forState:UIControlStateNormal];
     } else {
         [menuButton setBackgroundImage:[UIImage retina4ImageNamed:@"menuBg.png"] forState:UIControlStateNormal];
@@ -662,14 +660,14 @@
 	}
 	
 	// Set navigation bar frame
-	CGRect navBarFrame = self.navigationController.navigationBar.frame;
+	CGRect navBarFrame = naviBar.frame;
 	navBarFrame.origin.y = statusBarHeight;
-	self.navigationController.navigationBar.frame = navBarFrame;
+	naviBar.frame = navBarFrame;
 	
 	// Bars
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.35];
-	[self.navigationController.navigationBar setAlpha:hidden ? 0 : 1];
+	[naviBar setAlpha:hidden ? 0 : 1];
 	[toolbar setAlpha:hidden ? 0 : 1];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationDidStopSelector:@selector(reloadMenuBg)];

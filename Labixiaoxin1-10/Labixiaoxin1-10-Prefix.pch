@@ -17,6 +17,7 @@
     #import "ChangeConstants.h"
     #import "DeviceHardware.h"
     #import "UIImageExtra.h"
+    #import "AppDelegate.h"
 #endif
 
 #define IS_IPAD ([[UIDevice currentDevice] respondsToSelector:@selector(userInterfaceIdiom)] && [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)

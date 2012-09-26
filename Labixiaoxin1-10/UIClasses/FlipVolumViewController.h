@@ -14,6 +14,7 @@
 #import "MobWinBannerView.h"
 #import "DMAdView.h"
 #import "UMUFPBannerView.h"
+#import "CustomNavigationBar.h"
 
 @class GADBannerView;
 @class VolumStatus;
@@ -27,6 +28,7 @@
 	NSUInteger pageIndexBeforeRotation;
 	
 	// Navigation & controls
+    IBOutlet CustomNavigationBar *naviBar;
     IBOutlet UIToolbar *bottomBar;
 	NSTimer *controlVisibilityTimer;
     UISlider *pageSlider;

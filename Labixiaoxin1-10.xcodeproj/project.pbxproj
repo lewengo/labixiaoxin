@@ -1367,8 +1367,6 @@
 		0BC6E0AB1571D37500256604 /* bookBgLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC6E0A91571D37500256604 /* bookBgLandscape.png */; };
 		0BC6E0AC1571D37500256604 /* bookBgLandscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC6E0AA1571D37500256604 /* bookBgLandscape@2x.png */; };
 		0BCC2F1C1611FC4300E3B379 /* UIImageExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BCC2F1B1611FC4300E3B379 /* UIImageExtra.m */; };
-		0BCC2F251611FE5C00E3B379 /* LBSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCC2F211611FE5C00E3B379 /* LBSSDK.framework */; };
-		0BCC2F261611FE5C00E3B379 /* MobWin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCC2F221611FE5C00E3B379 /* MobWin.a */; };
 		0BCC2F3A1611FFCD00E3B379 /* bottomBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BCC2F301611FFCD00E3B379 /* bottomBarBackground.png */; };
 		0BCC2F3B1611FFCD00E3B379 /* bottomBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BCC2F311611FFCD00E3B379 /* bottomBarBackground@2x.png */; };
 		0BCC2F3C1611FFCD00E3B379 /* bottomBarBackground@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BCC2F321611FFCD00E3B379 /* bottomBarBackground@2x~ipad.png */; };
@@ -1446,6 +1444,8 @@
 		33D57C17160C677E0016F32F /* canvas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33D57C11160C677E0016F32F /* canvas@2x.png */; };
 		33D57C18160C677E0016F32F /* canvas@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 33D57C12160C677E0016F32F /* canvas@2x~ipad.png */; };
 		33D57C19160C677E0016F32F /* canvas~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 33D57C13160C677E0016F32F /* canvas~ipad.png */; };
+		33D9C8931612CDBA0090DE74 /* LBSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D9C88F1612CDBA0090DE74 /* LBSSDK.framework */; };
+		33D9C8941612CDBA0090DE74 /* MobWin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D9C8901612CDBA0090DE74 /* MobWin.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2898,10 +2898,6 @@
 		0BC6E0AA1571D37500256604 /* bookBgLandscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookBgLandscape@2x.png"; sourceTree = "<group>"; };
 		0BCC2F1A1611FC4300E3B379 /* UIImageExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageExtra.h; sourceTree = "<group>"; };
 		0BCC2F1B1611FC4300E3B379 /* UIImageExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageExtra.m; sourceTree = "<group>"; };
-		0BCC2F211611FE5C00E3B379 /* LBSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LBSSDK.framework; sourceTree = "<group>"; };
-		0BCC2F221611FE5C00E3B379 /* MobWin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = MobWin.a; sourceTree = "<group>"; };
-		0BCC2F231611FE5C00E3B379 /* MobWinBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobWinBannerView.h; sourceTree = "<group>"; };
-		0BCC2F241611FE5C00E3B379 /* MobWinBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobWinBannerViewDelegate.h; sourceTree = "<group>"; };
 		0BCC2F301611FFCD00E3B379 /* bottomBarBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomBarBackground.png; sourceTree = "<group>"; };
 		0BCC2F311611FFCD00E3B379 /* bottomBarBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottomBarBackground@2x.png"; sourceTree = "<group>"; };
 		0BCC2F321611FFCD00E3B379 /* bottomBarBackground@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottomBarBackground@2x~ipad.png"; sourceTree = "<group>"; };
@@ -3006,6 +3002,10 @@
 		33D57C11160C677E0016F32F /* canvas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canvas@2x.png"; sourceTree = "<group>"; };
 		33D57C12160C677E0016F32F /* canvas@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canvas@2x~ipad.png"; sourceTree = "<group>"; };
 		33D57C13160C677E0016F32F /* canvas~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canvas~ipad.png"; sourceTree = "<group>"; };
+		33D9C88F1612CDBA0090DE74 /* LBSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LBSSDK.framework; sourceTree = "<group>"; };
+		33D9C8901612CDBA0090DE74 /* MobWin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = MobWin.a; sourceTree = "<group>"; };
+		33D9C8911612CDBA0090DE74 /* MobWinBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobWinBannerView.h; sourceTree = "<group>"; };
+		33D9C8921612CDBA0090DE74 /* MobWinBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobWinBannerViewDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3037,8 +3037,8 @@
 				33D57BD8160C595C0016F32F /* libMobClickLibrary.a in Frameworks */,
 				33D57C00160C5A000016F32F /* libUMAppNetwork.a in Frameworks */,
 				0B690D60160CA7C6009D9009 /* libYouMi.a in Frameworks */,
-				0BCC2F251611FE5C00E3B379 /* LBSSDK.framework in Frameworks */,
-				0BCC2F261611FE5C00E3B379 /* MobWin.a in Frameworks */,
+				33D9C8931612CDBA0090DE74 /* LBSSDK.framework in Frameworks */,
+				33D9C8941612CDBA0090DE74 /* MobWin.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3205,7 +3205,7 @@
 		0B49BB46154FDC8D004B8AC1 /* Labixiaoxin1-10 */ = {
 			isa = PBXGroup;
 			children = (
-				0BCC2F1E1611FE5C00E3B379 /* MobWIN */,
+				33D9C88C1612CDBA0090DE74 /* MobWin */,
 				33D57BDE160C5A000016F32F /* UMengAd */,
 				33D57BD5160C595C0016F32F /* Analytics */,
 				0B54B38D15E5264B003FE113 /* ToChanged */,
@@ -4907,33 +4907,6 @@
 			path = IMAGE;
 			sourceTree = "<group>";
 		};
-		0BCC2F1E1611FE5C00E3B379 /* MobWIN */ = {
-			isa = PBXGroup;
-			children = (
-				0BCC2F1F1611FE5C00E3B379 /* build */,
-				0BCC2F221611FE5C00E3B379 /* MobWin.a */,
-				0BCC2F231611FE5C00E3B379 /* MobWinBannerView.h */,
-				0BCC2F241611FE5C00E3B379 /* MobWinBannerViewDelegate.h */,
-			);
-			path = MobWIN;
-			sourceTree = "<group>";
-		};
-		0BCC2F1F1611FE5C00E3B379 /* build */ = {
-			isa = PBXGroup;
-			children = (
-				0BCC2F201611FE5C00E3B379 /* Framework */,
-			);
-			path = build;
-			sourceTree = "<group>";
-		};
-		0BCC2F201611FE5C00E3B379 /* Framework */ = {
-			isa = PBXGroup;
-			children = (
-				0BCC2F211611FE5C00E3B379 /* LBSSDK.framework */,
-			);
-			path = Framework;
-			sourceTree = "<group>";
-		};
 		0BCC2F2F1611FFCC00E3B379 /* CustomTabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -5051,6 +5024,33 @@
 				33D57C0C160C5B490016F32F /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		33D9C88C1612CDBA0090DE74 /* MobWin */ = {
+			isa = PBXGroup;
+			children = (
+				33D9C88D1612CDBA0090DE74 /* build */,
+				33D9C8901612CDBA0090DE74 /* MobWin.a */,
+				33D9C8911612CDBA0090DE74 /* MobWinBannerView.h */,
+				33D9C8921612CDBA0090DE74 /* MobWinBannerViewDelegate.h */,
+			);
+			path = MobWin;
+			sourceTree = "<group>";
+		};
+		33D9C88D1612CDBA0090DE74 /* build */ = {
+			isa = PBXGroup;
+			children = (
+				33D9C88E1612CDBA0090DE74 /* Framework */,
+			);
+			path = build;
+			sourceTree = "<group>";
+		};
+		33D9C88E1612CDBA0090DE74 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				33D9C88F1612CDBA0090DE74 /* LBSSDK.framework */,
+			);
+			path = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -6688,12 +6688,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xiaoxiao wei (DSXR77A9C9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: levin wei (JEDJ7ZXY76)";
 				COMPRESS_PNG_FILES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Labixiaoxin1-10/MobWIN\"",
 					"\"$(SRCROOT)/Labixiaoxin1-10/MobWIN/build/Framework\"",
+					"\"$(SRCROOT)/Labixiaoxin1-10/MobWin/build/Framework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Labixiaoxin1-10/Labixiaoxin1-10-Prefix.pch";
@@ -6709,9 +6710,10 @@
 					"\"$(SRCROOT)/Labixiaoxin1-10/DomobAdSDK\"",
 					"\"$(SRCROOT)/Labixiaoxin1-10/UMengAd\"",
 					"\"$(SRCROOT)/Labixiaoxin1-10/Analytics\"",
+					"\"$(SRCROOT)/Labixiaoxin1-10/MobWin\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8BA15C70-B158-4717-ACB1-97236F5093C6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "92448954-7EEC-48A4-9F32-3179562D960F";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -6726,6 +6728,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Labixiaoxin1-10/MobWIN\"",
 					"\"$(SRCROOT)/Labixiaoxin1-10/MobWIN/build/Framework\"",
+					"\"$(SRCROOT)/Labixiaoxin1-10/MobWin/build/Framework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Labixiaoxin1-10/Labixiaoxin1-10-Prefix.pch";
@@ -6741,6 +6744,7 @@
 					"\"$(SRCROOT)/Labixiaoxin1-10/DomobAdSDK\"",
 					"\"$(SRCROOT)/Labixiaoxin1-10/UMengAd\"",
 					"\"$(SRCROOT)/Labixiaoxin1-10/Analytics\"",
+					"\"$(SRCROOT)/Labixiaoxin1-10/MobWin\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FA0728E2-35C8-4D7B-B541-F6D814F6DDA0";
