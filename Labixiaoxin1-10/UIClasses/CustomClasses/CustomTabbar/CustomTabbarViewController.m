@@ -238,7 +238,7 @@
         if (theIndex == 0) {
             return @"MainViewController";
         } else if (theIndex == 1) {
-            return @"MyDownloadList_Ipad";
+            return @"MoreAppsControllerViewController";
         } else if (theIndex == 2) {
             return @"RecentController_Ipad";
         } else if (theIndex == 3) {
@@ -250,7 +250,7 @@
         if (theIndex == 0) {
             return @"MainViewController";
         } else if (theIndex == 1) {
-            return @"MyComicsController_iPhone";
+            return @"MoreAppsControllerViewController";
         } else if (theIndex == 2) {
             return @"MoreController";
         } else {
@@ -298,7 +298,7 @@
 {
     if (IS_IPAD) {
         if (theIndex == 0) {
-            return NSLocalizedString(@"我的漫画", nil);
+            return NSLocalizedString(@"Book name", nil);
         } else if (theIndex == 1) {
             return NSLocalizedString(@"More cartoon", nil);
         } else if (theIndex == 2) {
@@ -308,7 +308,7 @@
         }
     } else {
         if (theIndex == 0) {
-            return NSLocalizedString(@"我的漫画", nil);
+            return NSLocalizedString(@"Book name", nil);
         } else if (theIndex == 1) {
             return NSLocalizedString(@"More cartoon", nil);
         } else if (theIndex == 2) {
@@ -322,13 +322,13 @@
 - (UIColor *)tabbarItemTitleColorNormal:(CTTabbarControl *)tabbar
                                 atIndex:(NSInteger)theIndex
 {
-    return [UIColor colorWithRed:218.0 / 255 green:225.0 / 255 blue:229.0 / 255 alpha:1.0];
+    return [UIColor colorWithRed:62 / 255.0 green:62 / 255.0 blue:62 / 255.0 alpha:1.0];
 }
 
 - (UIColor *)tabbarItemTitleColorSelected:(CTTabbarControl *)tabbar
                                   atIndex:(NSInteger)theIndex
 {
-    return [UIColor colorWithRed:57 / 255.0 green:171 / 255.0 blue:243 / 255.0 alpha:1.0];
+    return [UIColor colorWithRed:240 / 255.0 green:34 / 255.0 blue:7 / 255.0 alpha:1.0];
 }
 
 - (UIFont *)tabbarItemTitleFont:(CTTabbarControl *)tabbar
@@ -342,21 +342,19 @@
 {
     if (IS_IPAD) {
         if (theIndex == 0) {
-            return [UIImage retina4ImageNamed:@"TabRecommend.png"];
+            return [UIImage retina4ImageNamed:@"TabComic.png"];
         } else if (theIndex == 1) {
-            return [UIImage retina4ImageNamed:@"TabMyComics.png"];
+            return [UIImage retina4ImageNamed:@"TabRecommend.png"];
         } else if (theIndex == 2) {
-            return [UIImage retina4ImageNamed:@"TabRecent.png"];
-        } else if (theIndex == 3) {
             return [UIImage retina4ImageNamed:@"TabMore.png"];
         } else {
             return nil;
         }
     } else {
         if (theIndex == 0) {
-            return [UIImage retina4ImageNamed:@"TabRecommend.png"];
+            return [UIImage retina4ImageNamed:@"TabComic.png"];
         } else if (theIndex == 1) {
-            return [UIImage retina4ImageNamed:@"TabMyComics.png"];
+            return [UIImage retina4ImageNamed:@"TabRecommend.png"];
         } else if (theIndex == 2) {
             return [UIImage retina4ImageNamed:@"TabMore.png"];
         } else {
@@ -376,21 +374,19 @@
 {
     if (IS_IPAD) {
         if (theIndex == 0) {
-            return [UIImage retina4ImageNamed:@"TabRecommend_select.png"];
+            return [UIImage retina4ImageNamed:@"TabComic_select.png"];
         } else if (theIndex == 1) {
-            return [UIImage retina4ImageNamed:@"TabMyComics_select.png"];
+            return [UIImage retina4ImageNamed:@"TabRecommend_select.png"];
         } else if (theIndex == 2) {
-            return [UIImage retina4ImageNamed:@"TabRecent_select.png"];
-        } else if (theIndex == 3) {
             return [UIImage retina4ImageNamed:@"TabMore_select.png"];
         } else {
             return nil;
         }
     } else {
         if (theIndex == 0) {
-            return [UIImage retina4ImageNamed:@"TabRecommend_select.png"];
+            return [UIImage retina4ImageNamed:@"TabComic_select.png"];
         } else if (theIndex == 1) {
-            return [UIImage retina4ImageNamed:@"TabMyComics_select.png"];
+            return [UIImage retina4ImageNamed:@"TabRecommend_select.png"];
         } else if (theIndex == 2) {
             return [UIImage retina4ImageNamed:@"TabMore_select.png"];
         } else {
@@ -552,7 +548,7 @@
 
 - (UIEdgeInsets)titleInset:(CTTabbarControl *)tabbar atIndex:(NSInteger)theIndex
 {
-    return UIEdgeInsetsMake(33, 0, 0, 0);
+    return UIEdgeInsetsMake(26, 0, 0, 0);
 }
 
 - (void)showAnimationDidStop

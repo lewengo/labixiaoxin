@@ -62,8 +62,16 @@
         _delegate = theDelegate;
         _count = theCount;
         _selected = -1;
-        _bgImage = [_delegate tabbarBgImage:self];
+        UIImage *bgImage = [_delegate tabbarBgImage:self];
+        UIImageView *bgView = [[UIImageView alloc] initWithFrame:self.bounds];
+        bgView.image = bgImage;
+        [self addSubview:bgView];
         _orientationType = orientationType;
+        if (_orientationType == CTTabbarOrientationHorizontal) {
+            bgView.contentMode = UIViewContentModeBottom;
+        } else {
+            bgView.contentMode = UIViewContentModeLeft;
+        }
         [self initTabbar];
         UIImage *arrow = nil;
         if (_delegate && [_delegate respondsToSelector:@selector(arrowImage:)]) {
@@ -223,16 +231,16 @@
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
-    CGRect middleFrame = [_delegate tabbarButtonRect:self atIndex:1];
-    if (_orientationType == CTTabbarOrientationHorizontal) {
-        if (point.y >= 0 && point.y < [_delegate realHeightMargin:self] && ((point.x >= 0 && point.x < middleFrame.origin.x) || (point.x >= middleFrame.origin.x + middleFrame.size.width && point.x < self.frame.size.width))) {
-            return nil;
-        }
-    } else {
-        if (point.x >= (CGRectGetWidth(self.frame) - [_delegate realHeightMargin:self]) && point.x < CGRectGetWidth(self.frame) && ((point.y >= 0 && point.y < middleFrame.origin.y) || (point.y >= middleFrame.origin.y + middleFrame.size.height && point.y < self.frame.size.height))) {
-            return nil;
-        }
-    }
+//    CGRect middleFrame = [_delegate tabbarButtonRect:self atIndex:1];
+//    if (_orientationType == CTTabbarOrientationHorizontal) {
+//        if (point.y >= 0 && point.y < [_delegate realHeightMargin:self] && ((point.x >= 0 && point.x < middleFrame.origin.x) || (point.x >= middleFrame.origin.x + middleFrame.size.width && point.x < self.frame.size.width))) {
+//            return nil;
+//        }
+//    } else {
+//        if (point.x >= (CGRectGetWidth(self.frame) - [_delegate realHeightMargin:self]) && point.x < CGRectGetWidth(self.frame) && ((point.y >= 0 && point.y < middleFrame.origin.y) || (point.y >= middleFrame.origin.y + middleFrame.size.height && point.y < self.frame.size.height))) {
+//            return nil;
+//        }
+//    }
     return [super hitTest:point withEvent:event];
 }
 
@@ -316,7 +324,8 @@
     }
 }
 
-- (void)deselectItemExcept:(NSInteger)selectedIndex highlightIndex:(NSInteger)highlightIndex
+- (void)deselectItemExcept:(NSInteger)selectedIndex
+            highlightIndex:(NSInteger)highlightIndex
 {
     for (int ii = 0; ii < _count; ii++) {
         UIButton *button = [_buttons objectAtIndex:ii];
@@ -433,16 +442,6 @@
     if ([animation boolValue]) {
         [UIView commitAnimations];
     }
-}
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
- */
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-    [_bgImage drawInRect:self.bounds];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context

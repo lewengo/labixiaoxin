@@ -20,7 +20,6 @@ typedef enum {
     __unsafe_unretained id<CTTabbarControlDelegate> _delegate;
     NSInteger _count;
     NSInteger _selected;
-    UIImage *_bgImage;
     UIImageView *_arrow;
 }
 @property (nonatomic, assign) BOOL notShow;

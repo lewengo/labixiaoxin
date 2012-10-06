@@ -364,6 +364,7 @@
     naviBar.alpha = 1.0;
 	[self cancelControlHiding];
 	[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(reloadAd) object:nil];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

@@ -399,6 +399,7 @@
 	// Cancel any hiding timers
 	[self cancelControlHiding];
 	[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(reloadAd) object:nil];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
 
 

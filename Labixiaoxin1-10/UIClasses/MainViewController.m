@@ -74,63 +74,63 @@
 
 - (void)showRightButton
 {
-    CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
-    if (_moreBookButton == nil) {
-        _moreBookButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_moreBookButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
-//        [_moreBookButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
-        // Set the title to use the same font and shadow as the standard back button
-        _moreBookButton.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
-        _moreBookButton.titleLabel.textColor = [UIColor whiteColor];
-        _moreBookButton.titleLabel.shadowOffset = CGSizeMake(0,-1);
-        _moreBookButton.titleLabel.shadowColor = [UIColor darkGrayColor];
-        // Set the break mode to truncate at the end like the standard back button
-        _moreBookButton.titleLabel.lineBreakMode = UILineBreakModeTailTruncation;
-        // Inset the title on the left and right
-        _moreBookButton.titleEdgeInsets = UIEdgeInsetsMake(0, 6.0, 0, 3.0);
-        // Make the button as high as the passed in image
-        _moreBookButton.frame = CGRectMake(0, 0, 56, 28);
-        [customNavigationBar setText:NSLocalizedString(@"More cartoon", nil) onBackButton:_moreBookButton leftCapWidth:10.0];
-        [_moreBookButton addTarget:self action:@selector(moreBook:) forControlEvents:UIControlEventTouchUpInside];
-        
-        UIImage *bageBg = [[UIImage retina4ImageNamed:@"notificaionBubble.png"] stretchableImageWithLeftCapWidth:12.0f topCapHeight:8.0f];
-        _baggeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_baggeButton setBackgroundImage:bageBg forState:UIControlStateNormal];
-        _baggeButton.titleEdgeInsets = UIEdgeInsetsMake(-1, 2, 0, 0);
-        _baggeButton.titleLabel.font = [UIFont boldSystemFontOfSize:11];
-        _baggeButton.titleLabel.textAlignment = UITextAlignmentCenter;
-        _baggeButton.titleLabel.textColor = [UIColor whiteColor];
-        _baggeButton.frame = CGRectMake(CGRectGetMaxX(_moreBookButton.frame) - bageBg.size.width - 2, 2, bageBg.size.width, bageBg.size.height);
-        _baggeButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
-        [_moreBookButton addSubview:_baggeButton];
-        _baggeButton.hidden = YES;
-        _baggeButton.userInteractionEnabled = NO;
-
-    }
-    if ([UIApplication sharedApplication].applicationIconBadgeNumber > 0) {
-        [_baggeButton setTitle:[NSString stringWithFormat:@"%d", [UIApplication sharedApplication].applicationIconBadgeNumber] forState:UIControlStateNormal];
-        _baggeButton.hidden = NO;
-        _moreBookButton.titleEdgeInsets = UIEdgeInsetsMake(0, 6.0, 0, 13.0);
-        [customNavigationBar setText:NSLocalizedString(@"More cartoon", nil) onBackButton:_moreBookButton leftCapWidth:20.0];
-    } else {
-        _baggeButton.hidden = YES;
-        _moreBookButton.titleEdgeInsets = UIEdgeInsetsMake(0, 6.0, 0, 3.0);
-        [customNavigationBar setText:NSLocalizedString(@"More cartoon", nil) onBackButton:_moreBookButton leftCapWidth:10.0];
-    }
-    BOOL hasBook = NO;
-    DataEngine *dataEngine = [DataEngine sharedInstance];
-    for (Book *book in dataEngine.books) {
-        if (![book.bookId isEqualToString:BOOK_ID]) {
-            hasBook = YES;
-            break;
-        }
-    }
-    if (hasBook) {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_moreBookButton];
-
-    } else {
-        self.navigationItem.leftBarButtonItem = nil;
-    }
+//    CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
+//    if (_moreBookButton == nil) {
+//        _moreBookButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [_moreBookButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
+////        [_moreBookButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
+//        // Set the title to use the same font and shadow as the standard back button
+//        _moreBookButton.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
+//        _moreBookButton.titleLabel.textColor = [UIColor whiteColor];
+//        _moreBookButton.titleLabel.shadowOffset = CGSizeMake(0,-1);
+//        _moreBookButton.titleLabel.shadowColor = [UIColor darkGrayColor];
+//        // Set the break mode to truncate at the end like the standard back button
+//        _moreBookButton.titleLabel.lineBreakMode = UILineBreakModeTailTruncation;
+//        // Inset the title on the left and right
+//        _moreBookButton.titleEdgeInsets = UIEdgeInsetsMake(0, 6.0, 0, 3.0);
+//        // Make the button as high as the passed in image
+//        _moreBookButton.frame = CGRectMake(0, 0, 56, 28);
+//        [customNavigationBar setText:NSLocalizedString(@"More cartoon", nil) onBackButton:_moreBookButton leftCapWidth:10.0];
+//        [_moreBookButton addTarget:self action:@selector(moreBook:) forControlEvents:UIControlEventTouchUpInside];
+//        
+//        UIImage *bageBg = [[UIImage retina4ImageNamed:@"notificaionBubble.png"] stretchableImageWithLeftCapWidth:12.0f topCapHeight:8.0f];
+//        _baggeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [_baggeButton setBackgroundImage:bageBg forState:UIControlStateNormal];
+//        _baggeButton.titleEdgeInsets = UIEdgeInsetsMake(-1, 2, 0, 0);
+//        _baggeButton.titleLabel.font = [UIFont boldSystemFontOfSize:11];
+//        _baggeButton.titleLabel.textAlignment = UITextAlignmentCenter;
+//        _baggeButton.titleLabel.textColor = [UIColor whiteColor];
+//        _baggeButton.frame = CGRectMake(CGRectGetMaxX(_moreBookButton.frame) - bageBg.size.width - 2, 2, bageBg.size.width, bageBg.size.height);
+//        _baggeButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
+//        [_moreBookButton addSubview:_baggeButton];
+//        _baggeButton.hidden = YES;
+//        _baggeButton.userInteractionEnabled = NO;
+//
+//    }
+//    if ([UIApplication sharedApplication].applicationIconBadgeNumber > 0) {
+//        [_baggeButton setTitle:[NSString stringWithFormat:@"%d", [UIApplication sharedApplication].applicationIconBadgeNumber] forState:UIControlStateNormal];
+//        _baggeButton.hidden = NO;
+//        _moreBookButton.titleEdgeInsets = UIEdgeInsetsMake(0, 6.0, 0, 13.0);
+//        [customNavigationBar setText:NSLocalizedString(@"More cartoon", nil) onBackButton:_moreBookButton leftCapWidth:20.0];
+//    } else {
+//        _baggeButton.hidden = YES;
+//        _moreBookButton.titleEdgeInsets = UIEdgeInsetsMake(0, 6.0, 0, 3.0);
+//        [customNavigationBar setText:NSLocalizedString(@"More cartoon", nil) onBackButton:_moreBookButton leftCapWidth:10.0];
+//    }
+//    BOOL hasBook = NO;
+//    DataEngine *dataEngine = [DataEngine sharedInstance];
+//    for (Book *book in dataEngine.books) {
+//        if (![book.bookId isEqualToString:BOOK_ID]) {
+//            hasBook = YES;
+//            break;
+//        }
+//    }
+//    if (hasBook) {
+//        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_moreBookButton];
+//
+//    } else {
+//        self.navigationItem.leftBarButtonItem = nil;
+//    }
 }
 
 - (IBAction)comment:(id)sender
@@ -140,8 +140,8 @@
 
 - (IBAction)moreApp:(id)sender
 {
-    MoreController *more = [[MoreController alloc] initWithNibName:@"MoreController" bundle:nil];
-    [self.navigationController pushViewController:more animated:YES];
+//    MoreController *more = [[MoreController alloc] initWithNibName:@"MoreController" bundle:nil];
+//    [self.navigationController pushViewController:more animated:YES];
 }
 
 - (IBAction)moreBook:(id)sender
@@ -193,10 +193,11 @@
                                                  name:kBadgeCountChangeNotification
                                                object:nil];
     self.title = NSLocalizedString(@"Book name", nil);
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage retina4ImageNamed:@"canvas.png"]];
     
 #ifndef Is_Only_Portrait
     if (IS_IPAD) {
-        self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage retina4ImageNamed:@"bookShelf.png"]];
+        self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage retina4ImageNamed:@"canvas.png"]];
     }
 #endif
     if (IS_IPAD) {
@@ -220,7 +221,7 @@
     moreApp.frame = CGRectMake(0, 0, 56, 28);
     [customNavigationBar setText:NSLocalizedString(@"更 多", nil) onBackButton:moreApp leftCapWidth:15.0];
     [moreApp addTarget:self action:@selector(moreApp:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:moreApp];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:moreApp];
 #endif
     [self showRightButton];
 }
