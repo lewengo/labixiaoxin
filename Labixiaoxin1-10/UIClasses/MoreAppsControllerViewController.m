@@ -41,36 +41,36 @@
 
 - (void)showRightButton
 {
-    DataEngine *dataEngine = [DataEngine sharedInstance];
-    BOOL has = NO;
-    for (Book *book in dataEngine.books) {
-        if ([book.bookId isEqualToString:BOOK_ID]) {
-            has = YES;
-            break;
-        }
-    }
-    if (has) {
-        CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
-        UIButton *commentButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [commentButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
-        //    [commentButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
-        // Set the title to use the same font and shadow as the standard back button
-        commentButton.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
-        commentButton.titleLabel.textColor = [UIColor whiteColor];
-        commentButton.titleLabel.shadowOffset = CGSizeMake(0,-1);
-        commentButton.titleLabel.shadowColor = [UIColor darkGrayColor];
-        // Set the break mode to truncate at the end like the standard back button
-        commentButton.titleLabel.lineBreakMode = UILineBreakModeTailTruncation;
-        // Inset the title on the left and right
-        commentButton.titleEdgeInsets = UIEdgeInsetsMake(0, 6.0, 0, 3.0);
-        // Make the button as high as the passed in image
-        commentButton.frame = CGRectMake(0, 0, 56, 28);
-        [customNavigationBar setText:NSLocalizedString(@"comment", nil) onBackButton:commentButton leftCapWidth:10.0];
-        [commentButton addTarget:self action:@selector(comment:) forControlEvents:UIControlEventTouchUpInside];
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:commentButton];
-    } else {
-        self.navigationItem.rightBarButtonItem = nil;
-    }
+//    DataEngine *dataEngine = [DataEngine sharedInstance];
+//    BOOL has = NO;
+//    for (Book *book in dataEngine.books) {
+//        if ([book.bookId isEqualToString:BOOK_ID]) {
+//            has = YES;
+//            break;
+//        }
+//    }
+//    if (has) {
+//        CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
+//        UIButton *commentButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [commentButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
+//        //    [commentButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
+//        // Set the title to use the same font and shadow as the standard back button
+//        commentButton.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
+//        commentButton.titleLabel.textColor = [UIColor whiteColor];
+//        commentButton.titleLabel.shadowOffset = CGSizeMake(0,-1);
+//        commentButton.titleLabel.shadowColor = [UIColor darkGrayColor];
+//        // Set the break mode to truncate at the end like the standard back button
+//        commentButton.titleLabel.lineBreakMode = UILineBreakModeTailTruncation;
+//        // Inset the title on the left and right
+//        commentButton.titleEdgeInsets = UIEdgeInsetsMake(0, 6.0, 0, 3.0);
+//        // Make the button as high as the passed in image
+//        commentButton.frame = CGRectMake(0, 0, 56, 28);
+//        [customNavigationBar setText:NSLocalizedString(@"comment", nil) onBackButton:commentButton leftCapWidth:10.0];
+//        [commentButton addTarget:self action:@selector(comment:) forControlEvents:UIControlEventTouchUpInside];
+//        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:commentButton];
+//    } else {
+//        self.navigationItem.rightBarButtonItem = nil;
+//    }
 }
 
 - (void)bookListResponse:(NSNotification *)notification
@@ -129,24 +129,24 @@
                                                object:nil];
     
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage retina4ImageNamed:@"canvas.png"]];
-    CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
-    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [backButton setBackgroundImage:[[UIImage retina4ImageNamed:@"back.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
-    //    [commentButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
-    // Set the title to use the same font and shadow as the standard back button
-    backButton.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
-    backButton.titleLabel.textColor = [UIColor whiteColor];
-    backButton.titleLabel.shadowOffset = CGSizeMake(0,-1);
-    backButton.titleLabel.shadowColor = [UIColor darkGrayColor];
-    // Set the break mode to truncate at the end like the standard back button
-    backButton.titleLabel.lineBreakMode = UILineBreakModeTailTruncation;
-    // Inset the title on the left and right
-    backButton.titleEdgeInsets = UIEdgeInsetsMake(0, 6.0, 0, 3.0);
-    // Make the button as high as the passed in image
-    backButton.frame = CGRectMake(0, 0, 56, 28);
-    [customNavigationBar setText:[NSString stringWithFormat:@" %@", NSLocalizedString(@"Back", nil)] onBackButton:backButton leftCapWidth:10.0];
-    [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+//    CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
+//    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [backButton setBackgroundImage:[[UIImage retina4ImageNamed:@"back.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
+//    //    [commentButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
+//    // Set the title to use the same font and shadow as the standard back button
+//    backButton.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
+//    backButton.titleLabel.textColor = [UIColor whiteColor];
+//    backButton.titleLabel.shadowOffset = CGSizeMake(0,-1);
+//    backButton.titleLabel.shadowColor = [UIColor darkGrayColor];
+//    // Set the break mode to truncate at the end like the standard back button
+//    backButton.titleLabel.lineBreakMode = UILineBreakModeTailTruncation;
+//    // Inset the title on the left and right
+//    backButton.titleEdgeInsets = UIEdgeInsetsMake(0, 6.0, 0, 3.0);
+//    // Make the button as high as the passed in image
+//    backButton.frame = CGRectMake(0, 0, 56, 28);
+//    [customNavigationBar setText:[NSString stringWithFormat:@" %@", NSLocalizedString(@"Back", nil)] onBackButton:backButton leftCapWidth:10.0];
+//    [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     
     [self showRightButton];
 
