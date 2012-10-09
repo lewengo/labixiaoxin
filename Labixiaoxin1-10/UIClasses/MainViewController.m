@@ -60,7 +60,6 @@
         fliper.volumStatus = view.volum;
         [[DataEngine sharedInstance] saveCurrentVolum:[view.volum.volumId intValue]];
         [delegate.appRootController pushViewController:fliper animated:YES];
-//        [self.navigationController pushViewController:fliper animated:YES];
     } else
 #endif
     {
@@ -68,7 +67,6 @@
         controller.volumStatus = view.volum;
         [[DataEngine sharedInstance] saveCurrentVolum:[view.volum.volumId intValue]];
         [delegate.appRootController pushViewController:controller animated:YES];
-//        [self.navigationController pushViewController:controller animated:YES];
     }
 }
 
@@ -78,7 +76,6 @@
 //    if (_moreBookButton == nil) {
 //        _moreBookButton = [UIButton buttonWithType:UIButtonTypeCustom];
 //        [_moreBookButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
-////        [_moreBookButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
 //        // Set the title to use the same font and shadow as the standard back button
 //        _moreBookButton.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
 //        _moreBookButton.titleLabel.textColor = [UIColor whiteColor];

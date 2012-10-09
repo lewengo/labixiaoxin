@@ -1346,14 +1346,10 @@
 		0BA056061556579200E75963 /* bookBg~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055E81556579200E75963 /* bookBg~ipad.png */; };
 		0BA056071556579200E75963 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055E91556579200E75963 /* button.png */; };
 		0BA056081556579200E75963 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055EA1556579200E75963 /* button@2x.png */; };
-		0BA056091556579200E75963 /* button_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055EB1556579200E75963 /* button_selected.png */; };
-		0BA0560A1556579200E75963 /* button_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055EC1556579200E75963 /* button_selected@2x.png */; };
 		0BA0560B1556579200E75963 /* currentBookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055ED1556579200E75963 /* currentBookmark.png */; };
 		0BA0560C1556579200E75963 /* currentBookmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055EE1556579200E75963 /* currentBookmark@2x.png */; };
 		0BA0560D1556579200E75963 /* currentBookmark@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055EF1556579200E75963 /* currentBookmark@2x~ipad.png */; };
 		0BA0560E1556579200E75963 /* currentBookmark~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055F01556579200E75963 /* currentBookmark~ipad.png */; };
-		0BA0560F1556579200E75963 /* moreAppsArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055F11556579200E75963 /* moreAppsArrow.png */; };
-		0BA056101556579200E75963 /* moreAppsArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055F21556579200E75963 /* moreAppsArrow@2x.png */; };
 		0BA056111556579200E75963 /* moreAppsBg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055F31556579200E75963 /* moreAppsBg1.png */; };
 		0BA056121556579200E75963 /* moreAppsBg1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055F41556579200E75963 /* moreAppsBg1@2x.png */; };
 		0BA056131556579200E75963 /* moreAppsBg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BA055F51556579200E75963 /* moreAppsBg2.png */; };
@@ -2868,14 +2864,10 @@
 		0BA055E81556579200E75963 /* bookBg~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookBg~ipad.png"; sourceTree = "<group>"; };
 		0BA055E91556579200E75963 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		0BA055EA1556579200E75963 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
-		0BA055EB1556579200E75963 /* button_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_selected.png; sourceTree = "<group>"; };
-		0BA055EC1556579200E75963 /* button_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_selected@2x.png"; sourceTree = "<group>"; };
 		0BA055ED1556579200E75963 /* currentBookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = currentBookmark.png; sourceTree = "<group>"; };
 		0BA055EE1556579200E75963 /* currentBookmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "currentBookmark@2x.png"; sourceTree = "<group>"; };
 		0BA055EF1556579200E75963 /* currentBookmark@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "currentBookmark@2x~ipad.png"; sourceTree = "<group>"; };
 		0BA055F01556579200E75963 /* currentBookmark~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "currentBookmark~ipad.png"; sourceTree = "<group>"; };
-		0BA055F11556579200E75963 /* moreAppsArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moreAppsArrow.png; sourceTree = "<group>"; };
-		0BA055F21556579200E75963 /* moreAppsArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moreAppsArrow@2x.png"; sourceTree = "<group>"; };
 		0BA055F31556579200E75963 /* moreAppsBg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moreAppsBg1.png; sourceTree = "<group>"; };
 		0BA055F41556579200E75963 /* moreAppsBg1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moreAppsBg1@2x.png"; sourceTree = "<group>"; };
 		0BA055F51556579200E75963 /* moreAppsBg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moreAppsBg2.png; sourceTree = "<group>"; };
@@ -4799,83 +4791,79 @@
 		0BA055E01556579200E75963 /* image */ = {
 			isa = PBXGroup;
 			children = (
-				0B34CE65162089990060F1B0 /* TabComic_select.png */,
-				0B34CE66162089990060F1B0 /* TabComic_select@2x.png */,
-				0B34CE67162089990060F1B0 /* TabComic.png */,
-				0B34CE68162089990060F1B0 /* TabComic@2x.png */,
-				0B34CE69162089990060F1B0 /* TabMore_select.png */,
-				0B34CE6A162089990060F1B0 /* TabMore_select@2x.png */,
-				0B34CE6B162089990060F1B0 /* TabMore.png */,
-				0B34CE6C162089990060F1B0 /* TabMore@2x.png */,
-				0B34CE6D162089990060F1B0 /* TabRecommend_select.png */,
-				0B34CE6E162089990060F1B0 /* TabRecommend_select@2x.png */,
-				0B34CE6F162089990060F1B0 /* TabRecommend.png */,
-				0B34CE70162089990060F1B0 /* TabRecommend@2x.png */,
+				0BA055E11556579200E75963 /* appIconEmpty.png */,
 				33D57C0E160C677E0016F32F /* appIconEmpty2@2x~ipad.png */,
 				33D57C0F160C677E0016F32F /* appIconEmpty2~ipad.png */,
-				33D57C10160C677E0016F32F /* canvas.png */,
-				33D57C11160C677E0016F32F /* canvas@2x.png */,
-				33D57C12160C677E0016F32F /* canvas@2x~ipad.png */,
-				33D57C13160C677E0016F32F /* canvas~ipad.png */,
-				3375780E15E5D5CB00A528D7 /* moreButtonBg@2x~ipad.png */,
-				3375780F15E5D5CB00A528D7 /* moreButtonBg~ipad.png */,
-				3375780A15E5D2EC00A528D7 /* moreButtonBg.png */,
-				3375780B15E5D2EC00A528D7 /* moreButtonBg@2x.png */,
-				0B4C8B2A157348E100EE687D /* userGuide2-Landscape@2x~ipad.png */,
-				0B4C8B2B157348E100EE687D /* userGuide2-Landscape~ipad.png */,
-				0BC6E0A91571D37500256604 /* bookBgLandscape.png */,
-				0BC6E0AA1571D37500256604 /* bookBgLandscape@2x.png */,
-				0B5BDDC91571C454005EDDBD /* volumStandLandscape.png */,
-				0B5BDDCA1571C454005EDDBD /* volumStandLandscape@2x.png */,
-				0B6D6CA61571321E000A6EE1 /* flip-illusion-oriented.jpg */,
-				0B6D6CA71571321E000A6EE1 /* flip-illusion.png */,
-				0BE81B16156E94AE00A9F1AC /* navigationBarBackground@2x~ipad.png */,
-				0BE81B0A156E883300A9F1AC /* bookShelf@2x~ipad.png */,
-				0BE81B0B156E883300A9F1AC /* bookShelf~ipad.png */,
-				0B0961C415693AF600D295F1 /* newIcon.png */,
-				0B0961C515693AF600D295F1 /* newIcon@2x.png */,
-				0B7885D31568023500533D80 /* menuBgShow.png */,
-				0B7885D41568023500533D80 /* menuBgShow@2x.png */,
-				0B7885D51568023500533D80 /* menuBgShow@2x~ipad.png */,
-				0B7885D61568023500533D80 /* menuBgShow~ipad.png */,
-				0BD19C741566C5C000C47E4A /* userGuide2.png */,
-				0BD19C751566C5C000C47E4A /* userGuide2@2x.png */,
-				0BD19C761566C5C000C47E4A /* userGuide2@2x~ipad.png */,
-				0BD19C771566C5C000C47E4A /* userGuide2~ipad.png */,
-				0BD19C701566C24C00C47E4A /* menuBg@2x~ipad.png */,
-				0BD19C711566C24C00C47E4A /* menuBg~ipad.png */,
-				0BD19C6C1566BCF700C47E4A /* menuBg.png */,
-				0BD19C6D1566BCF700C47E4A /* menuBg@2x.png */,
-				0BDC33291556E0A0009423FB /* userGuide1.png */,
-				0BDC332A1556E0A0009423FB /* userGuide1@2x.png */,
-				0BA0561D15565AF200E75963 /* navigationBarBackground~ipad.png */,
-				0BA055E11556579200E75963 /* appIconEmpty.png */,
 				0BA055E21556579200E75963 /* appIconEmpty@2x.png */,
 				0BA055E31556579200E75963 /* back.png */,
 				0BA055E41556579200E75963 /* back@2x.png */,
 				0BA055E51556579200E75963 /* bookBg.png */,
 				0BA055E61556579200E75963 /* bookBg@2x.png */,
 				0BA055E71556579200E75963 /* bookBg@2x~ipad.png */,
+				0BC6E0A91571D37500256604 /* bookBgLandscape.png */,
+				0BC6E0AA1571D37500256604 /* bookBgLandscape@2x.png */,
 				0BA055E81556579200E75963 /* bookBg~ipad.png */,
+				0BE81B0A156E883300A9F1AC /* bookShelf@2x~ipad.png */,
+				0BE81B0B156E883300A9F1AC /* bookShelf~ipad.png */,
 				0BA055E91556579200E75963 /* button.png */,
 				0BA055EA1556579200E75963 /* button@2x.png */,
-				0BA055EB1556579200E75963 /* button_selected.png */,
-				0BA055EC1556579200E75963 /* button_selected@2x.png */,
+				33D57C10160C677E0016F32F /* canvas.png */,
+				33D57C11160C677E0016F32F /* canvas@2x.png */,
+				33D57C12160C677E0016F32F /* canvas@2x~ipad.png */,
+				33D57C13160C677E0016F32F /* canvas~ipad.png */,
 				0BA055ED1556579200E75963 /* currentBookmark.png */,
 				0BA055EE1556579200E75963 /* currentBookmark@2x.png */,
 				0BA055EF1556579200E75963 /* currentBookmark@2x~ipad.png */,
 				0BA055F01556579200E75963 /* currentBookmark~ipad.png */,
-				0BA055F11556579200E75963 /* moreAppsArrow.png */,
-				0BA055F21556579200E75963 /* moreAppsArrow@2x.png */,
+				0B6D6CA61571321E000A6EE1 /* flip-illusion-oriented.jpg */,
+				0B6D6CA71571321E000A6EE1 /* flip-illusion.png */,
+				0BD19C6C1566BCF700C47E4A /* menuBg.png */,
+				0BD19C6D1566BCF700C47E4A /* menuBg@2x.png */,
+				0BD19C701566C24C00C47E4A /* menuBg@2x~ipad.png */,
+				0B7885D31568023500533D80 /* menuBgShow.png */,
+				0B7885D41568023500533D80 /* menuBgShow@2x.png */,
+				0B7885D51568023500533D80 /* menuBgShow@2x~ipad.png */,
+				0B7885D61568023500533D80 /* menuBgShow~ipad.png */,
+				0BD19C711566C24C00C47E4A /* menuBg~ipad.png */,
 				0BA055F31556579200E75963 /* moreAppsBg1.png */,
 				0BA055F41556579200E75963 /* moreAppsBg1@2x.png */,
 				0BA055F51556579200E75963 /* moreAppsBg2.png */,
 				0BA055F61556579200E75963 /* moreAppsBg2@2x.png */,
+				3375780A15E5D2EC00A528D7 /* moreButtonBg.png */,
+				3375780B15E5D2EC00A528D7 /* moreButtonBg@2x.png */,
+				3375780E15E5D5CB00A528D7 /* moreButtonBg@2x~ipad.png */,
+				3375780F15E5D5CB00A528D7 /* moreButtonBg~ipad.png */,
 				0BA055F71556579200E75963 /* navigationBarBackground.png */,
 				0BA055F81556579200E75963 /* navigationBarBackground@2x.png */,
+				0BE81B16156E94AE00A9F1AC /* navigationBarBackground@2x~ipad.png */,
+				0BA0561D15565AF200E75963 /* navigationBarBackground~ipad.png */,
+				0B0961C415693AF600D295F1 /* newIcon.png */,
+				0B0961C515693AF600D295F1 /* newIcon@2x.png */,
+				0B34CE67162089990060F1B0 /* TabComic.png */,
+				0B34CE68162089990060F1B0 /* TabComic@2x.png */,
+				0B34CE65162089990060F1B0 /* TabComic_select.png */,
+				0B34CE66162089990060F1B0 /* TabComic_select@2x.png */,
+				0B34CE6B162089990060F1B0 /* TabMore.png */,
+				0B34CE6C162089990060F1B0 /* TabMore@2x.png */,
+				0B34CE69162089990060F1B0 /* TabMore_select.png */,
+				0B34CE6A162089990060F1B0 /* TabMore_select@2x.png */,
+				0B34CE6F162089990060F1B0 /* TabRecommend.png */,
+				0B34CE70162089990060F1B0 /* TabRecommend@2x.png */,
+				0B34CE6D162089990060F1B0 /* TabRecommend_select.png */,
+				0B34CE6E162089990060F1B0 /* TabRecommend_select@2x.png */,
+				0BDC33291556E0A0009423FB /* userGuide1.png */,
+				0BDC332A1556E0A0009423FB /* userGuide1@2x.png */,
+				0B4C8B2A157348E100EE687D /* userGuide2-Landscape@2x~ipad.png */,
+				0B4C8B2B157348E100EE687D /* userGuide2-Landscape~ipad.png */,
+				0BD19C741566C5C000C47E4A /* userGuide2.png */,
+				0BD19C751566C5C000C47E4A /* userGuide2@2x.png */,
+				0BD19C761566C5C000C47E4A /* userGuide2@2x~ipad.png */,
+				0BD19C771566C5C000C47E4A /* userGuide2~ipad.png */,
 				0BA055FB1556579200E75963 /* volumStand.png */,
 				0BA055FC1556579200E75963 /* volumStand@2x.png */,
 				0BA055FD1556579200E75963 /* volumStand@2x~ipad.png */,
+				0B5BDDC91571C454005EDDBD /* volumStandLandscape.png */,
+				0B5BDDCA1571C454005EDDBD /* volumStandLandscape@2x.png */,
 				0BA055FE1556579200E75963 /* volumStand~ipad.png */,
 			);
 			path = image;
@@ -5174,14 +5162,10 @@
 				0BA056061556579200E75963 /* bookBg~ipad.png in Resources */,
 				0BA056071556579200E75963 /* button.png in Resources */,
 				0BA056081556579200E75963 /* button@2x.png in Resources */,
-				0BA056091556579200E75963 /* button_selected.png in Resources */,
-				0BA0560A1556579200E75963 /* button_selected@2x.png in Resources */,
 				0BA0560B1556579200E75963 /* currentBookmark.png in Resources */,
 				0BA0560C1556579200E75963 /* currentBookmark@2x.png in Resources */,
 				0BA0560D1556579200E75963 /* currentBookmark@2x~ipad.png in Resources */,
 				0BA0560E1556579200E75963 /* currentBookmark~ipad.png in Resources */,
-				0BA0560F1556579200E75963 /* moreAppsArrow.png in Resources */,
-				0BA056101556579200E75963 /* moreAppsArrow@2x.png in Resources */,
 				0BA056111556579200E75963 /* moreAppsBg1.png in Resources */,
 				0BA056121556579200E75963 /* moreAppsBg1@2x.png in Resources */,
 				0BA056131556579200E75963 /* moreAppsBg2.png in Resources */,

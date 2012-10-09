@@ -53,7 +53,6 @@
 //        CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
 //        UIButton *commentButton = [UIButton buttonWithType:UIButtonTypeCustom];
 //        [commentButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
-//        //    [commentButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
 //        // Set the title to use the same font and shadow as the standard back button
 //        commentButton.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
 //        commentButton.titleLabel.textColor = [UIColor whiteColor];
@@ -132,7 +131,6 @@
 //    CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
 //    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
 //    [backButton setBackgroundImage:[[UIImage retina4ImageNamed:@"back.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
-//    //    [commentButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
 //    // Set the title to use the same font and shadow as the standard back button
 //    backButton.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
 //    backButton.titleLabel.textColor = [UIColor whiteColor];
@@ -209,9 +207,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        UIImageView *arrow = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"moreAppsArrow.png"]];
-        [cell.contentView addSubview:arrow];
-        arrow.frame = CGRectMake(CGRectGetWidth(self.tableView.frame) - 10 - CGRectGetWidth(arrow.frame), ([self tableView:tableView heightForRowAtIndexPath:indexPath] - CGRectGetHeight(arrow.frame)) / 2, CGRectGetWidth(arrow.frame), CGRectGetHeight(arrow.frame));
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//        UIImageView *arrow = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"moreAppsArrow.png"]];
+//        [cell.contentView addSubview:arrow];
+//        arrow.frame = CGRectMake(CGRectGetWidth(self.tableView.frame) - 10 - CGRectGetWidth(arrow.frame), ([self tableView:tableView heightForRowAtIndexPath:indexPath] - CGRectGetHeight(arrow.frame)) / 2, CGRectGetWidth(arrow.frame), CGRectGetHeight(arrow.frame));
     }
     if (indexPath.row < _bookArray.count) {
         if (indexPath.row % 2 == 0) {

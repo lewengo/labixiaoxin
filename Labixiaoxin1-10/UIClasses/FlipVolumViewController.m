@@ -105,7 +105,6 @@
     } else {
         UIButton *removeAd = [UIButton buttonWithType:UIButtonTypeCustom];
         [removeAd setBackgroundImage:[[UIImage retina4ImageNamed:@"button.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
-        //        [_moreBookButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
         // Set the title to use the same font and shadow as the standard back button
         removeAd.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
         removeAd.titleLabel.textColor = [UIColor whiteColor];
@@ -208,7 +207,6 @@
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [backButton setBackgroundImage:[[UIImage retina4ImageNamed:@"back.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
-    //    [commentButton setBackgroundImage:[[UIImage retina4ImageNamed:@"button_selected.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateHighlighted];
     // Set the title to use the same font and shadow as the standard back button
     backButton.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
     backButton.titleLabel.textColor = [UIColor whiteColor];
