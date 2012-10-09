@@ -249,6 +249,9 @@
 - (void)showActivityView:(NSString *)text
                   inView:(UIView*)view
 {
+    if (view == nil) {
+        view = self.window;
+    }
     UIView *viewExist = nil;
 	for (UIView *v in [view subviews]) {
 		if ([v isKindOfClass:[MBProgressHUD class]]) {
@@ -277,6 +280,9 @@
                       interval:(NSTimeInterval)time
                         inView:(UIView*)view
 {
+    if (view == nil) {
+        view = self.window;
+    }
     UIView *viewExist = nil;
 	for (UIView *v in [view subviews]) {
 		if ([v isKindOfClass:[MBProgressHUD class]]) {
@@ -308,6 +314,9 @@
                       interval:(NSTimeInterval)time
                         inView:(UIView*)view
 {
+    if (view == nil) {
+        view = self.window;
+    }
     UIView *viewExist = nil;
 	for (UIView *v in [view subviews]) {
 		if ([v isKindOfClass:[MBProgressHUD class]]) {
