@@ -40,7 +40,7 @@
 #define kTabbarRealWidth 61
 
 #define kIPhoneTabbarCount 3
-#define kIPadTabbarCount 4
+#define kIPadTabbarCount 3
 
 @interface CustomTabbarViewController ()
 - (void)notificationCountChanged:(NSNotification *)notification;
@@ -240,8 +240,6 @@
         } else if (theIndex == 1) {
             return @"MoreAppsControllerViewController";
         } else if (theIndex == 2) {
-            return @"RecentController_Ipad";
-        } else if (theIndex == 3) {
             return @"MoreController";
         } else {
             return nil;
@@ -274,13 +272,11 @@
 {
     if (IS_IPAD) {
         if (theIndex == 0) {
-            return CGRectMake(0, 116, 61, 45);
+            return CGRectMake(0, 116, 61, 75);
         } else if (theIndex == 1) {
-            return CGRectMake(0, 219, 61, 45);
-        } else if (theIndex == 2) {
-            return CGRectMake(0, 316, 61, 45);
+            return CGRectMake(0, 219, 61, 75);
         } else {
-            return CGRectMake(0, 561, 61, 45);
+            return CGRectMake(0, 561, 61, 75);
         }
     } else {
         if (theIndex == 0) {
@@ -483,20 +479,15 @@
         switch (theIndex) {
             case 0:
             {
-                [MobClick event:@"Tab页面" attributes:[NSDictionary dictionaryWithObject:@"iPad_点击推荐页面" forKey:UM_LabelName]];
+                [MobClick event:@"Tab页面" attributes:[NSDictionary dictionaryWithObject:@"iPad_点击漫画页面" forKey:UM_LabelName]];
             }
                 break;
             case 1:
             {
-                [MobClick event:@"Tab页面" attributes:[NSDictionary dictionaryWithObject:@"iPad_点击最近阅读页面" forKey:UM_LabelName]];
+                [MobClick event:@"Tab页面" attributes:[NSDictionary dictionaryWithObject:@"iPad_点击推荐页面" forKey:UM_LabelName]];
             }
                 break;
             case 2:
-            {
-                [MobClick event:@"Tab页面" attributes:[NSDictionary dictionaryWithObject:@"iPad_点击本地下载页面" forKey:UM_LabelName]];
-            }
-                break;
-            case 3:
             {
                 [MobClick event:@"Tab页面" attributes:[NSDictionary dictionaryWithObject:@"iPad_点击更多页面" forKey:UM_LabelName]];
             }
@@ -508,12 +499,12 @@
         switch (theIndex) {
             case 0:
             {
-                [MobClick event:@"Tab页面" attributes:[NSDictionary dictionaryWithObject:@"iPhone_点击推荐页面" forKey:UM_LabelName]];
+                [MobClick event:@"Tab页面" attributes:[NSDictionary dictionaryWithObject:@"iPhone_点击漫画页面" forKey:UM_LabelName]];
             }
                 break;
             case 1:
             {
-                [MobClick event:@"Tab页面" attributes:[NSDictionary dictionaryWithObject:@"iPhone_点击我的漫画页面" forKey:UM_LabelName]];
+                [MobClick event:@"Tab页面" attributes:[NSDictionary dictionaryWithObject:@"iPhone_点击推荐页面" forKey:UM_LabelName]];
             }
                 break;
             case 2:

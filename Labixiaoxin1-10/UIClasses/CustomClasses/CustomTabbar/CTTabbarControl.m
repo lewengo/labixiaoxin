@@ -65,6 +65,7 @@
         UIImage *bgImage = [_delegate tabbarBgImage:self];
         UIImageView *bgView = [[UIImageView alloc] initWithFrame:self.bounds];
         bgView.image = bgImage;
+        bgView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         [self addSubview:bgView];
         _orientationType = orientationType;
         if (_orientationType == CTTabbarOrientationHorizontal) {
