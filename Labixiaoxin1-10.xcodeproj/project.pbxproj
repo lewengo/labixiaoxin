@@ -1431,6 +1431,7 @@
 		3375781015E5D5CB00A528D7 /* moreButtonBg@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3375780E15E5D5CB00A528D7 /* moreButtonBg@2x~ipad.png */; };
 		3375781115E5D5CB00A528D7 /* moreButtonBg~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3375780F15E5D5CB00A528D7 /* moreButtonBg~ipad.png */; };
 		338C7E5016536DEE000F23AD /* DomobAdSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 338C7E4F16536DEE000F23AD /* DomobAdSDKBundle.bundle */; };
+		338C7E5416536F50000F23AD /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 338C7E5216536EE9000F23AD /* AdSupport.framework */; };
 		33C8AE0D15E5CDD500D42EBA /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C8AE0515E5CDD500D42EBA /* Default-Landscape@2x~ipad.png */; };
 		33C8AE0E15E5CDD500D42EBA /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C8AE0615E5CDD500D42EBA /* Default-Landscape~ipad.png */; };
 		33C8AE0F15E5CDD500D42EBA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C8AE0715E5CDD500D42EBA /* Default.png */; };
@@ -2999,6 +3000,7 @@
 		3375780F15E5D5CB00A528D7 /* moreButtonBg~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moreButtonBg~ipad.png"; sourceTree = "<group>"; };
 		3375781215E5DA0100A528D7 /* Labixiaoxin1-10-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Labixiaoxin1-10-Info.plist"; path = "Labixiaoxin1-10/Labixiaoxin1-10-Info.plist"; sourceTree = SOURCE_ROOT; };
 		338C7E4F16536DEE000F23AD /* DomobAdSDKBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DomobAdSDKBundle.bundle; sourceTree = "<group>"; };
+		338C7E5216536EE9000F23AD /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		33C8AE0515E5CDD500D42EBA /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		33C8AE0615E5CDD500D42EBA /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		33C8AE0715E5CDD500D42EBA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -3053,6 +3055,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				338C7E5416536F50000F23AD /* AdSupport.framework in Frameworks */,
 				0B54AC3315A14C9F00AD91DD /* libz.dylib in Frameworks */,
 				0B54AC3115A14C9600AD91DD /* libstdc++.dylib in Frameworks */,
 				0B54AC2F15A14C7300AD91DD /* CFNetwork.framework in Frameworks */,
@@ -3219,6 +3222,7 @@
 		0B49BB3F154FDC8D004B8AC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				338C7E5216536EE9000F23AD /* AdSupport.framework */,
 				0B54AC3215A14C9F00AD91DD /* libz.dylib */,
 				0B54AC3015A14C9600AD91DD /* libstdc++.dylib */,
 				0B54AC2E15A14C7300AD91DD /* CFNetwork.framework */,
