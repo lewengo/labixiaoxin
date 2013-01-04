@@ -18,6 +18,9 @@
     #import "DeviceHardware.h"
     #import "UIImageExtra.h"
     #import "AppDelegate.h"
+    #import "JsonUtils.h"
+    #import "Constants.h"
+    #import "DataEngine.h"
 #endif
 
 #define IS_IPAD ([[UIDevice currentDevice] respondsToSelector:@selector(userInterfaceIdiom)] && [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)

@@ -62,6 +62,12 @@ static DataEngine *dataEngineInstance = nil;
 - (id)init
 {
     if (self = [super init]) {
+        self.weibo = [[SinaWeibo alloc] initWithAppKey:Sina_AppKey
+                                             appSecret:Sina_AppSecret
+                                        appRedirectURI:Sina_AppRedirectURI
+                                     ssoCallbackScheme:Oauth_Scheme_Weibo
+                                           andDelegate:self];
+        
         self.currentVolumId = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentVolumId"];
         self.volumsStatus = [NSMutableDictionary dictionaryWithDictionary:[LocalSettings loadVolumsStatus]];
         self.books = [NSMutableArray arrayWithArray:[LocalSettings loadBooks]];
@@ -404,5 +410,68 @@ static DataEngine *dataEngineInstance = nil;
     [LocalSettings saveBooks:self.books];
     [LocalSettings saveVolumsStatus:self.volumsStatus];
     
+}
+
+#pragma mark - SinaWeiboDelegate delegate
+- (void)sinaweiboDidLogIn:(SinaWeibo *)sinaweibo
+{
+//    Oauth *oauth = [CoreDataHelper getOauthByOauthType:OpenPlatformTypeWeibo];
+//    if (oauth == nil) {
+//        oauth = [NSEntityDescription insertNewObjectForEntityForName:kEntities_Oauth
+//                                              inManagedObjectContext:[CoreDataEngine objectContext]];
+//        oauth.oauth_type = [NSNumber numberWithInteger:OpenPlatformTypeWeibo];
+//    }
+//    
+//    oauth.oauth_uid = sinaweibo.userID;
+//    oauth.oauth_token = sinaweibo.accessToken;
+//    oauth.oauth_expireTime = sinaweibo.expirationDate;
+//    [CoreDataHelper save:@"33"];
+    
+//    [self bindPlatform:OpenPlatformTypeWeibo
+//       withPlatformUid:sinaweibo.userID
+//     withPlatformToken:sinaweibo.accessToken
+//       withExpiredTime:[sinaweibo.expirationDate timeIntervalSince1970]
+//            withSource:nil];
+//    [self followWUser:Zhuimanhua_WeiboId
+//               source:nil];
+//    if (![[NSUserDefaults standardUserDefaults] boolForKey:[NSString stringWithFormat:kUserDefaults_FirstShareWeibo, self.version]]) {
+//        [self performSelector:@selector(shareLoginWeibo)
+//                   withObject:nil
+//                   afterDelay:10];
+//        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:[NSString stringWithFormat:kUserDefaults_FirstShareWeibo, self.version]];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+//    }
+    
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_OAUTH_WEIBO_BIND_SUCCESS
+                                                        object:nil];
+}
+
+- (void)sinaweiboDidLogOut:(SinaWeibo *)sinaweibo
+{
+    int a = 10;
+    a ++;
+}
+
+- (void)sinaweiboLogInDidCancel:(SinaWeibo *)sinaweibo
+{
+    int a = 10;
+    a ++;
+}
+
+- (void)sinaweibo:(SinaWeibo *)sinaweibo
+logInDidFailWithError:(NSError *)error
+{
+    int a = 10;
+    a ++;
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_OAUTH_WEIBO_BIND_FAILED
+                                                        object:error];
+}
+
+- (void)sinaweibo:(SinaWeibo *)sinaweibo
+accessTokenInvalidOrExpired:(NSError *)error
+{
+    int a = 10;
+    a ++;
 }
 @end

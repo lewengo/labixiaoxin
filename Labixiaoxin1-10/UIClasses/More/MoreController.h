@@ -11,12 +11,14 @@
 @interface MoreController : UIViewController
 {
     
+    IBOutlet UIButton *shareButton;
     IBOutlet UIButton *recommendbutton;
     IBOutlet UIButton *feedbackButton;
     IBOutlet UIButton *aboutButton;
     
 }
 
+- (IBAction)share:(id)sender;
 - (IBAction)recommend:(id)sender;
 - (IBAction)feedback:(id)sender;
 - (IBAction)about:(id)sender;

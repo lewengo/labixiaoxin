@@ -1432,6 +1432,12 @@
 		3375781115E5D5CB00A528D7 /* moreButtonBg~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3375780F15E5D5CB00A528D7 /* moreButtonBg~ipad.png */; };
 		338C7E5016536DEE000F23AD /* DomobAdSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 338C7E4F16536DEE000F23AD /* DomobAdSDKBundle.bundle */; };
 		338C7E5416536F50000F23AD /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 338C7E5216536EE9000F23AD /* AdSupport.framework */; };
+		33A8B9851696D4350085B3BF /* SinaWeibo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 33A8B97D1696D4350085B3BF /* SinaWeibo.bundle */; };
+		33A8B9861696D4350085B3BF /* SinaWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A8B97F1696D4350085B3BF /* SinaWeibo.m */; };
+		33A8B9871696D4350085B3BF /* SinaWeiboAuthorizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A8B9811696D4350085B3BF /* SinaWeiboAuthorizeView.m */; };
+		33A8B9881696D4350085B3BF /* SinaWeiboRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A8B9841696D4350085B3BF /* SinaWeiboRequest.m */; };
+		33A8B98E1696D4470085B3BF /* ShareController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A8B98C1696D4470085B3BF /* ShareController.m */; };
+		33A8B98F1696D4470085B3BF /* ShareController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33A8B98D1696D4470085B3BF /* ShareController.xib */; };
 		33C8AE0D15E5CDD500D42EBA /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C8AE0515E5CDD500D42EBA /* Default-Landscape@2x~ipad.png */; };
 		33C8AE0E15E5CDD500D42EBA /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C8AE0615E5CDD500D42EBA /* Default-Landscape~ipad.png */; };
 		33C8AE0F15E5CDD500D42EBA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C8AE0715E5CDD500D42EBA /* Default.png */; };
@@ -3001,6 +3007,17 @@
 		3375781215E5DA0100A528D7 /* Labixiaoxin1-10-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Labixiaoxin1-10-Info.plist"; path = "Labixiaoxin1-10/Labixiaoxin1-10-Info.plist"; sourceTree = SOURCE_ROOT; };
 		338C7E4F16536DEE000F23AD /* DomobAdSDKBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DomobAdSDKBundle.bundle; sourceTree = "<group>"; };
 		338C7E5216536EE9000F23AD /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		33A8B97D1696D4350085B3BF /* SinaWeibo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SinaWeibo.bundle; sourceTree = "<group>"; };
+		33A8B97E1696D4350085B3BF /* SinaWeibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeibo.h; sourceTree = "<group>"; };
+		33A8B97F1696D4350085B3BF /* SinaWeibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeibo.m; sourceTree = "<group>"; };
+		33A8B9801696D4350085B3BF /* SinaWeiboAuthorizeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboAuthorizeView.h; sourceTree = "<group>"; };
+		33A8B9811696D4350085B3BF /* SinaWeiboAuthorizeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboAuthorizeView.m; sourceTree = "<group>"; };
+		33A8B9821696D4350085B3BF /* SinaWeiboConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboConstants.h; sourceTree = "<group>"; };
+		33A8B9831696D4350085B3BF /* SinaWeiboRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboRequest.h; sourceTree = "<group>"; };
+		33A8B9841696D4350085B3BF /* SinaWeiboRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboRequest.m; sourceTree = "<group>"; };
+		33A8B98B1696D4470085B3BF /* ShareController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareController.h; sourceTree = "<group>"; };
+		33A8B98C1696D4470085B3BF /* ShareController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareController.m; sourceTree = "<group>"; };
+		33A8B98D1696D4470085B3BF /* ShareController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareController.xib; sourceTree = "<group>"; };
 		33C8AE0515E5CDD500D42EBA /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		33C8AE0615E5CDD500D42EBA /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		33C8AE0715E5CDD500D42EBA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -3249,6 +3266,7 @@
 		0B49BB46154FDC8D004B8AC1 /* Labixiaoxin1-10 */ = {
 			isa = PBXGroup;
 			children = (
+				33A8B97C1696D4350085B3BF /* SinaWeibo */,
 				33D9C88C1612CDBA0090DE74 /* MobWin */,
 				33D57BDE160C5A000016F32F /* UMengAd */,
 				33D57BD5160C595C0016F32F /* Analytics */,
@@ -3317,6 +3335,7 @@
 		0B49C043154FE2D5004B8AC1 /* UIClasses */ = {
 			isa = PBXGroup;
 			children = (
+				33A8B98A1696D4470085B3BF /* Share */,
 				33D57C01160C5A4D0016F32F /* RecommendedApps */,
 				3375780315E5D16A00A528D7 /* Abount */,
 				0B42983815E51CA8005539CF /* More */,
@@ -5034,6 +5053,31 @@
 			path = DomobAdSDKBundle;
 			sourceTree = "<group>";
 		};
+		33A8B97C1696D4350085B3BF /* SinaWeibo */ = {
+			isa = PBXGroup;
+			children = (
+				33A8B97D1696D4350085B3BF /* SinaWeibo.bundle */,
+				33A8B97E1696D4350085B3BF /* SinaWeibo.h */,
+				33A8B97F1696D4350085B3BF /* SinaWeibo.m */,
+				33A8B9801696D4350085B3BF /* SinaWeiboAuthorizeView.h */,
+				33A8B9811696D4350085B3BF /* SinaWeiboAuthorizeView.m */,
+				33A8B9821696D4350085B3BF /* SinaWeiboConstants.h */,
+				33A8B9831696D4350085B3BF /* SinaWeiboRequest.h */,
+				33A8B9841696D4350085B3BF /* SinaWeiboRequest.m */,
+			);
+			path = SinaWeibo;
+			sourceTree = "<group>";
+		};
+		33A8B98A1696D4470085B3BF /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				33A8B98B1696D4470085B3BF /* ShareController.h */,
+				33A8B98C1696D4470085B3BF /* ShareController.m */,
+				33A8B98D1696D4470085B3BF /* ShareController.xib */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
 		33D57BD5160C595C0016F32F /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -6573,6 +6617,8 @@
 				3317F0A71623FC720017694B /* TabComic_select@2x~ipad.png in Resources */,
 				3317F0A81623FC720017694B /* TabRecommend_select@2x~ipad.png in Resources */,
 				338C7E5016536DEE000F23AD /* DomobAdSDKBundle.bundle in Resources */,
+				33A8B9851696D4350085B3BF /* SinaWeibo.bundle in Resources */,
+				33A8B98F1696D4470085B3BF /* ShareController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6660,6 +6706,10 @@
 				0BCC2F1C1611FC4300E3B379 /* UIImageExtra.m in Sources */,
 				0BCC2F3E1611FFCD00E3B379 /* CTTabbarControl.m in Sources */,
 				0BCC2F3F1611FFCD00E3B379 /* CustomTabbarViewController.m in Sources */,
+				33A8B9861696D4350085B3BF /* SinaWeibo.m in Sources */,
+				33A8B9871696D4350085B3BF /* SinaWeiboAuthorizeView.m in Sources */,
+				33A8B9881696D4350085B3BF /* SinaWeiboRequest.m in Sources */,
+				33A8B98E1696D4470085B3BF /* ShareController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

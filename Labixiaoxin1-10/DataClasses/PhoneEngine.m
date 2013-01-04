@@ -152,8 +152,8 @@ static PhoneEngine * _sharedInstance = nil;
 - (BOOL)sendSMS:(NSString*)phoneNumber text:(NSString*)text
 {
     if (![[UIDevice currentDevice].model isEqualToString:@"iPhone"]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Unable to send sms", @"")
-                                                        message:[NSString stringWithFormat:NSLocalizedString(@"\"%@\" can't use Message app.", @""), [UIDevice currentDevice].model]
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"不能发送信息", @"")
+                                                        message:[NSString stringWithFormat:NSLocalizedString(@"\"%@\" 不能发送短信息.", @""), [UIDevice currentDevice].model]
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];

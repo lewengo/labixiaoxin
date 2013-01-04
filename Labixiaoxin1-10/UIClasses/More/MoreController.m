@@ -58,6 +58,8 @@
     
     self.title = NSLocalizedString(@"更 多", nil);
     
+    [shareButton setTitle:NSLocalizedString(@"分享给好友", nil)
+                 forState:UIControlStateNormal];
     [recommendbutton setTitle:NSLocalizedString(@"精彩应用推荐", nil)
                      forState:UIControlStateNormal];
     [feedbackButton setTitle:NSLocalizedString(@"意见反馈", nil)
@@ -84,6 +86,7 @@
     recommendbutton = nil;
     feedbackButton = nil;
     aboutButton = nil;
+    shareButton = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -96,6 +99,12 @@
     } else {
         return (interfaceOrientation == UIInterfaceOrientationPortrait);
     }
+}
+
+- (IBAction)share:(id)sender {
+    [[PhoneEngine sharedInstance] sendSMS:nil
+                                     text:[NSString stringWithFormat:@"快来看%@吧，免费的应用 %@",
+                                           NSLocalizedString(@"Book name", nil), APP_URL]];
 }
 
 - (IBAction)recommend:(id)sender

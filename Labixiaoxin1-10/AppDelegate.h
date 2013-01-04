@@ -18,6 +18,7 @@
     NSString *_controllerId;
 }
 
+@property (nonatomic, assign) BOOL isIpad;
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UINavigationController *appRootController;
 @property (nonatomic, retain) CustomTabbarViewController *tabBarController;

@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "VolumStatus.h"
+#import "SinaWeibo.h"
+
 
 @class HttpEngine;
 @class AdTypes;
 
-@interface DataEngine : NSObject
+@interface DataEngine : NSObject <SinaWeiboDelegate>
 {
     BOOL hasRetinaDisplay;
     NSString *imageExtension;
@@ -22,6 +24,7 @@
 
 + (DataEngine *)sharedInstance;
 
+@property (strong, nonatomic) SinaWeibo *weibo;
 @property (copy, nonatomic) NSNumber *currentVolumId;
 @property (strong, nonatomic) NSMutableDictionary *volumsStatus;
 @property (strong, nonatomic) NSMutableArray *books;
