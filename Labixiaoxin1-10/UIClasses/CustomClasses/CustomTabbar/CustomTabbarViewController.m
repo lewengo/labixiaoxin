@@ -318,13 +318,21 @@
 - (UIColor *)tabbarItemTitleColorNormal:(CTTabbarControl *)tabbar
                                 atIndex:(NSInteger)theIndex
 {
-    return [UIColor purpleColor];
+    if (IS_IPAD) {
+        return [UIColor purpleColor];
+    } else {
+        return [UIColor colorWithRed:62 / 255.0 green:62 / 255.0 blue:62 / 255.0 alpha:1.0];
+    }
 }
 
 - (UIColor *)tabbarItemTitleColorSelected:(CTTabbarControl *)tabbar
                                   atIndex:(NSInteger)theIndex
 {
-    return [UIColor yellowColor];
+    if (IS_IPAD) {
+        return [UIColor yellowColor];
+    } else {
+        return [UIColor colorWithRed:240 / 255.0 green:34 / 255.0 blue:7 / 255.0 alpha:1.0];
+    }
 }
 
 - (UIFont *)tabbarItemTitleFont:(CTTabbarControl *)tabbar
