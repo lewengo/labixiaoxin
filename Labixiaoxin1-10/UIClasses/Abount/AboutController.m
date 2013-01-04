@@ -60,7 +60,7 @@
     
     self.title = NSLocalizedString(@"关于漫画", nil);
     
-    aboutLabel.text = NSLocalizedString(@"    本漫画内容均来自于互联网，所有图片资料只供学习交流试看，本App与内容的出处无关，如有侵犯到您的权益，请联系zhuimanhua@sina.com，我们会马上处理。", nil);
+    aboutLabel.text = NSLocalizedString(@"    本漫画内容均来自于互联网，所有图片资料只供学习交流试看，本App与内容的出处无关，如有侵犯到您的权益，请联系manhualover@sina.cn，我们会马上处理。", nil);
     
     if (IS_IPAD) {
         aboutLabel.font = [UIFont systemFontOfSize:25];

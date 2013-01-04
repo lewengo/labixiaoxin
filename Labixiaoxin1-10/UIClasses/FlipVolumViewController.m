@@ -104,7 +104,7 @@
         self.navigationItem.rightBarButtonItem = nil;
     } else {
         UIButton *removeAd = [UIButton buttonWithType:UIButtonTypeCustom];
-        [removeAd setBackgroundImage:[[UIImage retina4ImageNamed:@"button.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
+        [removeAd setBackgroundImage:[[UIImage retina4ImageNamed:@"button2.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
         // Set the title to use the same font and shadow as the standard back button
         removeAd.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
         removeAd.titleLabel.textColor = [UIColor whiteColor];
@@ -206,7 +206,7 @@
     }
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [backButton setBackgroundImage:[[UIImage retina4ImageNamed:@"back.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
+    [backButton setBackgroundImage:[[UIImage retina4ImageNamed:@"back2.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
     // Set the title to use the same font and shadow as the standard back button
     backButton.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
     backButton.titleLabel.textColor = [UIColor whiteColor];

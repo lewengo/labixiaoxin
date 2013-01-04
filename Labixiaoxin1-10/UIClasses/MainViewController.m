@@ -297,13 +297,17 @@
 #ifdef Is_Only_Portrait
             stand = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"volumStand.png"]];
 #else
-            stand = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"volumStandLandscape.png"]];
+            UIImage *immm = [UIImage retina4ImageNamed:@"volumStand.png"];
+            immm = [immm stretchableImageWithLeftCapWidth:immm.size.width / 2 topCapHeight:immm.size.height];
+            stand = [[UIImageView alloc] initWithImage:immm];
+            stand.frame = CGRectMake(0, 0, 1024 - 80, stand.frame.size.height);
 #endif
         } else {
             stand = [[UIImageView alloc] initWithImage:[UIImage retina4ImageNamed:@"volumStand.png"]];
         }
-        stand.frame = CGRectMake(stand.frame.origin.x, [self tableView:tableView heightForRowAtIndexPath:indexPath] - stand.frame.size.height, stand.frame.size.width, stand.frame.size.height);
+        stand.frame = CGRectMake((cell.contentView.frame.size.width - stand.frame.size.width) / 2, cell.contentView.frame.size.height - stand.frame.size.height, stand.frame.size.width, stand.frame.size.height);
         [cell.contentView addSubview:stand];
+        stand.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin;
     }
 #ifdef Is_Only_Portrait
     NSInteger perline = IS_IPAD ? kIpadPortraitNumberPerline : kIphoneNumberPerLine;
@@ -312,9 +316,9 @@
     CGFloat widthInterval = IS_IPAD ? 40 : 10;
 #else
     NSInteger perline = IS_IPAD ? kIpadLandscapeNumberPerline : kIphoneNumberPerLine;
-    CGPoint ltPoint = IS_IPAD ? CGPointMake(98, 3) : CGPointMake(9, 7);
+    CGPoint ltPoint = IS_IPAD ? CGPointMake(85, 3) : CGPointMake(9, 7);
     CGSize volumSize = IS_IPAD ? CGSizeMake(162, 216) : CGSizeMake(94, 123);
-    CGFloat widthInterval = IS_IPAD ? 60 : 10;
+    CGFloat widthInterval = IS_IPAD ? 50 : 10;
 #endif
     
     if (indexPath.row < [self tableView:tableView numberOfRowsInSection:0]) {

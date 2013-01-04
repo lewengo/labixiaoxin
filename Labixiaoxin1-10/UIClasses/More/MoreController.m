@@ -120,7 +120,7 @@
 
 - (IBAction)feedback:(id)sender
 {
-    [[PhoneEngine sharedInstance] showMail:@"zhuimanhua@sina.com"
+    [[PhoneEngine sharedInstance] showMail:@"manhualover@sina.cn"
                                    subject:NSLocalizedString(@"意见反馈", nil)
                                    content:nil];
 }
