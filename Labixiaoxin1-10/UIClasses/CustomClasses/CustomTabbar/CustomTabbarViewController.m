@@ -318,13 +318,13 @@
 - (UIColor *)tabbarItemTitleColorNormal:(CTTabbarControl *)tabbar
                                 atIndex:(NSInteger)theIndex
 {
-    return [UIColor colorWithRed:62 / 255.0 green:62 / 255.0 blue:62 / 255.0 alpha:1.0];
+    return [UIColor purpleColor];
 }
 
 - (UIColor *)tabbarItemTitleColorSelected:(CTTabbarControl *)tabbar
                                   atIndex:(NSInteger)theIndex
 {
-    return [UIColor colorWithRed:240 / 255.0 green:34 / 255.0 blue:7 / 255.0 alpha:1.0];
+    return [UIColor yellowColor];
 }
 
 - (UIFont *)tabbarItemTitleFont:(CTTabbarControl *)tabbar
@@ -520,7 +520,7 @@
 
 - (void)selectDone:(CTTabbarControl *)tabbar atIndex:(NSInteger)theIndex
 {
-    if (IS_IPAD) {
+    if (IS_IPAD && theIndex != 2) {
         if ([self targetController:theIndex] != (UIViewController *)[NSNull null]) {
             [((UINavigationController*) [self targetController:theIndex]) setNavigationBarHidden:YES];
         }

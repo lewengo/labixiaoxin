@@ -38,7 +38,11 @@
     // Do any additional setup after loading the view from its nib.
     CustomNavigationBar *customNavigationBar =  (CustomNavigationBar*)self.navigationController.navigationBar;
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [backButton setBackgroundImage:[[UIImage retina4ImageNamed:@"back.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
+    if (IS_IPAD) {
+        [backButton setBackgroundImage:[[UIImage retina4ImageNamed:@"back2.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
+    } else {
+        [backButton setBackgroundImage:[[UIImage retina4ImageNamed:@"back.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:16.0] forState:UIControlStateNormal];
+    }
     // Set the title to use the same font and shadow as the standard back button
     backButton.titleLabel.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
     backButton.titleLabel.textColor = [UIColor whiteColor];

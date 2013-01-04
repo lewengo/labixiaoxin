@@ -69,12 +69,15 @@
     
     if (IS_IPAD) {
         UIImage *buttonBg = [UIImage retina4ImageNamed:@"moreButtonBg.png"];
-        recommendbutton.frame = CGRectMake((CGRectGetWidth(self.view.frame) - buttonBg.size.width) / 2, 100, buttonBg.size.width, buttonBg.size.height);       
+        shareButton.frame = CGRectMake((CGRectGetWidth(self.view.frame) - buttonBg.size.width) / 2, 80, buttonBg.size.width, buttonBg.size.height);
+        
+        recommendbutton.frame = CGRectMake((CGRectGetWidth(self.view.frame) - buttonBg.size.width) / 2, 230, buttonBg.size.width, buttonBg.size.height);
 
-        feedbackButton.frame = CGRectMake((CGRectGetWidth(self.view.frame) - buttonBg.size.width) / 2, 250, buttonBg.size.width, buttonBg.size.height);
+        feedbackButton.frame = CGRectMake((CGRectGetWidth(self.view.frame) - buttonBg.size.width) / 2, 320, buttonBg.size.width, buttonBg.size.height);
         
-        aboutButton.frame = CGRectMake((CGRectGetWidth(self.view.frame) - buttonBg.size.width) / 2, 400, buttonBg.size.width, buttonBg.size.height);
+        aboutButton.frame = CGRectMake((CGRectGetWidth(self.view.frame) - buttonBg.size.width) / 2, 410, buttonBg.size.width, buttonBg.size.height);
         
+        [shareButton.titleLabel setFont:[UIFont boldSystemFontOfSize:35]];
         [recommendbutton.titleLabel setFont:[UIFont boldSystemFontOfSize:35]];
         [feedbackButton.titleLabel setFont:[UIFont boldSystemFontOfSize:35]];
         [aboutButton.titleLabel setFont:[UIFont boldSystemFontOfSize:35]];

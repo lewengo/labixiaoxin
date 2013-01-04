@@ -1438,6 +1438,8 @@
 		33A8B9881696D4350085B3BF /* SinaWeiboRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A8B9841696D4350085B3BF /* SinaWeiboRequest.m */; };
 		33A8B98E1696D4470085B3BF /* ShareController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A8B98C1696D4470085B3BF /* ShareController.m */; };
 		33A8B98F1696D4470085B3BF /* ShareController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33A8B98D1696D4470085B3BF /* ShareController.xib */; };
+		33A8B9921696DC6C0085B3BF /* back2@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 33A8B9901696DC6C0085B3BF /* back2@2x~ipad.png */; };
+		33A8B9931696DC6C0085B3BF /* back2~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 33A8B9911696DC6C0085B3BF /* back2~ipad.png */; };
 		33C8AE0D15E5CDD500D42EBA /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C8AE0515E5CDD500D42EBA /* Default-Landscape@2x~ipad.png */; };
 		33C8AE0E15E5CDD500D42EBA /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C8AE0615E5CDD500D42EBA /* Default-Landscape~ipad.png */; };
 		33C8AE0F15E5CDD500D42EBA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C8AE0715E5CDD500D42EBA /* Default.png */; };
@@ -3018,6 +3020,8 @@
 		33A8B98B1696D4470085B3BF /* ShareController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareController.h; sourceTree = "<group>"; };
 		33A8B98C1696D4470085B3BF /* ShareController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareController.m; sourceTree = "<group>"; };
 		33A8B98D1696D4470085B3BF /* ShareController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareController.xib; sourceTree = "<group>"; };
+		33A8B9901696DC6C0085B3BF /* back2@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back2@2x~ipad.png"; sourceTree = "<group>"; };
+		33A8B9911696DC6C0085B3BF /* back2~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back2~ipad.png"; sourceTree = "<group>"; };
 		33C8AE0515E5CDD500D42EBA /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		33C8AE0615E5CDD500D42EBA /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		33C8AE0715E5CDD500D42EBA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -4841,6 +4845,8 @@
 		0BA055E01556579200E75963 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				33A8B9901696DC6C0085B3BF /* back2@2x~ipad.png */,
+				33A8B9911696DC6C0085B3BF /* back2~ipad.png */,
 				3317F0911623FC720017694B /* TabRecommend~ipad.png */,
 				3317F0921623FC720017694B /* TabComic~ipad.png */,
 				3317F0931623FC720017694B /* TabMore~ipad.png */,
@@ -6619,6 +6625,8 @@
 				338C7E5016536DEE000F23AD /* DomobAdSDKBundle.bundle in Resources */,
 				33A8B9851696D4350085B3BF /* SinaWeibo.bundle in Resources */,
 				33A8B98F1696D4470085B3BF /* ShareController.xib in Resources */,
+				33A8B9921696DC6C0085B3BF /* back2@2x~ipad.png in Resources */,
+				33A8B9931696DC6C0085B3BF /* back2~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

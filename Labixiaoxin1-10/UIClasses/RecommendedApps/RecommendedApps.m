@@ -60,7 +60,7 @@
     self.title = NSLocalizedString(@"精彩推荐", nil);
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    if (0 && IS_IPAD) {
+    if (IS_IPAD) {
         [backButton setBackgroundImage:[[UIImage retina4ImageNamed:@"back2.png"] stretchableImageWithLeftCapWidth:14.0 topCapHeight:15.0] forState:UIControlStateNormal];
         backButton.titleLabel.font = [UIFont boldSystemFontOfSize:16];
     } else {

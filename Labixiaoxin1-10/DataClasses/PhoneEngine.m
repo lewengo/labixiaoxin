@@ -177,7 +177,11 @@ static PhoneEngine * _sharedInstance = nil;
         if([MFMessageComposeViewController canSendText])
         {
             controller.messageComposeDelegate = self;
-            controller.recipients = [NSArray arrayWithObject:telNumber];
+            if (telNumber.length > 0) {
+                controller.recipients = [NSArray arrayWithObject:telNumber];
+            } else {
+                controller.recipients = nil;
+            }
             controller.navigationBar.barStyle = UIBarStyleBlack;
             controller.body = text;
             AppDelegate *delegate= (AppDelegate *)[[UIApplication sharedApplication] delegate];
